@@ -75,34 +75,45 @@ def run(project,bugid,patch_no,tests,randoop_tests=[],tmp_tracefile='tmp_c'):
     for test in tests:
         test=test.strip()
         
-        os.system('timeout 90 defects4j test -n -t '+test+' -w '+w_buggy+jvmargs)
+        ret=os.system('timeout 90 defects4j test -n -t '+test+' -w '+w_buggy+jvmargs)
         if os.path.exists(tmp_tracefile):
-            extract_trace(tmp_tracefile,os.path.join(dir_path,'buggy_e','__'.join(test.split('::'))),start_line,end_line)
-            os.system('mv '+tmp_tracefile+' '+os.path.join(dir_path,'buggy','__'.join(test.split('::'))))
+            if ret==0:
+                extract_trace(tmp_tracefile,os.path.join(dir_path,'buggy_e','__'.join(test.split('::'))),start_line,end_line)
+                os.system('mv '+tmp_tracefile+' '+os.path.join(dir_path,'buggy','__'.join(test.split('::'))))
+            else:
+                os.system('rm '+tmp_tracefile)
 
-
-        os.system('timeout 90 defects4j test -n -t '+test+' -w  '+w_patched+jvmargs)
+        ret=os.system('timeout 90 defects4j test -n -t '+test+' -w  '+w_patched+jvmargs)
         if os.path.exists(tmp_tracefile):
-            extract_trace(tmp_tracefile,os.path.join(dir_path,'patched_e','__'.join(test.split('::'))),start_line,end_line)
-            os.system('mv '+tmp_tracefile+' '+os.path.join(dir_path,'patched','__'.join(test.split('::'))))
+            if ret==0:
+                extract_trace(tmp_tracefile,os.path.join(dir_path,'patched_e','__'.join(test.split('::'))),start_line,end_line)
+                os.system('mv '+tmp_tracefile+' '+os.path.join(dir_path,'patched','__'.join(test.split('::'))))
+            else:
+                os.system('rm '+tmp_tracefile)
 
     cmpl_flag=True
     testfile='../test_gen_randoop/'+project+'/randoop/'+bugid+'/'+project+'-'+bugid+'b-randoop.'+bugid+'.tar.bz2'
     for Test_Case in randoop_tests:
         test='Randoop.'+Test_Case.strip()
         if(cmpl_flag):
-            os.system('timeout 90 defects4j test -s '+testfile+' -t '+Test_Case.strip()+' -w '+w_buggy+jvmargs)
+            ret=os.system('timeout 90 defects4j test -s '+testfile+' -t '+Test_Case.strip()+' -w '+w_buggy+jvmargs)
         else:
-            os.system('timeout 90 defects4j test -n -s '+testfile+' -t '+Test_Case.strip()+' -w '+w_buggy+jvmargs)
+            ret=os.system('timeout 90 defects4j test -n -s '+testfile+' -t '+Test_Case.strip()+' -w '+w_buggy+jvmargs)
         if os.path.exists(tmp_tracefile):
-            extract_trace(tmp_tracefile,os.path.join(dir_path,'buggy_e','__'.join(test.split('::'))),start_line,end_line)
-            os.system('mv '+tmp_tracefile+' '+os.path.join(dir_path,'buggy','__'.join(test.split('::'))))
+            if ret==0:
+                extract_trace(tmp_tracefile,os.path.join(dir_path,'buggy_e','__'.join(test.split('::'))),start_line,end_line)
+                os.system('mv '+tmp_tracefile+' '+os.path.join(dir_path,'buggy','__'.join(test.split('::'))))
+            else:
+                os.system('rm '+tmp_tracefile)
         if(cmpl_flag):
-            os.system('timeout 90 defects4j test -s '+testfile+' -t '+Test_Case.strip()+' -w '+w_patched+jvmargs)
+            ret=os.system('timeout 90 defects4j test -s '+testfile+' -t '+Test_Case.strip()+' -w '+w_patched+jvmargs)
         else:
-            os.system('timeout 90 defects4j test -n -s '+testfile+' -t '+Test_Case.strip()+' -w '+w_patched+jvmargs)
+            ret=os.system('timeout 90 defects4j test -n -s '+testfile+' -t '+Test_Case.strip()+' -w '+w_patched+jvmargs)
         if os.path.exists(tmp_tracefile):
-            extract_trace(tmp_tracefile,os.path.join(dir_path,'patched_e','__'.join(test.split('::'))),start_line,end_line)
-            os.system('mv '+tmp_tracefile+' '+os.path.join(dir_path,'patched','__'.join(test.split('::'))))
+            if ret==0:
+                extract_trace(tmp_tracefile,os.path.join(dir_path,'patched_e','__'.join(test.split('::'))),start_line,end_line)
+                os.system('mv '+tmp_tracefile+' '+os.path.join(dir_path,'patched','__'.join(test.split('::'))))
+            else:
+                os.system('rm '+tmp_tracefile)
         cmpl_flag=False
 
