@@ -1,0 +1,17 @@
+diff -r -u -w Chart17b/source/org/jfree/data/time/TimeSeries.java chart_17_buggy/source/org/jfree/data/time/TimeSeries.java
+--- Chart17b/source/org/jfree/data/time/TimeSeries.java	2018-11-13 21:56:24.435347678 +0800
++++ chart_17_buggy/source/org/jfree/data/time/TimeSeries.java	2018-11-13 21:56:33.107837393 +0800
+@@ -877,6 +877,13 @@
+             throw new IllegalArgumentException("Requires start >= 0.");
+         }
+         if (end < start) {
++if(start==SerialDate.INCLUDE_FIRST){
++return (maximumItemCount>=start&&s<end);
++}else if(include==SerialDate.INCLUDE_SECOND){
++return (s>start&&s<=end);
++}else {
++return (s>start&&s<end);
++}
+             throw new IllegalArgumentException("Requires start <= end.");
+         }
+         TimeSeries copy = (TimeSeries) super.clone();

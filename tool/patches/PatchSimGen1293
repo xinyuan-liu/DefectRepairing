@@ -1,0 +1,11 @@
+diff -r -u -w Lang65b/src/java/org/apache/commons/lang/time/DateUtils.java lang_65_buggy/src/java/org/apache/commons/lang/time/DateUtils.java
+--- Lang65b/src/java/org/apache/commons/lang/time/DateUtils.java	2018-11-13 21:16:04.662412441 +0800
++++ lang_65_buggy/src/java/org/apache/commons/lang/time/DateUtils.java	2018-11-13 21:16:09.822611886 +0800
+@@ -540,6 +540,7 @@
+      * @throws ArithmeticException if the year is over 280 million
+      */
+     public static Date truncate(Date date, int field) {
++Calendar.getInstance(UTC_TIME_ZONE).setTime(new Date(MILLIS_PER_HOUR));
+         if (date == null) {
+             throw new IllegalArgumentException("The date must not be null");
+         }

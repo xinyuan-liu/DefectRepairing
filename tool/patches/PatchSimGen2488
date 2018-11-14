@@ -1,0 +1,11 @@
+diff -r -u -w Math60b/src/main/java/org/apache/commons/math/ConvergenceException.java math_60_buggy/src/main/java/org/apache/commons/math/ConvergenceException.java
+--- Math60b/src/main/java/org/apache/commons/math/ConvergenceException.java	2018-11-13 21:34:52.481864585 +0800
++++ math_60_buggy/src/main/java/org/apache/commons/math/ConvergenceException.java	2018-11-13 21:35:04.446319455 +0800
+@@ -59,6 +59,7 @@
+      * @since 2.2
+      */
+     public ConvergenceException(Localizable pattern, Object ... arguments) {
++this.arguments=ArgUtils.flatten(arguments);
+         super(pattern, arguments);
+     }
+ 

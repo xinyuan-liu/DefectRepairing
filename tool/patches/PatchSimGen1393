@@ -1,0 +1,13 @@
+diff -r -u -w Math5b/src/main/java/org/apache/commons/math3/complex/Complex.java math_5_buggy/src/main/java/org/apache/commons/math3/complex/Complex.java
+--- Math5b/src/main/java/org/apache/commons/math3/complex/Complex.java	2018-11-13 21:17:42.594621217 +0800
++++ math_5_buggy/src/main/java/org/apache/commons/math3/complex/Complex.java	2018-11-13 21:18:00.763487243 +0800
+@@ -340,6 +340,9 @@
+         if (this == other) {
+             return true;
+         }
++if(this==other){
++return true;
++}
+         if (other instanceof Complex){
+             Complex c = (Complex)other;
+             if (c.isNaN) {

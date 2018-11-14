@@ -1,0 +1,19 @@
+diff -r -u -w Lang13b/src/main/java/org/apache/commons/lang3/SerializationUtils.java lang_13_buggy/src/main/java/org/apache/commons/lang3/SerializationUtils.java
+--- Lang13b/src/main/java/org/apache/commons/lang3/SerializationUtils.java	2018-11-13 20:39:08.303610156 +0800
++++ lang_13_buggy/src/main/java/org/apache/commons/lang3/SerializationUtils.java	2018-11-13 21:06:25.526598162 +0800
+@@ -262,11 +262,15 @@
+         @Override
+         protected Class<?> resolveClass(ObjectStreamClass desc) throws IOException, ClassNotFoundException {
+             String name = desc.getName();
++if(name==null){
++return false;
++}
+             try {
+                 return Class.forName(name, false, classLoader);
+             } catch (ClassNotFoundException ex) {
+                     return Class.forName(name, false, Thread.currentThread().getContextClassLoader());
+             }
++
+         }
+ 
+     }

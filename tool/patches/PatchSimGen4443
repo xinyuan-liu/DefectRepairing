@@ -1,0 +1,15 @@
+diff -r -u -w Chart25b/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java chart_25_buggy/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java
+--- Chart25b/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	2018-11-13 21:59:03.044337880 +0800
++++ chart_25_buggy/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	2018-11-13 21:59:19.185256385 +0800
+@@ -105,9 +105,8 @@
+      */
+     public Number getMeanValue(int row, int column) {
+         Number result = null;
+-        MeanAndStandardDeviation masd 
+-            = (MeanAndStandardDeviation) this.data.getObject(row, column);
+-        if (masd != null) {
++MeanAndStandardDeviation masd=(MeanAndStandardDeviation)this.data.getObject(row,column);
++if(masd==null){
+             result = masd.getMean();
+         }
+         return result;

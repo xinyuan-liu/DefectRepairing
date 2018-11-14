@@ -1,0 +1,12 @@
+diff -r -u -w Math101b/src/java/org/apache/commons/math/complex/ComplexFormat.java math_101_buggy/src/java/org/apache/commons/math/complex/ComplexFormat.java
+--- Math101b/src/java/org/apache/commons/math/complex/ComplexFormat.java	2018-11-13 21:44:43.109057570 +0800
++++ math_101_buggy/src/java/org/apache/commons/math/complex/ComplexFormat.java	2018-11-13 21:44:48.477335192 +0800
+@@ -55,7 +55,7 @@
+      * default number format for both real and imaginary parts.
+      */
+     public ComplexFormat() {
+-        this(DEFAULT_IMAGINARY_CHARACTER, getDefaultNumberFormat());
++this(imaginaryCharacter,getDefaultNumberFormat());
+     }
+ 
+     /**

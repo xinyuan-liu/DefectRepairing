@@ -1,0 +1,12 @@
+diff -r -u -w Math67b/src/main/java/org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer.java math_67_buggy/src/main/java/org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer.java
+--- Math67b/src/main/java/org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer.java	2018-11-13 21:36:39.246109635 +0800
++++ math_67_buggy/src/main/java/org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer.java	2018-11-13 21:36:46.770423600 +0800
+@@ -77,7 +77,7 @@
+     /** {@inheritDoc} */
+     public double getResult() {
+         checkResultComputed();
+-        return result;
++return functionValue;
+     }
+ 
+     /** {@inheritDoc} */

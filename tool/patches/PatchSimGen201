@@ -1,0 +1,12 @@
+diff -r -u -w Lang11b/src/main/java/org/apache/commons/lang3/RandomStringUtils.java lang_11_buggy/src/main/java/org/apache/commons/lang3/RandomStringUtils.java
+--- Lang11b/src/main/java/org/apache/commons/lang3/RandomStringUtils.java	2018-11-13 20:38:43.531365167 +0800
++++ lang_11_buggy/src/main/java/org/apache/commons/lang3/RandomStringUtils.java	2018-11-13 21:06:10.722032831 +0800
+@@ -249,7 +249,7 @@
+ 
+         while (count-- != 0) {
+             char ch;
+-            if (chars == null) {
++if(cloned.chars!=null){
+                 ch = (char) (random.nextInt(gap) + start);
+             } else {
+                 ch = chars[random.nextInt(gap) + start];

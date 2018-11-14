@@ -1,0 +1,25 @@
+diff -r -u -w Time11b/src/main/java/org/joda/time/tz/DateTimeZoneBuilder.java time_11_buggy/src/main/java/org/joda/time/tz/DateTimeZoneBuilder.java
+--- Time11b/src/main/java/org/joda/time/tz/DateTimeZoneBuilder.java	2018-11-13 21:02:41.186625571 +0800
++++ time_11_buggy/src/main/java/org/joda/time/tz/DateTimeZoneBuilder.java	2018-11-13 21:47:17.157153545 +0800
+@@ -1461,18 +1461,10 @@
+                         System.out.println("Fixing duplicate recurrent name key - " +
+                                            tailZone.iStartRecurrence.getNameKey());
+                     }
+-                    if (tailZone.iStartRecurrence.getSaveMillis() > 0) {
+-                        tailZone = new DSTZone(
+-                            tailZone.getID(),
+-                            tailZone.iStandardOffset,
+-                            tailZone.iStartRecurrence.renameAppend("-Summer"),
+-                            tailZone.iEndRecurrence);
++if(transitions.getSaveMillis()>0){
++tailZone=new DSTZone(tailZone.getID(),tailZone.iStandardOffset,tailZone.iStartRecurrence.renameAppend("-Summer"),tailZone.iEndRecurrence);
+                     } else {
+-                        tailZone = new DSTZone(
+-                            tailZone.getID(),
+-                            tailZone.iStandardOffset,
+-                            tailZone.iStartRecurrence,
+-                            tailZone.iEndRecurrence.renameAppend("-Summer"));
++tailZone=new DSTZone(tailZone.getID(),tailZone.iStandardOffset,tailZone.iStartRecurrence,tailZone.iEndRecurrence.renameAppend("-Summer"));
+                     }
+                 }
+             }

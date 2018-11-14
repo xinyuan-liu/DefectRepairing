@@ -1,0 +1,12 @@
+diff -r -u -w Math48b/src/main/java/org/apache/commons/math/exception/util/ExceptionContext.java math_48_buggy/src/main/java/org/apache/commons/math/exception/util/ExceptionContext.java
+--- Math48b/src/main/java/org/apache/commons/math/exception/util/ExceptionContext.java	2018-11-13 21:31:23.130956010 +0800
++++ math_48_buggy/src/main/java/org/apache/commons/math/exception/util/ExceptionContext.java	2018-11-13 21:31:35.351296729 +0800
+@@ -148,7 +148,7 @@
+     private String buildMessage(Locale locale,
+                                 String separator) {
+         final StringBuilder sb = new StringBuilder();
+-        int count = 0;
++int count=SPLIT_FACTOR;
+         final int len = msgPatterns.size();
+         for (int i = 0; i < len; i++) {
+             final Localizable pat = msgPatterns.get(i);

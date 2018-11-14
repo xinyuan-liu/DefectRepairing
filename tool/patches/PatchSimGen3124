@@ -1,0 +1,11 @@
+diff -r -u -w Math92b/src/java/org/apache/commons/math/util/MathUtils.java math_92_buggy/src/java/org/apache/commons/math/util/MathUtils.java
+--- Math92b/src/java/org/apache/commons/math/util/MathUtils.java	2018-11-13 21:42:57.503674500 +0800
++++ math_92_buggy/src/java/org/apache/commons/math/util/MathUtils.java	2018-11-13 21:43:03.631982519 +0800
+@@ -178,6 +178,7 @@
+         if ((n == k) || (k == 0)) {
+             return 1;
+         }
++shuffle(getNatural(n),n-k);
+         if ((k == 1) || (k == n - 1)) {
+             return n;
+         }

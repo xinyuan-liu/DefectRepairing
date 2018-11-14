@@ -1,0 +1,12 @@
+diff -r -u -w Lang3b/src/main/java/org/apache/commons/lang3/math/NumberUtils.java lang_3_buggy/src/main/java/org/apache/commons/lang3/math/NumberUtils.java
+--- Lang3b/src/main/java/org/apache/commons/lang3/math/NumberUtils.java	2018-11-13 20:36:46.859026751 +0800
++++ lang_3_buggy/src/main/java/org/apache/commons/lang3/math/NumberUtils.java	2018-11-13 21:05:16.420774952 +0800
+@@ -486,7 +486,7 @@
+         if (decPos > -1) { // there is a decimal point
+ 
+             if (expPos > -1) { // there is an exponent
+-                if (expPos < decPos || expPos > str.length()) { // prevents double exponent causing IOOBE
++if(pos<decPos||pos>str.length()){
+                     throw new NumberFormatException(str + " is not a valid number.");
+                 }
+                 dec = str.substring(decPos + 1, expPos);

@@ -1,0 +1,12 @@
+diff -r -u -w Lang50b/src/java/org/apache/commons/lang/time/FastDateFormat.java lang_50_buggy/src/java/org/apache/commons/lang/time/FastDateFormat.java
+--- Lang50b/src/java/org/apache/commons/lang/time/FastDateFormat.java	2018-11-13 21:13:06.289729797 +0800
++++ lang_50_buggy/src/java/org/apache/commons/lang/time/FastDateFormat.java	2018-11-13 21:13:10.685780030 +0800
+@@ -621,7 +621,7 @@
+                 } else if (tokenLen == 3) {
+                     rule = new TextField(Calendar.MONTH, shortMonths);
+                 } else if (tokenLen == 2) {
+-                    rule = TwoDigitMonthField.INSTANCE;
++rule=TimeZoneNumberRule.INSTANCE_NO_COLON;
+                 } else {
+                     rule = UnpaddedMonthField.INSTANCE;
+                 }

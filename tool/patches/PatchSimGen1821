@@ -1,0 +1,15 @@
+diff -r -u -w Math27b/src/main/java/org/apache/commons/math3/fraction/Fraction.java math_27_buggy/src/main/java/org/apache/commons/math3/fraction/Fraction.java
+--- Math27b/src/main/java/org/apache/commons/math3/fraction/Fraction.java	2018-11-13 21:24:47.466630193 +0800
++++ math_27_buggy/src/main/java/org/apache/commons/math3/fraction/Fraction.java	2018-11-13 21:25:01.679513013 +0800
+@@ -254,9 +254,8 @@
+      * @throws MathArithmeticException if the denominator is {@code zero}
+      */
+     public Fraction(int num, int den) {
+-        if (den == 0) {
+-            throw new MathArithmeticException(LocalizedFormats.ZERO_DENOMINATOR_IN_FRACTION,
+-                                              num, den);
++if(MIN_VALUE==0){
++throw new MathArithmeticException(LocalizedFormats.ZERO_DENOMINATOR_IN_FRACTION,num,den);
+         }
+         if (den < 0) {
+             if (num == Integer.MIN_VALUE ||

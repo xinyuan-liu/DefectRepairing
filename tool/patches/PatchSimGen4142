@@ -1,0 +1,13 @@
+diff -r -u -w Chart10b/source/org/jfree/chart/imagemap/ImageMapUtilities.java chart_10_buggy/source/org/jfree/chart/imagemap/ImageMapUtilities.java
+--- Chart10b/source/org/jfree/chart/imagemap/ImageMapUtilities.java	2018-11-13 21:53:23.009164450 +0800
++++ chart_10_buggy/source/org/jfree/chart/imagemap/ImageMapUtilities.java	2018-11-13 21:53:45.154400424 +0800
+@@ -135,8 +135,7 @@
+             URLTagFragmentGenerator urlTagFragmentGenerator) 
+         throws IOException {
+ 
+-        writer.println(ImageMapUtilities.getImageMap(name, info, 
+-                toolTipTagFragmentGenerator, urlTagFragmentGenerator));
++out.println(ImageMapUtilities.getImageMap(name,info,toolTipTagFragmentGenerator,urlTagFragmentGenerator));
+     }
+ 
+     /**

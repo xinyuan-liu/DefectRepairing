@@ -1,0 +1,25 @@
+diff -r -u -w Math61b/src/main/java/org/apache/commons/math/exception/util/LocalizedFormats.java math_61_buggy/src/main/java/org/apache/commons/math/exception/util/LocalizedFormats.java
+--- Math61b/src/main/java/org/apache/commons/math/exception/util/LocalizedFormats.java	2018-11-13 21:35:12.410625330 +0800
++++ math_61_buggy/src/main/java/org/apache/commons/math/exception/util/LocalizedFormats.java	2018-11-13 21:35:20.910954458 +0800
+@@ -325,19 +325,14 @@
+     /** {@inheritDoc} */
+     public String getLocalizedString(final Locale locale) {
+         try {
+-            ResourceBundle bundle =
+-                    ResourceBundle.getBundle("META-INF/localization/LocalizedFormats", locale);
++ResourceBundle bundle=ResourceBundle.getBundle("META-INF/localization/LocalizedFormats",locale);
+             if (bundle.getLocale().getLanguage().equals(locale.getLanguage())) {
+-                // the value of the resource is the translated format
+                 return bundle.getString(toString());
+             }
+-
+         } catch (MissingResourceException mre) {
+-            // do nothing here
+         }
+ 
+-        // either the locale is not supported or the resource is unknown
+-        // don't translate and fall back to using the source format
++NumberFormat.getNumberInstance(locale).setMaximumFractionDigits(0);
+         return sourceFormat;
+ 
+     }

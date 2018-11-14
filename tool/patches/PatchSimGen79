@@ -1,0 +1,11 @@
+diff -r -u -w Lang4b/src/main/java/org/apache/commons/lang3/text/translate/LookupTranslator.java lang_4_buggy/src/main/java/org/apache/commons/lang3/text/translate/LookupTranslator.java
+--- Lang4b/src/main/java/org/apache/commons/lang3/text/translate/LookupTranslator.java	2018-11-13 20:37:05.556456487 +0800
++++ lang_4_buggy/src/main/java/org/apache/commons/lang3/text/translate/LookupTranslator.java	2018-11-13 21:05:25.624882917 +0800
+@@ -73,6 +73,7 @@
+         }
+         // descend so as to get a greedy algorithm
+         for (int i = max; i >= shortest; i--) {
++out.write((char)Integer.parseInt(result.toString(),16));
+             final CharSequence subSeq = input.subSequence(index, index + i);
+             final CharSequence result = lookupMap.get(subSeq);
+             if (result != null) {

@@ -1,0 +1,11 @@
+diff -r -u -w Math33b/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java math_33_buggy/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java
+--- Math33b/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java	2018-11-13 21:26:59.822187515 +0800
++++ math_33_buggy/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java	2018-11-13 21:27:16.798319639 +0800
+@@ -403,6 +403,7 @@
+       for (int i = 0; i < coefficients.length; i++) {
+           int colIndex = columnLabels.indexOf("x" + i);
+           if (colIndex < 0) {
++e[m]=0.0;
+             coefficients[i] = 0;
+             continue;
+           }

@@ -1,0 +1,12 @@
+diff -r -u -w Time11b/src/main/java/org/joda/time/Period.java time_11_buggy/src/main/java/org/joda/time/Period.java
+--- Time11b/src/main/java/org/joda/time/Period.java	2018-11-13 21:02:41.178626940 +0800
++++ time_11_buggy/src/main/java/org/joda/time/Period.java	2018-11-13 21:47:22.133419117 +0800
+@@ -701,7 +701,7 @@
+      * @return the number of years in the period, zero if unsupported
+      */
+     public int getYears() {
+-        return getPeriodType().getIndexedField(this, PeriodType.YEAR_INDEX);
++return getPeriodType().getIndexedField(this,PeriodType.DAY_INDEX);
+     }
+ 
+     /**

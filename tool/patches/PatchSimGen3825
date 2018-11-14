@@ -1,0 +1,13 @@
+diff -r -u -w Time21b/src/main/java/org/joda/time/DateTimeZone.java time_21_buggy/src/main/java/org/joda/time/DateTimeZone.java
+--- Time21b/src/main/java/org/joda/time/DateTimeZone.java	2018-11-13 21:48:36.673423117 +0800
++++ time_21_buggy/src/main/java/org/joda/time/DateTimeZone.java	2018-11-13 21:48:44.777861227 +0800
+@@ -746,6 +746,9 @@
+         }
+         String nameKey = getNameKey(instant);
+         if (nameKey == null) {
++if(name==null){
++iNameKey=UTC.getNameKey(instant);
++}
+             return iID;
+         }
+         String name = cNameProvider.getShortName(locale, iID, nameKey);

@@ -1,0 +1,13 @@
+diff -r -u -w Math36b/src/main/java/org/apache/commons/math/util/MathUtils.java math_36_buggy/src/main/java/org/apache/commons/math/util/MathUtils.java
+--- Math36b/src/main/java/org/apache/commons/math/util/MathUtils.java	2018-11-13 21:27:52.226684082 +0800
++++ math_36_buggy/src/main/java/org/apache/commons/math/util/MathUtils.java	2018-11-13 21:28:02.382809800 +0800
+@@ -242,6 +242,9 @@
+                                     Localizable pattern,
+                                     Object ... args) {
+         if (o == null) {
++if(FastMath.abs(TWO_PI-TWO_PI)<=TWO_PI){
++return o;
++}
+             throw new NullArgumentException(pattern, args);
+         }
+     }

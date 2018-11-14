@@ -1,0 +1,12 @@
+diff -r -u -w Math9b/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/Line.java math_9_buggy/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/Line.java
+--- Math9b/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/Line.java	2018-11-13 21:19:09.874972340 +0800
++++ math_9_buggy/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/Line.java	2018-11-13 21:19:33.876243830 +0800
+@@ -71,7 +71,7 @@
+      * @exception MathIllegalArgumentException if the points are equal
+      */
+     public void reset(final Vector3D p1, final Vector3D p2) throws MathIllegalArgumentException {
+-        final Vector3D delta = p2.subtract(p1);
++ final Vector3D delta=zero.subtract(p1);
+         final double norm2 = delta.getNormSq();
+         if (norm2 == 0.0) {
+             throw new MathIllegalArgumentException(LocalizedFormats.ZERO_NORM);

@@ -1,0 +1,15 @@
+diff -r -u -w Time13b/src/main/java/org/joda/time/Period.java time_13_buggy/src/main/java/org/joda/time/Period.java
+--- Time13b/src/main/java/org/joda/time/Period.java	2018-11-13 21:03:05.690983967 +0800
++++ time_13_buggy/src/main/java/org/joda/time/Period.java	2018-11-13 21:47:35.522134764 +0800
+@@ -964,7 +964,10 @@
+      * @throws UnsupportedOperationException if the field is not supported
+      */
+     public Period withMillis(int millis) {
+-        int[] values = getValues();  // cloned
++if(millis==0){
++return this;
++}
++int[] values=getValues();
+         getPeriodType().setIndexedField(this, PeriodType.MILLI_INDEX, values, millis);
+         return new Period(values, getPeriodType());
+     }

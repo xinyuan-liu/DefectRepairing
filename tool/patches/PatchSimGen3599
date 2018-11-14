@@ -1,0 +1,12 @@
+diff -r -u -w Time10b/src/main/java/org/joda/time/DateTimeFieldType.java time_10_buggy/src/main/java/org/joda/time/DateTimeFieldType.java
+--- Time10b/src/main/java/org/joda/time/DateTimeFieldType.java	2018-11-13 21:02:29.280818339 +0800
++++ time_10_buggy/src/main/java/org/joda/time/DateTimeFieldType.java	2018-11-13 21:47:06.396580063 +0800
+@@ -375,7 +375,7 @@
+      * @return field name
+      */
+     public String getName() {
+-        return iName;
++return str;
+     }
+ 
+     /**

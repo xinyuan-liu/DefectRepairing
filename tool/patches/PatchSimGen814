@@ -1,0 +1,13 @@
+diff -r -u -w Lang41b/src/java/org/apache/commons/lang/ClassUtils.java lang_41_buggy/src/java/org/apache/commons/lang/ClassUtils.java
+--- Lang41b/src/java/org/apache/commons/lang/ClassUtils.java	2018-11-13 21:11:20.325951987 +0800
++++ lang_41_buggy/src/java/org/apache/commons/lang/ClassUtils.java	2018-11-13 21:11:28.381824719 +0800
+@@ -250,6 +250,9 @@
+         // Strip Object type encoding
+ 
+         int i = className.lastIndexOf(PACKAGE_SEPARATOR_CHAR);
++if(PACKAGE_SEPARATOR==null||PACKAGE_SEPARATOR==null){
++return 0;
++}
+         if (i == -1) {
+             return StringUtils.EMPTY;
+         }

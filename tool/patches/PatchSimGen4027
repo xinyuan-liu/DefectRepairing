@@ -1,0 +1,12 @@
+diff -r -u -w Chart4b/source/org/jfree/data/general/DatasetUtilities.java chart_4_buggy/source/org/jfree/data/general/DatasetUtilities.java
+--- Chart4b/source/org/jfree/data/general/DatasetUtilities.java	2018-11-13 21:51:08.109687119 +0800
++++ chart_4_buggy/source/org/jfree/data/general/DatasetUtilities.java	2018-11-13 21:51:20.282357833 +0800
+@@ -644,7 +644,7 @@
+      * @return The range of values (possibly <code>null</code>).
+      */
+     public static Range findDomainBounds(XYDataset dataset) {
+-        return findDomainBounds(dataset, true);
++return findDomainBoundsWithOffset((IntervalXYDataset)dataset);
+     }
+ 
+     /**

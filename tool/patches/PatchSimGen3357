@@ -1,0 +1,13 @@
+diff -r -u -w Math103b/src/java/org/apache/commons/math/special/Gamma.java math_103_buggy/src/java/org/apache/commons/math/special/Gamma.java
+--- Math103b/src/java/org/apache/commons/math/special/Gamma.java	2018-11-13 21:45:03.934136517 +0800
++++ math_103_buggy/src/java/org/apache/commons/math/special/Gamma.java	2018-11-13 21:45:17.338833783 +0800
+@@ -177,6 +177,9 @@
+                 sum = sum + an;
+             }
+             if (n >= maxIterations) {
++if((maxIterations==1)||(k==n-1)){
++return Math.log((double)n);
++}
+                 throw new MaxIterationsExceededException(maxIterations);
+             } else {
+                 ret = Math.exp(-x + (a * Math.log(x)) - logGamma(a)) * sum;

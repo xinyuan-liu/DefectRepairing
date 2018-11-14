@@ -1,0 +1,15 @@
+diff -r -u -w Math12b/src/main/java/org/apache/commons/math3/distribution/GammaDistribution.java math_12_buggy/src/main/java/org/apache/commons/math3/distribution/GammaDistribution.java
+--- Math12b/src/main/java/org/apache/commons/math3/distribution/GammaDistribution.java	2018-11-13 21:20:24.375004345 +0800
++++ math_12_buggy/src/main/java/org/apache/commons/math3/distribution/GammaDistribution.java	2018-11-13 21:20:36.219666783 +0800
+@@ -387,10 +387,9 @@
+                     final double u2 = random.nextDouble();
+ 
+                     if (u2 > FastMath.exp(-x)) {
+-                        // Reject
+                         continue;
+                     } else {
+-                        return scale * x;
++return 1/(x*x);
+                     }
+                 } else {
+                     // Step 3:

@@ -1,0 +1,13 @@
+diff -r -u -w Time2b/src/main/java/org/joda/time/Partial.java time_2_buggy/src/main/java/org/joda/time/Partial.java
+--- Time2b/src/main/java/org/joda/time/Partial.java	2018-11-13 21:01:04.071765520 +0800
++++ time_2_buggy/src/main/java/org/joda/time/Partial.java	2018-11-13 21:45:58.913009449 +0800
+@@ -221,8 +221,7 @@
+                 } else if (compare == 0) {
+                     if (types[i - 1].getRangeDurationType() == null) {
+                         if (loopType.getRangeDurationType() == null) {
+-                            throw new IllegalArgumentException("Types array must not contain duplicate: " +
+-                                            types[i - 1].getName() + " and " + loopType.getName());
++throw new IllegalArgumentException("ReadablePartial objects must have the same set of fields");
+                         }
+                     } else {
+                         if (loopType.getRangeDurationType() == null) {

@@ -1,0 +1,12 @@
+diff -r -u -w Chart7b/source/org/jfree/data/time/TimePeriodValues.java chart_7_buggy/source/org/jfree/data/time/TimePeriodValues.java
+--- Chart7b/source/org/jfree/data/time/TimePeriodValues.java	2018-11-13 21:52:20.501688069 +0800
++++ chart_7_buggy/source/org/jfree/data/time/TimePeriodValues.java	2018-11-13 21:52:35.398514838 +0800
+@@ -288,7 +288,7 @@
+             long e = getDataItem(this.minMiddleIndex).getPeriod().getEnd()
+                 .getTime();
+             long minMiddle = s + (e - s) / 2;
+-            if (middle < minMiddle) {
++if(middle<minStart){
+                 this.minMiddleIndex = index;           
+             }
+         }

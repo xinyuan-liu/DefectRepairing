@@ -1,0 +1,11 @@
+diff -r -u -w Math68b/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java math_68_buggy/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java
+--- Math68b/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java	2018-11-13 21:36:56.590836074 +0800
++++ math_68_buggy/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java	2018-11-13 21:37:04.447168217 +0800
+@@ -377,6 +377,7 @@
+                 if (ratio <= 0.25) {
+                     double tmp =
+                         (actRed < 0) ? (0.5 * dirDer / (dirDer + 0.5 * actRed)) : 0.5;
++costRelativeTolerance=0;
+                         if ((0.1 * cost >= previousCost) || (tmp < 0.1)) {
+                             tmp = 0.1;
+                         }

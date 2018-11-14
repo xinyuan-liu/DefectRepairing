@@ -1,0 +1,15 @@
+diff -r -u -w Math57b/src/main/java/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java math_57_buggy/src/main/java/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java
+--- Math57b/src/main/java/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java	2018-11-13 21:33:57.687856054 +0800
++++ math_57_buggy/src/main/java/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java	2018-11-13 21:34:06.696177522 +0800
+@@ -108,8 +108,11 @@
+                             newCenter = getPointFromLargestVarianceCluster(clusters);
+                             break;
+                         case LARGEST_POINTS_NUMBER :
++
++case LARGEST_POINTS_NUMBER :
+                             newCenter = getPointFromLargestNumberCluster(clusters);
+                             break;
++
+                         case FARTHEST_POINT :
+                             newCenter = getFarthestPoint(clusters);
+                             break;

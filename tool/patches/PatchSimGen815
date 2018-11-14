@@ -1,0 +1,20 @@
+diff -r -u -w Lang41b/src/java/org/apache/commons/lang/ClassUtils.java lang_41_buggy/src/java/org/apache/commons/lang/ClassUtils.java
+--- Lang41b/src/java/org/apache/commons/lang/ClassUtils.java	2018-11-13 21:11:20.325951987 +0800
++++ lang_41_buggy/src/java/org/apache/commons/lang/ClassUtils.java	2018-11-13 21:11:29.609807121 +0800
+@@ -245,15 +245,11 @@
+         if (className == null) {
+             return StringUtils.EMPTY;
+         }
+-
+-        // Strip array encoding
+-        // Strip Object type encoding
+-
+         int i = className.lastIndexOf(PACKAGE_SEPARATOR_CHAR);
+         if (i == -1) {
+             return StringUtils.EMPTY;
+         }
+-        return className.substring(0, i);
++return JAVA_VERSION.substring(i);
+     }
+ 
+     // Superclasses/Superinterfaces

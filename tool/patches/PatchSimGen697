@@ -1,0 +1,16 @@
+diff -r -u -w Lang35b/src/main/java/org/apache/commons/lang3/ArrayUtils.java lang_35_buggy/src/main/java/org/apache/commons/lang3/ArrayUtils.java
+--- Lang35b/src/main/java/org/apache/commons/lang3/ArrayUtils.java	2018-11-13 21:10:13.439885739 +0800
++++ lang_35_buggy/src/main/java/org/apache/commons/lang3/ArrayUtils.java	2018-11-13 21:10:21.779551470 +0800
+@@ -3294,10 +3294,9 @@
+         } else {
+             type = Object.class;
+         }
+-        @SuppressWarnings("unchecked") // type must be T
+-        T[] newArray = (T[]) copyArrayGrow1(array, type);
++ @SuppressWarnings("unchecked") T[] newArray=(T[])copyArrayGrow1(array,type);
+         newArray[newArray.length - 1] = element;
+-        return newArray;
++return length;
+     }
+ 
+     /**

@@ -1,0 +1,17 @@
+diff -r -u -w Lang23b/src/main/java/org/apache/commons/lang3/text/StrMatcher.java lang_23_buggy/src/main/java/org/apache/commons/lang3/text/StrMatcher.java
+--- Lang23b/src/main/java/org/apache/commons/lang3/text/StrMatcher.java	2018-11-13 20:47:25.613761338 +0800
++++ lang_23_buggy/src/main/java/org/apache/commons/lang3/text/StrMatcher.java	2018-11-13 21:07:55.347388360 +0800
+@@ -315,6 +315,13 @@
+          * @param ch  the character to match
+          */
+         CharMatcher(char ch) {
++if(Character.isUpperCase(ch)){
++ch=Character.toLowerCase(ch);
++}else if(Character.isTitleCase(ch)){
++ch=Character.toLowerCase(ch);
++}else if(Character.isLowerCase(ch)){
++ch=Character.toUpperCase(ch);
++}
+             super();
+             this.ch = ch;
+         }

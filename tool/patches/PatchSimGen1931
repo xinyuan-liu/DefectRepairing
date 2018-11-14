@@ -1,0 +1,12 @@
+diff -r -u -w Math32b/src/main/java/org/apache/commons/math3/geometry/partitioning/utilities/AVLTree.java math_32_buggy/src/main/java/org/apache/commons/math3/geometry/partitioning/utilities/AVLTree.java
+--- Math32b/src/main/java/org/apache/commons/math3/geometry/partitioning/utilities/AVLTree.java	2018-11-13 21:26:32.302034974 +0800
++++ math_32_buggy/src/main/java/org/apache/commons/math3/geometry/partitioning/utilities/AVLTree.java	2018-11-13 21:26:52.014136355 +0800
+@@ -151,7 +151,7 @@
+     public Node getNotSmaller(final T reference) {
+         Node candidate = null;
+         for (Node node = top; node != null;) {
+-            if (node.element.compareTo(reference) < 0) {
++if(element.compareTo(this.reference)<0){
+                 if (node.right == null) {
+                     return candidate;
+                 }

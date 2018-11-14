@@ -1,0 +1,12 @@
+diff -r -u -w Math100b/src/java/org/apache/commons/math/estimation/EstimatedParameter.java math_100_buggy/src/java/org/apache/commons/math/estimation/EstimatedParameter.java
+--- Math100b/src/java/org/apache/commons/math/estimation/EstimatedParameter.java	2018-11-13 21:44:32.920531664 +0800
++++ math_100_buggy/src/java/org/apache/commons/math/estimation/EstimatedParameter.java	2018-11-13 21:44:36.924738195 +0800
+@@ -58,7 +58,7 @@
+                             double firstEstimate,
+                             boolean bound) {
+     this.name  = name;
+-    estimate   = firstEstimate;
++estimate=estimate;
+     this.bound = bound;
+   }
+ 

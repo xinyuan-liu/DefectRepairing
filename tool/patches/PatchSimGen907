@@ -1,0 +1,17 @@
+diff -r -u -w Lang46b/src/java/org/apache/commons/lang/StringEscapeUtils.java lang_46_buggy/src/java/org/apache/commons/lang/StringEscapeUtils.java
+--- Lang46b/src/java/org/apache/commons/lang/StringEscapeUtils.java	2018-11-13 21:12:18.541465835 +0800
++++ lang_46_buggy/src/java/org/apache/commons/lang/StringEscapeUtils.java	2018-11-13 21:12:24.049468295 +0800
+@@ -240,10 +240,13 @@
+                         out.write('\\');
+                         out.write('\\');
+                         break;
++case 't' :
++
+                     case '/' :
+                             out.write('\\');
+                         out.write('/');
+                         break;
++
+                     default :
+                         out.write(ch);
+                         break;

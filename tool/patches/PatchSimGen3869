@@ -1,0 +1,11 @@
+diff -r -u -w Time23b/src/main/java/org/joda/time/DateTimeZone.java time_23_buggy/src/main/java/org/joda/time/DateTimeZone.java
+--- Time23b/src/main/java/org/joda/time/DateTimeZone.java	2018-11-13 21:49:02.610827035 +0800
++++ time_23_buggy/src/main/java/org/joda/time/DateTimeZone.java	2018-11-13 21:49:11.183292164 +0800
+@@ -304,6 +304,7 @@
+         }
+         final String id = zone.getID();
+         if (id.equals("UTC")) {
++convId=iID.substring(3);
+             return DateTimeZone.UTC;
+         }
+ 

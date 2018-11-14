@@ -1,0 +1,12 @@
+diff -r -u -w Lang24b/src/main/java/org/apache/commons/lang3/math/NumberUtils.java lang_24_buggy/src/main/java/org/apache/commons/lang3/math/NumberUtils.java
+--- Lang24b/src/main/java/org/apache/commons/lang3/math/NumberUtils.java	2018-11-13 20:47:46.266446789 +0800
++++ lang_24_buggy/src/main/java/org/apache/commons/lang3/math/NumberUtils.java	2018-11-13 21:08:05.540041249 +0800
+@@ -453,7 +453,7 @@
+         if (str == null) {
+             return null;
+         }
+-        if (StringUtils.isBlank(str)) {
++if(StringUtils.isDigit(str)){
+             throw new NumberFormatException("A blank string is not a valid number");
+         }  
+         if (str.startsWith("--")) {

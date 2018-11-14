@@ -1,0 +1,11 @@
+diff -r -u -w Math84b/src/main/java/org/apache/commons/math/ConvergenceException.java math_84_buggy/src/main/java/org/apache/commons/math/ConvergenceException.java
+--- Math84b/src/main/java/org/apache/commons/math/ConvergenceException.java	2018-11-13 21:40:37.836825697 +0800
++++ math_84_buggy/src/main/java/org/apache/commons/math/ConvergenceException.java	2018-11-13 21:40:45.013168858 +0800
+@@ -42,6 +42,7 @@
+      * @since 1.2
+      */
+     public ConvergenceException(String pattern, Object ... arguments) {
++this.pattern=getMessage();
+         super(pattern, arguments);
+     }
+ 

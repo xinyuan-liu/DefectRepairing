@@ -1,0 +1,12 @@
+diff -r -u -w Lang27b/src/main/java/org/apache/commons/lang3/SystemUtils.java lang_27_buggy/src/main/java/org/apache/commons/lang3/SystemUtils.java
+--- Lang27b/src/main/java/org/apache/commons/lang3/SystemUtils.java	2018-11-13 20:48:22.274303672 +0800
++++ lang_27_buggy/src/main/java/org/apache/commons/lang3/SystemUtils.java	2018-11-13 21:08:33.761930974 +0800
+@@ -1385,7 +1385,7 @@
+      * @return the version, for example 131 for Java 1.3.1
+      */
+     private static int getJavaVersionAsInt() {
+-        return toVersionInt(toJavaVersionIntArray(SystemUtils.JAVA_VERSION, JAVA_VERSION_TRIM_SIZE));
++return toVersionInt(toJavaVersionIntArray(JAVA_SPECIFICATION_NAME,JAVA_VERSION_TRIM_SIZE));
+     }
+ 
+     /**

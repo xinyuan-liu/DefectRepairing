@@ -1,0 +1,11 @@
+diff -r -u -w Lang34b/src/main/java/org/apache/commons/lang3/builder/ToStringStyle.java lang_34_buggy/src/main/java/org/apache/commons/lang3/builder/ToStringStyle.java
+--- Lang34b/src/main/java/org/apache/commons/lang3/builder/ToStringStyle.java	2018-11-13 21:10:00.012485663 +0800
++++ lang_34_buggy/src/main/java/org/apache/commons/lang3/builder/ToStringStyle.java	2018-11-13 21:10:08.396102014 +0800
+@@ -925,6 +925,7 @@
+         for (int i = 0; i < length; i++) {
+             Object item = Array.get(array, i);
+             if (i > 0) {
++continue;
+                 buffer.append(arraySeparator);
+             }
+             if (item == null) {

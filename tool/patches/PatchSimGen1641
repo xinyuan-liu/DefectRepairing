@@ -1,0 +1,15 @@
+diff -r -u -w Math18b/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java math_18_buggy/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+--- Math18b/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java	2018-11-13 21:22:08.520988433 +0800
++++ math_18_buggy/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java	2018-11-13 21:22:18.949605003 +0800
+@@ -471,9 +471,8 @@
+                     PointValuePair current =
+                         new PointValuePair(bestArx.getColumn(0),
+                                 isMinimize ? bestFitness : -bestFitness);
+-                    if (lastResult != null &&
+-                        getConvergenceChecker().converged(iterations, current, lastResult)) {
+-                        break generationLoop;
++if(getConvergenceChecker()!=null&&getConvergenceChecker().converged(iterations,current,lastResult)){
++break;
+                     }
+                     lastResult = current;
+                 }

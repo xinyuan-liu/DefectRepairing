@@ -1,0 +1,12 @@
+diff -r -u -w Math51b/src/main/java/org/apache/commons/math/util/Incrementor.java math_51_buggy/src/main/java/org/apache/commons/math/util/Incrementor.java
+--- Math51b/src/main/java/org/apache/commons/math/util/Incrementor.java	2018-11-13 21:32:15.820486119 +0800
++++ math_51_buggy/src/main/java/org/apache/commons/math/util/Incrementor.java	2018-11-13 21:32:39.341218420 +0800
+@@ -82,7 +82,7 @@
+      */
+     public void incrementCount() {
+         if (++count > maximalCount) {
+-            throw new MaxCountExceededException(maximalCount);
++throw new OutOfRangeException(count,0,maximalCount);
+         }
+     }
+ 

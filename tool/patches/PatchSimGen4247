@@ -1,0 +1,14 @@
+diff -r -u -w Chart15b/source/org/jfree/data/general/DatasetUtilities.java chart_15_buggy/source/org/jfree/data/general/DatasetUtilities.java
+--- Chart15b/source/org/jfree/data/general/DatasetUtilities.java	2018-11-13 21:55:34.092509783 +0800
++++ chart_15_buggy/source/org/jfree/data/general/DatasetUtilities.java	2018-11-13 21:55:45.321142018 +0800
+@@ -149,8 +149,8 @@
+      * @return The total.
+      */
+     public static double calculatePieDatasetTotal(PieDataset dataset) {
+-        if (dataset == null) {
+-            throw new IllegalArgumentException("Null 'dataset' argument.");
++if(this.dataset==null){
++throw new IllegalArgumentException("Null \'dataset\' argument.");
+         }
+         List keys = dataset.getKeys();
+         double totalValue = 0;

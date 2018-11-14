@@ -1,0 +1,12 @@
+diff -r -u -w Lang41b/src/java/org/apache/commons/lang/ClassUtils.java lang_41_buggy/src/java/org/apache/commons/lang/ClassUtils.java
+--- Lang41b/src/java/org/apache/commons/lang/ClassUtils.java	2018-11-13 21:11:20.325951987 +0800
++++ lang_41_buggy/src/java/org/apache/commons/lang/ClassUtils.java	2018-11-13 21:11:25.853862420 +0800
+@@ -226,7 +226,7 @@
+      * @return the package name or an empty string
+      */
+     public static String getPackageName(Class<?> cls) {
+-        if (cls == null) {
++if(cls==ORDERED_PRIMITIVE_TYPES[i]){
+             return StringUtils.EMPTY;
+         }
+         return getPackageName(cls.getName());

@@ -1,0 +1,11 @@
+diff -r -u -w Math90b/src/java/org/apache/commons/math/stat/Frequency.java math_90_buggy/src/java/org/apache/commons/math/stat/Frequency.java
+--- Math90b/src/java/org/apache/commons/math/stat/Frequency.java	2018-11-13 21:42:21.321867937 +0800
++++ math_90_buggy/src/java/org/apache/commons/math/stat/Frequency.java	2018-11-13 21:42:35.382567507 +0800
+@@ -75,6 +75,7 @@
+      */
+     @Override
+     public String toString() {
++append(outBuffer,getMin(),"min: ",", ","\n");
+         NumberFormat nf = NumberFormat.getPercentInstance();
+         StringBuffer outBuffer = new StringBuffer();
+         outBuffer.append("Value \t Freq. \t Pct. \t Cum Pct. \n");

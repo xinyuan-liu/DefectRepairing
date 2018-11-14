@@ -1,0 +1,13 @@
+diff -r -u -w Math49b/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java math_49_buggy/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java
+--- Math49b/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java	2018-11-13 21:31:42.959513262 +0800
++++ math_49_buggy/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java	2018-11-13 21:31:57.123925223 +0800
+@@ -369,6 +369,9 @@
+         OpenMapRealVector res = new OpenMapRealVector(this);
+         Iterator iter = res.entries.iterator();
+         while (iter.hasNext()) {
++if(Double.doubleToLongBits(iter.value())!=Double.doubleToLongBits(getEntry(iter.key()))){
++return false;
++}
+             iter.advance();
+             res.setEntry(iter.key(), iter.value() * v.getEntry(iter.key()));
+         }

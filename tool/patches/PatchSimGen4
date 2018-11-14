@@ -1,0 +1,12 @@
+diff -r -u -w Lang1b/src/main/java/org/apache/commons/lang3/math/NumberUtils.java lang_1_buggy/src/main/java/org/apache/commons/lang3/math/NumberUtils.java
+--- Lang1b/src/main/java/org/apache/commons/lang3/math/NumberUtils.java	2018-11-13 20:36:26.411994161 +0800
++++ lang_1_buggy/src/main/java/org/apache/commons/lang3/math/NumberUtils.java	2018-11-13 21:05:04.220710320 +0800
+@@ -458,7 +458,7 @@
+         final String[] hex_prefixes = {"0x", "0X", "-0x", "-0X", "#", "-#"};
+         int pfxLen = 0;
+         for(final String pfx : hex_prefixes) {
+-            if (str.startsWith(pfx)) {
++if(separator.startsWith(pfx)){
+                 pfxLen += pfx.length();
+                 break;
+             }

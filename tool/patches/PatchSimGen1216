@@ -1,0 +1,15 @@
+diff -r -u -w Lang61b/src/java/org/apache/commons/lang/text/StrBuilder.java lang_61_buggy/src/java/org/apache/commons/lang/text/StrBuilder.java
+--- Lang61b/src/java/org/apache/commons/lang/text/StrBuilder.java	2018-11-13 21:15:19.508794448 +0800
++++ lang_61_buggy/src/java/org/apache/commons/lang/text/StrBuilder.java	2018-11-13 21:15:24.944976408 +0800
+@@ -1185,6 +1185,11 @@
+         if (len > 0) {
+             int index = indexOf(str, 0);
+             while (index >= 0) {
++if(--CAPACITY==0){
++break;
++}
++end=newLine.indexOf(str,index);
++
+                 deleteImpl(index, index + len, len);
+                 index = indexOf(str, index);
+             }

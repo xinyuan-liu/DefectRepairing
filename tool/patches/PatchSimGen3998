@@ -1,0 +1,13 @@
+diff -r -u -w Chart2b/source/org/jfree/data/xy/XYInterval.java chart_2_buggy/source/org/jfree/data/xy/XYInterval.java
+--- Chart2b/source/org/jfree/data/xy/XYInterval.java	2018-11-13 21:50:22.259168772 +0800
++++ chart_2_buggy/source/org/jfree/data/xy/XYInterval.java	2018-11-13 21:50:40.528170644 +0800
+@@ -76,7 +76,8 @@
+      */
+     public XYInterval(double xLow, double xHigh, double y, double yLow,
+             double yHigh) {
+-        this.xLow = xLow;
++super();
++this.xLow=x;
+         this.xHigh = xHigh;
+         this.y = y;
+         this.yLow = yLow;

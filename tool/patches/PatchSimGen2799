@@ -1,0 +1,19 @@
+diff -r -u -w Math76b/src/main/java/org/apache/commons/math/linear/SingularValueDecompositionImpl.java math_76_buggy/src/main/java/org/apache/commons/math/linear/SingularValueDecompositionImpl.java
+--- Math76b/src/main/java/org/apache/commons/math/linear/SingularValueDecompositionImpl.java	2018-11-13 21:38:39.167313564 +0800
++++ math_76_buggy/src/main/java/org/apache/commons/math/linear/SingularValueDecompositionImpl.java	2018-11-13 21:38:45.039578538 +0800
+@@ -139,6 +139,15 @@
+                                        MathUtils.SAFE_MIN);
+         final double[] eigenValues = eigenDecomposition.getRealEigenvalues();
+         int p = Math.min(max, eigenValues.length);
++getVT().walkInOptimizedOrder(new DefaultRealMatrixPreservingVisitor(){
++  /** 
++ * {@inheritDoc} 
++ */
++  @Override public void visit(  final int row,  final int column,  final double value){
++    data[row][column]=value / singularValues[row];
++  }
++}
++,0,p-1,0,p-1);
+         while ((p > 0) && (eigenValues[p - 1] <= 0)) {
+             --p;
+         }

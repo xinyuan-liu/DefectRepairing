@@ -1,0 +1,12 @@
+diff -r -u -w Time10b/src/main/java/org/joda/time/IllegalFieldValueException.java time_10_buggy/src/main/java/org/joda/time/IllegalFieldValueException.java
+--- Time10b/src/main/java/org/joda/time/IllegalFieldValueException.java	2018-11-13 21:02:29.280818339 +0800
++++ time_10_buggy/src/main/java/org/joda/time/IllegalFieldValueException.java	2018-11-13 21:47:10.692808900 +0800
+@@ -42,7 +42,7 @@
+             .append("Value ").append(value).append(" for ").append(fieldName).append(' ');
+ 
+         if (lowerBound == null) {
+-            if (upperBound == null) {
++if(SECONDS_MILLIS==null){
+                 buf.append("is not supported");
+             } else {
+                 buf.append("must not be larger than ").append(upperBound);

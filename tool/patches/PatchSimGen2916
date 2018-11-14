@@ -1,0 +1,14 @@
+diff -r -u -w Math81b/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java math_81_buggy/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java
+--- Math81b/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-11-13 21:39:49.406537787 +0800
++++ math_81_buggy/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-11-13 21:39:57.958938163 +0800
+@@ -1528,9 +1528,7 @@
+                 // case 5.
+                 tType = -5;
+                 double s = 0.25 * dMin;
+-
+-                // compute contribution to norm squared from i > nn-2.
+-                final int np = nn - 2 * pingPong;
++ final int np=end-2*pingPong;
+                 double b1 = work[np - 2];
+                 double b2 = work[np - 6];
+                 final double gam = dN2;

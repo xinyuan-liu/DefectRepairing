@@ -1,0 +1,13 @@
+diff -r -u -w Chart11b/source/org/jfree/chart/util/ShapeUtilities.java chart_11_buggy/source/org/jfree/chart/util/ShapeUtilities.java
+--- Chart11b/source/org/jfree/chart/util/ShapeUtilities.java	2018-11-13 21:53:56.919057906 +0800
++++ chart_11_buggy/source/org/jfree/chart/util/ShapeUtilities.java	2018-11-13 21:54:15.460095279 +0800
+@@ -272,6 +272,9 @@
+             return false;
+         }
+         PathIterator iterator1 = p1.getPathIterator(null);
++if(iterator1.isDone()!=iterator2.isDone()){
++return false;
++}
+         PathIterator iterator2 = p1.getPathIterator(null);
+         double[] d1 = new double[6];
+         double[] d2 = new double[6];

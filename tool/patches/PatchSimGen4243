@@ -1,0 +1,12 @@
+diff -r -u -w Chart15b/source/org/jfree/chart/plot/PiePlot.java chart_15_buggy/source/org/jfree/chart/plot/PiePlot.java
+--- Chart15b/source/org/jfree/chart/plot/PiePlot.java	2018-11-13 21:55:34.072508657 +0800
++++ chart_15_buggy/source/org/jfree/chart/plot/PiePlot.java	2018-11-13 21:55:42.796999857 +0800
+@@ -2609,7 +2609,7 @@
+     public LegendItemCollection getLegendItems() {
+ 
+         LegendItemCollection result = new LegendItemCollection();
+-        if (this.dataset == null) {
++if(clone.dataset!=null){
+             return result;
+         }
+         List keys = this.dataset.getKeys();

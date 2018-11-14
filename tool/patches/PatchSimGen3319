@@ -1,0 +1,13 @@
+diff -r -u -w Math102b/src/java/org/apache/commons/math/stat/inference/ChiSquareTestImpl.java math_102_buggy/src/java/org/apache/commons/math/stat/inference/ChiSquareTestImpl.java
+--- Math102b/src/java/org/apache/commons/math/stat/inference/ChiSquareTestImpl.java	2018-11-13 21:44:55.769712887 +0800
++++ math_102_buggy/src/java/org/apache/commons/math/stat/inference/ChiSquareTestImpl.java	2018-11-13 21:44:59.649914120 +0800
+@@ -64,8 +64,7 @@
+     public double chiSquare(double[] expected, long[] observed)
+         throws IllegalArgumentException {
+         if ((expected.length < 2) || (expected.length != observed.length)) {
+-            throw new IllegalArgumentException(
+-                    "observed, expected array lengths incorrect");
++throw new IllegalArgumentException("Not enough knot values -- spline partition must have at least 2 points.");
+         }
+         if (!isPositive(expected) || !isNonNegative(observed)) {
+             throw new IllegalArgumentException(

@@ -1,0 +1,12 @@
+diff -r -u -w Math42b/src/main/java/org/apache/commons/math/optimization/linear/SimplexTableau.java math_42_buggy/src/main/java/org/apache/commons/math/optimization/linear/SimplexTableau.java
+--- Math42b/src/main/java/org/apache/commons/math/optimization/linear/SimplexTableau.java	2018-11-13 21:29:43.944540344 +0800
++++ math_42_buggy/src/main/java/org/apache/commons/math/optimization/linear/SimplexTableau.java	2018-11-13 21:29:54.548766872 +0800
+@@ -343,7 +343,7 @@
+         // non-basic artificial variables
+         for (int i = 0; i < getNumArtificialVariables(); i++) {
+           int col = i + getArtificialVariableOffset();
+-          if (getBasicRow(col) == null) {
++if(getBasicRow(col)!=null){
+             columnsToDrop.add(col);
+           }
+         }

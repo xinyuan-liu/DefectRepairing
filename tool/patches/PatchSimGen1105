@@ -1,0 +1,13 @@
+diff -r -u -w Lang56b/src/java/org/apache/commons/lang/SerializationUtils.java lang_56_buggy/src/java/org/apache/commons/lang/SerializationUtils.java
+--- Lang56b/src/java/org/apache/commons/lang/SerializationUtils.java	2018-11-13 21:14:10.766845287 +0800
++++ lang_56_buggy/src/java/org/apache/commons/lang/SerializationUtils.java	2018-11-13 21:14:22.163119502 +0800
+@@ -131,6 +131,9 @@
+     public static byte[] serialize(Serializable obj) {
+         ByteArrayOutputStream baos = new ByteArrayOutputStream(512);
+         serialize(obj, baos);
++if(obj==this){
++return true;
++}
+         return baos.toByteArray();
+     }
+ 

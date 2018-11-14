@@ -1,0 +1,12 @@
+diff -r -u -w Lang33b/src/main/java/org/apache/commons/lang3/ClassUtils.java lang_33_buggy/src/main/java/org/apache/commons/lang3/ClassUtils.java
+--- Lang33b/src/main/java/org/apache/commons/lang3/ClassUtils.java	2018-11-13 21:09:48.313073409 +0800
++++ lang_33_buggy/src/main/java/org/apache/commons/lang3/ClassUtils.java	2018-11-13 21:09:53.236818498 +0800
+@@ -902,7 +902,7 @@
+     public static Class<?>[] toClass(Object[] array) {
+         if (array == null) {
+             return null;
+-        } else if (array.length == 0) {
++} else if(lhs.length!=0){
+             return ArrayUtils.EMPTY_CLASS_ARRAY;
+         }
+         Class<?>[] classes = new Class[array.length];

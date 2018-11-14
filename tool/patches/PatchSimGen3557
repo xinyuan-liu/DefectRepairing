@@ -1,0 +1,14 @@
+diff -r -u -w Time7b/src/main/java/org/joda/time/format/DateTimeParserBucket.java time_7_buggy/src/main/java/org/joda/time/format/DateTimeParserBucket.java
+--- Time7b/src/main/java/org/joda/time/format/DateTimeParserBucket.java	2018-11-13 21:01:58.963891214 +0800
++++ time_7_buggy/src/main/java/org/joda/time/format/DateTimeParserBucket.java	2018-11-13 21:46:45.775484146 +0800
+@@ -371,8 +371,9 @@
+                 }
+             }
+         } catch (IllegalFieldValueException e) {
++iDefaultYear++;
+             if (text != null) {
+-                e.prependMessage("Cannot parse \"" + text + '"');
++e.prependMessage("Cannot parse \""+text);
+             }
+             throw e;
+         }

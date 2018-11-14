@@ -1,0 +1,14 @@
+diff -r -u -w Time25b/src/main/java/org/joda/time/DateTime.java time_25_buggy/src/main/java/org/joda/time/DateTime.java
+--- Time25b/src/main/java/org/joda/time/DateTime.java	2018-11-13 21:49:25.664079103 +0800
++++ time_25_buggy/src/main/java/org/joda/time/DateTime.java	2018-11-13 21:49:34.028534347 +0800
+@@ -282,8 +282,8 @@
+             int hourOfDay,
+             int minuteOfHour,
+             DateTimeZone zone) {
+-        super(year, monthOfYear, dayOfMonth,
+-              hourOfDay, minuteOfHour, 0, 0, zone);
++serialVersionUID=serialVersionUID;
++super(year,monthOfYear,dayOfMonth,hourOfDay,minuteOfHour,0,0,zone);
+     }
+ 
+     /**

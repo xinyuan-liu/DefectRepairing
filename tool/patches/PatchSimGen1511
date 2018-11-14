@@ -1,0 +1,12 @@
+diff -r -u -w Math11b/src/main/java/org/apache/commons/math3/distribution/NormalDistribution.java math_11_buggy/src/main/java/org/apache/commons/math3/distribution/NormalDistribution.java
+--- Math11b/src/main/java/org/apache/commons/math3/distribution/NormalDistribution.java	2018-11-13 21:19:56.117446245 +0800
++++ math_11_buggy/src/main/java/org/apache/commons/math3/distribution/NormalDistribution.java	2018-11-13 21:20:10.214219474 +0800
+@@ -83,7 +83,7 @@
+      */
+     public NormalDistribution(double mean, double sd, double inverseCumAccuracy)
+         throws NotStrictlyPositiveException {
+-        this(new Well19937c(), mean, sd, inverseCumAccuracy);
++this(mean,sd,inverseCumAccuracy);
+     }
+ 
+     /**

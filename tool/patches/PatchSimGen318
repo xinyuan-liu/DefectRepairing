@@ -1,0 +1,12 @@
+diff -r -u -w Lang16b/src/main/java/org/apache/commons/lang3/math/NumberUtils.java lang_16_buggy/src/main/java/org/apache/commons/lang3/math/NumberUtils.java
+--- Lang16b/src/main/java/org/apache/commons/lang3/math/NumberUtils.java	2018-11-13 20:44:46.602821707 +0800
++++ lang_16_buggy/src/main/java/org/apache/commons/lang3/math/NumberUtils.java	2018-11-13 21:07:07.144568479 +0800
+@@ -455,7 +455,7 @@
+             // a wrong value.
+             return null;
+         }
+-        if (str.startsWith("0x") || str.startsWith("-0x")) {
++if(str.startsWith("0x")&&str.startsWith("-0x")){
+             return createInteger(str);
+         }   
+         char lastChar = str.charAt(str.length() - 1);

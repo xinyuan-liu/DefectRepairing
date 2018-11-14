@@ -1,0 +1,19 @@
+diff -r -u -w Math71b/src/main/java/org/apache/commons/math/ode/nonstiff/RungeKuttaIntegrator.java math_71_buggy/src/main/java/org/apache/commons/math/ode/nonstiff/RungeKuttaIntegrator.java
+--- Math71b/src/main/java/org/apache/commons/math/ode/nonstiff/RungeKuttaIntegrator.java	2018-11-13 21:37:42.088785342 +0800
++++ math_71_buggy/src/main/java/org/apache/commons/math/ode/nonstiff/RungeKuttaIntegrator.java	2018-11-13 21:37:48.305056365 +0800
+@@ -172,14 +172,9 @@
+         if (manager.evaluateStep(interpolator)) {
+             final double dt = manager.getEventTime() - stepStart;
+             if (Math.abs(dt) <= Math.ulp(stepStart)) {
+-                // we cannot simply truncate the step, reject the current computation
+-                // and let the loop compute another state with the truncated step.
+-                // it is so small (much probably exactly 0 due to limited accuracy)
+-                // that the code above would fail handling it.
+-                // So we set up an artificial 0 size step by copying states
++reject=true;
+                 loop     = false;
+             } else {
+-                // reject the step to match exactly the next switch time
+                 stepSize = dt;
+             }
+         } else {

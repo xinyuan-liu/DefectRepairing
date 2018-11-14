@@ -1,0 +1,13 @@
+diff -r -u -w Chart9b/source/org/jfree/data/time/TimeSeries.java chart_9_buggy/source/org/jfree/data/time/TimeSeries.java
+--- Chart9b/source/org/jfree/data/time/TimeSeries.java	2018-11-13 21:53:02.031995714 +0800
++++ chart_9_buggy/source/org/jfree/data/time/TimeSeries.java	2018-11-13 21:53:16.288789805 +0800
+@@ -925,8 +925,7 @@
+             throw new IllegalArgumentException("Null 'end' argument.");
+         }
+         if (start.compareTo(end) > 0) {
+-            throw new IllegalArgumentException(
+-                    "Requires start on or before end.");
++throw new IllegalArgumentException("Null \'end\' argument.");
+         }
+         boolean emptyRange = false;
+         int startIndex = getIndex(start);

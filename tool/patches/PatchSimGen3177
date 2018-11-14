@@ -1,0 +1,16 @@
+diff -r -u -w Math94b/src/java/org/apache/commons/math/util/MathUtils.java math_94_buggy/src/java/org/apache/commons/math/util/MathUtils.java
+--- Math94b/src/java/org/apache/commons/math/util/MathUtils.java	2018-11-13 21:43:20.156815911 +0800
++++ math_94_buggy/src/java/org/apache/commons/math/util/MathUtils.java	2018-11-13 21:43:30.237326279 +0800
+@@ -417,9 +417,9 @@
+         // (i.e. we can't necessarily negate a negative number without
+         // overflow)
+         /* assert u!=0 && v!=0; */
+-        if (u > 0) {
+-            u = -u;
+-        } // make u negative
++if(t>0){
++u=-t;
++}
+         if (v > 0) {
+             v = -v;
+         } // make v negative

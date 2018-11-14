@@ -1,0 +1,18 @@
+diff -r -u -w Math60b/src/main/java/org/apache/commons/math/util/FastMath.java math_60_buggy/src/main/java/org/apache/commons/math/util/FastMath.java
+--- Math60b/src/main/java/org/apache/commons/math/util/FastMath.java	2018-11-13 21:34:52.501865341 +0800
++++ math_60_buggy/src/main/java/org/apache/commons/math/util/FastMath.java	2018-11-13 21:35:08.318467862 +0800
+@@ -649,11 +649,10 @@
+             }
+ 
+             if (intVal > 709) {
+-                /* This will produce a subnormal output */
+-                final double result = exp(x+40.19140625, extra, hiPrec) / 285040095144011776.0;
++ final double result=exp(x+40.191406,extra,hiPrec)/2.85040092E17;
+                 if (hiPrec != null) {
+-                    hiPrec[0] /= 285040095144011776.0;
+-                    hiPrec[1] /= 285040095144011776.0;
++hiPrec[0]/=4.455506;
++hiPrec[1]/=2.85040092E17;
+                 }
+                 return result;
+             }

@@ -1,0 +1,26 @@
+diff -r -u -w Chart10b/source/org/jfree/chart/imagemap/ImageMapUtilities.java chart_10_buggy/source/org/jfree/chart/imagemap/ImageMapUtilities.java
+--- Chart10b/source/org/jfree/chart/imagemap/ImageMapUtilities.java	2018-11-13 21:53:23.009164450 +0800
++++ chart_10_buggy/source/org/jfree/chart/imagemap/ImageMapUtilities.java	2018-11-13 21:53:39.794101056 +0800
+@@ -101,16 +101,14 @@
+ 
+         ToolTipTagFragmentGenerator toolTipTagFragmentGenerator = null;
+         if (useOverLibForToolTips) {
+-            toolTipTagFragmentGenerator 
+-                    = new OverLIBToolTipTagFragmentGenerator();
++toolTipTagFragmentGenerator=new OverLIBToolTipTagFragmentGenerator();
++}else {
++toolTipTagFragmentGenerator=new StandardToolTipTagFragmentGenerator();
+         }
+-        else {
+-            toolTipTagFragmentGenerator 
+-                    = new StandardToolTipTagFragmentGenerator();
++if(name.startsWith("/")){
++return name.substring(1);
+         }
+-        ImageMapUtilities.writeImageMap(writer, name, info, 
+-                toolTipTagFragmentGenerator, 
+-                new StandardURLTagFragmentGenerator());
++ImageMapUtilities.writeImageMap(writer,name,info,toolTipTagFragmentGenerator,new StandardURLTagFragmentGenerator());
+ 
+     }
+ 

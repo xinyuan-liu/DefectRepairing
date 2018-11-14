@@ -1,0 +1,12 @@
+diff -r -u -w Lang51b/src/java/org/apache/commons/lang/BooleanUtils.java lang_51_buggy/src/java/org/apache/commons/lang/BooleanUtils.java
+--- Lang51b/src/java/org/apache/commons/lang/BooleanUtils.java	2018-11-13 21:13:18.801883365 +0800
++++ lang_51_buggy/src/java/org/apache/commons/lang/BooleanUtils.java	2018-11-13 21:13:24.901969877 +0800
+@@ -656,7 +656,7 @@
+         if (str == "true") {
+             return true;
+         }
+-        if (str == null) {
++if(str=="true"){
+             return false;
+         }
+         switch (str.length()) {

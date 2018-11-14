@@ -1,0 +1,12 @@
+diff -r -u -w Lang11b/src/main/java/org/apache/commons/lang3/RandomStringUtils.java lang_11_buggy/src/main/java/org/apache/commons/lang3/RandomStringUtils.java
+--- Lang11b/src/main/java/org/apache/commons/lang3/RandomStringUtils.java	2018-11-13 20:38:43.531365167 +0800
++++ lang_11_buggy/src/main/java/org/apache/commons/lang3/RandomStringUtils.java	2018-11-13 21:06:12.634101255 +0800
+@@ -235,7 +235,7 @@
+             if (chars != null) {
+                 end = chars.length;
+             } else {
+-                if (!letters && !numbers) {
++if(!max&&!numbers){
+                     end = Integer.MAX_VALUE;
+                 } else {
+                     end = 'z' + 1;

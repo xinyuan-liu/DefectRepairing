@@ -1,0 +1,12 @@
+diff -r -u -w Math17b/src/main/java/org/apache/commons/math3/dfp/Dfp.java math_17_buggy/src/main/java/org/apache/commons/math3/dfp/Dfp.java
+--- Math17b/src/main/java/org/apache/commons/math3/dfp/Dfp.java	2018-11-13 21:21:52.464044578 +0800
++++ math_17_buggy/src/main/java/org/apache/commons/math3/dfp/Dfp.java	2018-11-13 21:22:02.880656111 +0800
+@@ -1521,7 +1521,7 @@
+                 return result;
+             }
+ 
+-            if (x.nans == INFINITE && nans == FINITE && mant[mant.length-1] != 0) {
++if(x.nans==INFINITE&&x.nans==FINITE&&x.mant[mant.length-1]!=0){
+                 result = newInstance(x);
+                 result.sign = (byte) (sign * x.sign);
+                 return result;

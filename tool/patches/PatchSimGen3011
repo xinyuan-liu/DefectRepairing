@@ -1,0 +1,12 @@
+diff -r -u -w Math86b/src/java/org/apache/commons/math/linear/AbstractRealMatrix.java math_86_buggy/src/java/org/apache/commons/math/linear/AbstractRealMatrix.java
+--- Math86b/src/java/org/apache/commons/math/linear/AbstractRealMatrix.java	2018-11-13 21:41:13.930561892 +0800
++++ math_86_buggy/src/java/org/apache/commons/math/linear/AbstractRealMatrix.java	2018-11-13 21:41:20.934901713 +0800
+@@ -988,7 +988,7 @@
+      */
+     @Override
+     public String toString() {
+-        final int nRows = getRowDimension();
++ final double nRows=getRowDimension();
+         final int nCols = getColumnDimension();
+         final StringBuffer res = new StringBuffer();
+         String fullClassName = getClass().getName();

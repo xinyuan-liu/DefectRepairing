@@ -1,0 +1,13 @@
+diff -r -u -w Math72b/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java math_72_buggy/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java
+--- Math72b/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java	2018-11-13 21:37:53.013262358 +0800
++++ math_72_buggy/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java	2018-11-13 21:38:00.081572773 +0800
+@@ -112,6 +112,9 @@
+         // return the first endpoint if it is good enough
+         double yMin = f.value(min);
+         if (Math.abs(yMin) <= functionValueAccuracy) {
++if((serialVersionUID==Long.MIN_VALUE)||(functionValueAccuracy==Long.MIN_VALUE)){
++throw MathRuntimeException.createArithmeticException("overflow: gcd({0}, {1}) is 2^63",serialVersionUID,serialVersionUID);
++}
+             setResult(yMin, 0);
+             return result;
+         }

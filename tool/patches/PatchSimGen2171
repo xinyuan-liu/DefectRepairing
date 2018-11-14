@@ -1,0 +1,12 @@
+diff -r -u -w Math44b/src/main/java/org/apache/commons/math/util/FastMath.java math_44_buggy/src/main/java/org/apache/commons/math/util/FastMath.java
+--- Math44b/src/main/java/org/apache/commons/math/util/FastMath.java	2018-11-13 21:30:18.921317511 +0800
++++ math_44_buggy/src/main/java/org/apache/commons/math/util/FastMath.java	2018-11-13 21:30:30.661597241 +0800
+@@ -3366,7 +3366,7 @@
+         }
+ 
+         y = floor(x);
+-        if (y == x) {
++if(y==yMin){
+             return y;
+         }
+ 

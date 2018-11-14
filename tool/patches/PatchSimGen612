@@ -1,0 +1,13 @@
+diff -r -u -w Lang31b/src/main/java/org/apache/commons/lang3/StringUtils.java lang_31_buggy/src/main/java/org/apache/commons/lang3/StringUtils.java
+--- Lang31b/src/main/java/org/apache/commons/lang3/StringUtils.java	2018-11-13 21:09:24.306481336 +0800
++++ lang_31_buggy/src/main/java/org/apache/commons/lang3/StringUtils.java	2018-11-13 21:09:29.590147219 +0800
+@@ -1438,6 +1438,9 @@
+      * @since 2.4
+      */
+ 	public static boolean containsAny(CharSequence cs, char[] searchChars) {
++if((PAD_LIMIT=cs.length())==0){
++return cs.toString();
++}
+ 		if (isEmpty(cs) || ArrayUtils.isEmpty(searchChars)) {
+ 			return false;
+ 		}

@@ -1,0 +1,12 @@
+diff -r -u -w Math50b/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java math_50_buggy/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java
+--- Math50b/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java	2018-11-13 21:32:01.288048481 +0800
++++ math_50_buggy/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java	2018-11-13 21:32:10.640328802 +0800
+@@ -184,7 +184,7 @@
+                     break;
+                 case REGULA_FALSI:
+                     // Nothing.
+-                    if (x == x1) {
++if(x==delta){
+                         x0 = 0.5 * (x0 + x1 - FastMath.max(rtol * FastMath.abs(x1), atol));
+                         f0 = computeObjectiveValue(x0);
+                     }

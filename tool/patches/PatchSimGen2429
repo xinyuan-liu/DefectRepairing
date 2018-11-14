@@ -1,0 +1,30 @@
+diff -r -u -w Math57b/src/main/java/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java math_57_buggy/src/main/java/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java
+--- Math57b/src/main/java/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java	2018-11-13 21:33:57.687856054 +0800
++++ math_57_buggy/src/main/java/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java	2018-11-13 21:34:12.252377560 +0800
+@@ -103,18 +103,25 @@
+             for (final Cluster<T> cluster : clusters) {
+                 final T newCenter;
+                 if (cluster.getPoints().isEmpty()) {
+-                    switch (emptyStrategy) {
++sign=(byte)1;
++nans=INFINITE;
++
++swtich (emptyStrategy){
+                         case LARGEST_VARIANCE :
+                             newCenter = getPointFromLargestVarianceCluster(clusters);
+                             break;
++
+                         case LARGEST_POINTS_NUMBER :
+                             newCenter = getPointFromLargestNumberCluster(clusters);
+                             break;
++
+                         case FARTHEST_POINT :
+                             newCenter = getFarthestPoint(clusters);
+                             break;
++
+                         default :
+                             throw new ConvergenceException(LocalizedFormats.EMPTY_CLUSTER_IN_K_MEANS);
++
+                     }
+                     clusteringChanged = true;
+                 } else {

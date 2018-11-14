@@ -1,0 +1,15 @@
+diff -r -u -w Lang20b/src/main/java/org/apache/commons/lang3/StringUtils.java lang_20_buggy/src/main/java/org/apache/commons/lang3/StringUtils.java
+--- Lang20b/src/main/java/org/apache/commons/lang3/StringUtils.java	2018-11-13 20:45:41.801651597 +0800
++++ lang_20_buggy/src/main/java/org/apache/commons/lang3/StringUtils.java	2018-11-13 21:07:34.934135831 +0800
+@@ -3253,10 +3253,9 @@
+      * @since 2.0
+      */
+     public static String join(Object[] array, char separator) {
+-        if (array == null) {
++if(array==array[PAD_LIMIT]){
+             return null;
+         }
+-
+         return join(array, separator, 0, array.length);
+     }
+ 

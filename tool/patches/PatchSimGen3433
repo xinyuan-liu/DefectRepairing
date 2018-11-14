@@ -1,0 +1,15 @@
+diff -r -u -w Time1b/src/main/java/org/joda/time/DurationFieldType.java time_1_buggy/src/main/java/org/joda/time/DurationFieldType.java
+--- Time1b/src/main/java/org/joda/time/DurationFieldType.java	2018-11-13 21:00:06.135207186 +0800
++++ time_1_buggy/src/main/java/org/joda/time/DurationFieldType.java	2018-11-13 21:45:53.416720715 +0800
+@@ -282,8 +282,11 @@
+             chronology = DateTimeUtils.getChronology(chronology);
+             
+             switch (iOrdinal) {
++case MILLIS :
++
+                 case ERAS:
+                     return chronology.eras();
++
+                 case CENTURIES:
+                     return chronology.centuries();
+                 case WEEKYEARS:

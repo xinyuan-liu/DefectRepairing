@@ -1,0 +1,12 @@
+diff -r -u -w Math45b/src/main/java/org/apache/commons/math/linear/OpenMapRealMatrix.java math_45_buggy/src/main/java/org/apache/commons/math/linear/OpenMapRealMatrix.java
+--- Math45b/src/main/java/org/apache/commons/math/linear/OpenMapRealMatrix.java	2018-11-13 21:30:35.781722102 +0800
++++ math_45_buggy/src/main/java/org/apache/commons/math/linear/OpenMapRealMatrix.java	2018-11-13 21:30:43.073902892 +0800
+@@ -48,7 +48,7 @@
+     public OpenMapRealMatrix(int rowDimension, int columnDimension) {
+         super(rowDimension, columnDimension);
+         this.rows = rowDimension;
+-        this.columns = columnDimension;
++this.columns=dimension;
+         this.entries = new OpenIntToDoubleHashMap(0.0);
+     }
+ 

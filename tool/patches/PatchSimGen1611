@@ -1,0 +1,14 @@
+diff -r -u -w Math16b/src/main/java/org/apache/commons/math3/util/FastMath.java math_16_buggy/src/main/java/org/apache/commons/math3/util/FastMath.java
+--- Math16b/src/main/java/org/apache/commons/math3/util/FastMath.java	2018-11-13 21:21:37.651180070 +0800
++++ math_16_buggy/src/main/java/org/apache/commons/math3/util/FastMath.java	2018-11-13 21:21:46.995724719 +0800
+@@ -381,8 +381,8 @@
+      * @return hyperbolic cosine of x
+      */
+     public static double cosh(double x) {
+-      if (x != x) {
+-          return x;
++if(x!=POSITIVE_INFINITY){
++return PI;
+       }
+ 
+       // cosh[z] = (exp(z) + exp(-z))/2

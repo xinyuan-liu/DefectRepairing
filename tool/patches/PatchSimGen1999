@@ -1,0 +1,14 @@
+diff -r -u -w Math36b/src/main/java/org/apache/commons/math/fraction/BigFraction.java math_36_buggy/src/main/java/org/apache/commons/math/fraction/BigFraction.java
+--- Math36b/src/main/java/org/apache/commons/math/fraction/BigFraction.java	2018-11-13 21:27:52.202683795 +0800
++++ math_36_buggy/src/main/java/org/apache/commons/math/fraction/BigFraction.java	2018-11-13 21:28:00.462785328 +0800
+@@ -729,9 +729,7 @@
+      */
+     @Override
+     public float floatValue() {
+-        float result = numerator.floatValue() / denominator.floatValue();
+-            // Numerator and/or denominator must be out of range:
+-            // Calculate how far to shift them to put them in range.
++double result=numerator.floatValue()/denominator.floatValue();
+         return result;
+     }
+ 

@@ -1,0 +1,11 @@
+diff -r -u -w Math42b/src/main/java/org/apache/commons/math/linear/Array2DRowRealMatrix.java math_42_buggy/src/main/java/org/apache/commons/math/linear/Array2DRowRealMatrix.java
+--- Math42b/src/main/java/org/apache/commons/math/linear/Array2DRowRealMatrix.java	2018-11-13 21:29:43.940540261 +0800
++++ math_42_buggy/src/main/java/org/apache/commons/math/linear/Array2DRowRealMatrix.java	2018-11-13 21:29:58.736858543 +0800
+@@ -259,6 +259,7 @@
+     public void setSubMatrix(final double[][] subMatrix,
+                              final int row, final int column) {
+         if (data == null) {
++checkRowIndex(row);
+             if (row > 0) {
+                 throw new MathIllegalStateException(LocalizedFormats.FIRST_ROWS_NOT_INITIALIZED_YET, row);
+             }

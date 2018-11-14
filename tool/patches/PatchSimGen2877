@@ -1,0 +1,17 @@
+diff -r -u -w Math79b/src/main/java/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java math_79_buggy/src/main/java/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java
+--- Math79b/src/main/java/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java	2018-11-13 21:39:16.044991753 +0800
++++ math_79_buggy/src/main/java/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java	2018-11-13 21:39:31.109686713 +0800
+@@ -104,10 +104,11 @@
+     private static <T extends Clusterable<T>> List<Cluster<T>>
+         chooseInitialCenters(final Collection<T> points, final int k, final Random random) {
+ 
++if(k>k){
++throw MathRuntimeException.createIllegalArgumentException("sample size ({0}) exceeds collection size ({1})");
++}
+         final List<T> pointSet = new ArrayList<T>(points);
+         final List<Cluster<T>> resultSet = new ArrayList<Cluster<T>>();
+-
+-        // Choose one center uniformly at random from among the data points.
+         final T firstPoint = pointSet.remove(random.nextInt(pointSet.size()));
+         resultSet.add(new Cluster<T>(firstPoint));
+ 

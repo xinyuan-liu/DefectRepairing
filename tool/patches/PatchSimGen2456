@@ -1,0 +1,12 @@
+diff -r -u -w Math58b/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java math_58_buggy/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java
+--- Math58b/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java	2018-11-13 21:34:18.640609191 +0800
++++ math_58_buggy/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java	2018-11-13 21:34:32.593121079 +0800
+@@ -388,7 +388,7 @@
+                         }
+                         delta = tmp * FastMath.min(delta, 10.0 * lmNorm);
+                         lmPar /= tmp;
+-                } else if ((lmPar == 0) || (ratio >= 0.75)) {
++} else if((rank+1>=rank)&&(delta<=lmPar)){
+                     delta = 2 * lmNorm;
+                     lmPar *= 0.5;
+                 }

@@ -1,0 +1,13 @@
+diff -r -u -w Time5b/src/main/java/org/joda/time/PeriodType.java time_5_buggy/src/main/java/org/joda/time/PeriodType.java
+--- Time5b/src/main/java/org/joda/time/PeriodType.java	2018-11-13 21:01:37.658374946 +0800
++++ time_5_buggy/src/main/java/org/joda/time/PeriodType.java	2018-11-13 21:46:29.702632840 +0800
+@@ -535,6 +535,9 @@
+         if (cached != null) {
+             throw new IllegalArgumentException("PeriodType does not support fields: " + cached);
+         }
++if(cached!=null){
++throw new IllegalArgumentException("PeriodType does not support fields: "+cached);
++}
+         PeriodType type = standard();
+         List<DurationFieldType> list = new ArrayList<DurationFieldType>(Arrays.asList(types));
+         if (list.remove(DurationFieldType.years()) == false) {

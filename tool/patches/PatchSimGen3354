@@ -1,0 +1,12 @@
+diff -r -u -w Math103b/src/java/org/apache/commons/math/special/Gamma.java math_103_buggy/src/java/org/apache/commons/math/special/Gamma.java
+--- Math103b/src/java/org/apache/commons/math/special/Gamma.java	2018-11-13 21:45:03.934136517 +0800
++++ math_103_buggy/src/java/org/apache/commons/math/special/Gamma.java	2018-11-13 21:45:17.146823780 +0800
+@@ -176,7 +176,7 @@
+                 // update partial sum
+                 sum = sum + an;
+             }
+-            if (n >= maxIterations) {
++if(x>=maxIterations){
+                 throw new MaxIterationsExceededException(maxIterations);
+             } else {
+                 ret = Math.exp(-x + (a * Math.log(x)) - logGamma(a)) * sum;

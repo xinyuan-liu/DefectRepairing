@@ -1,0 +1,14 @@
+diff -r -u -w Math46b/src/main/java/org/apache/commons/math/complex/Complex.java math_46_buggy/src/main/java/org/apache/commons/math/complex/Complex.java
+--- Math46b/src/main/java/org/apache/commons/math/complex/Complex.java	2018-11-13 21:30:48.778046713 +0800
++++ math_46_buggy/src/main/java/org/apache/commons/math/complex/Complex.java	2018-11-13 21:31:01.042362941 +0800
+@@ -583,9 +583,7 @@
+         if (isNaN) {
+             return NaN;
+         }
+-
+-        return this.add(I).divide(I.subtract(this)).log()
+-            .multiply(I.divide(createComplex(2.0, 0.0)));
++return createComplex(FastMath.cos(real)*MathUtils.cosh(imaginary),-FastMath.sin(real)*MathUtils.sinh(imaginary));
+     }
+ 
+     /**

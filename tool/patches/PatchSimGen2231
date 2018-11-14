@@ -1,0 +1,12 @@
+diff -r -u -w Math47b/src/main/java/org/apache/commons/math/util/FastMath.java math_47_buggy/src/main/java/org/apache/commons/math/util/FastMath.java
+--- Math47b/src/main/java/org/apache/commons/math/util/FastMath.java	2018-11-13 21:31:06.090495846 +0800
++++ math_47_buggy/src/main/java/org/apache/commons/math/util/FastMath.java	2018-11-13 21:31:17.998815567 +0800
+@@ -2989,7 +2989,7 @@
+ 
+             if (x < 0.0 || invx < 0.0) {
+                 if (y < 0.0 || invy < 0.0) {
+-                    return -Math.PI;
++return -Math.PI/4.0;
+                 } else {
+                     return Math.PI;
+                 }

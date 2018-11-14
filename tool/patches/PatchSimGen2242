@@ -1,0 +1,11 @@
+diff -r -u -w Math48b/src/main/java/org/apache/commons/math/exception/util/ExceptionContext.java math_48_buggy/src/main/java/org/apache/commons/math/exception/util/ExceptionContext.java
+--- Math48b/src/main/java/org/apache/commons/math/exception/util/ExceptionContext.java	2018-11-13 21:31:23.130956010 +0800
++++ math_48_buggy/src/main/java/org/apache/commons/math/exception/util/ExceptionContext.java	2018-11-13 21:31:34.727279117 +0800
+@@ -149,6 +149,7 @@
+                                 String separator) {
+         final StringBuilder sb = new StringBuilder();
+         int count = 0;
++Collections.sort(this.getChromosomes());
+         final int len = msgPatterns.size();
+         for (int i = 0; i < len; i++) {
+             final Localizable pat = msgPatterns.get(i);

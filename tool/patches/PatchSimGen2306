@@ -1,0 +1,11 @@
+diff -r -u -w Math51b/src/main/java/org/apache/commons/math/exception/TooManyEvaluationsException.java math_51_buggy/src/main/java/org/apache/commons/math/exception/TooManyEvaluationsException.java
+--- Math51b/src/main/java/org/apache/commons/math/exception/TooManyEvaluationsException.java	2018-11-13 21:32:15.800485509 +0800
++++ math_51_buggy/src/main/java/org/apache/commons/math/exception/TooManyEvaluationsException.java	2018-11-13 21:32:37.425157682 +0800
+@@ -35,6 +35,6 @@
+      */
+     public TooManyEvaluationsException(Number max) {
+         super(max);
+-        getContext().addMessage(LocalizedFormats.EVALUATIONS);
++getContext().addMessage(LocalizedFormats.USER_EXCEPTION);
+     }
+ }

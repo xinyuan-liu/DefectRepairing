@@ -1,0 +1,13 @@
+diff -r -u -w Math68b/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java math_68_buggy/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java
+--- Math68b/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java	2018-11-13 21:36:56.590836074 +0800
++++ math_68_buggy/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java	2018-11-13 21:37:06.443252908 +0800
+@@ -604,7 +604,8 @@
+             // depending on the sign of the function, update parl or paru.
+             if (fp > 0) {
+                 parl = Math.max(parl, lmPar);
+-            } else if (fp < 0) {
++} else lmPar/=gNorm;
++if(fp<0){
+                 paru = Math.min(paru, lmPar);
+             }
+ 

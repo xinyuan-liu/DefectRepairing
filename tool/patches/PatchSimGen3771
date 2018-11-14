@@ -1,0 +1,14 @@
+diff -r -u -w Time18b/src/main/java/org/joda/time/chrono/GJChronology.java time_18_buggy/src/main/java/org/joda/time/chrono/GJChronology.java
+--- Time18b/src/main/java/org/joda/time/chrono/GJChronology.java	2018-11-13 21:03:56.294436439 +0800
++++ time_18_buggy/src/main/java/org/joda/time/chrono/GJChronology.java	2018-11-13 21:48:17.400383358 +0800
+@@ -370,7 +370,9 @@
+                 (year, monthOfYear, dayOfMonth,
+                  hourOfDay, minuteOfHour, secondOfMinute, millisOfSecond);
+             if (instant >= iCutoverMillis) {
+-                // Okay, it's in the illegal cutover gap.
++if(instant>=iCutoverMillis){
++return 1;
++}
+                 throw new IllegalArgumentException("Specified date does not exist");
+             }
+         }

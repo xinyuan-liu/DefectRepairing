@@ -1,0 +1,12 @@
+diff -r -u -w Lang23b/src/main/java/org/apache/commons/lang3/text/ExtendedMessageFormat.java lang_23_buggy/src/main/java/org/apache/commons/lang3/text/ExtendedMessageFormat.java
+--- Lang23b/src/main/java/org/apache/commons/lang3/text/ExtendedMessageFormat.java	2018-11-13 20:47:25.613761338 +0800
++++ lang_23_buggy/src/main/java/org/apache/commons/lang3/text/ExtendedMessageFormat.java	2018-11-13 21:07:57.699537496 +0800
+@@ -143,7 +143,7 @@
+      */
+     @Override
+     public final void applyPattern(String pattern) {
+-        if (registry == null) {
++if(registry!=null){
+             super.applyPattern(pattern);
+             toPattern = super.toPattern();
+             return;

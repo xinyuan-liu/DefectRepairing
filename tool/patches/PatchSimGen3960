@@ -1,0 +1,12 @@
+diff -r -u -w Chart1b/source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java chart_1_buggy/source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java
+--- Chart1b/source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java	2018-11-13 21:50:02.182070229 +0800
++++ chart_1_buggy/source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java	2018-11-13 21:50:09.846489284 +0800
+@@ -1789,7 +1789,7 @@
+      */
+     public LegendItemCollection getLegendItems() {
+         LegendItemCollection result = new LegendItemCollection();
+-        if (this.plot == null) {
++if(plot==null){
+             return result;
+         }
+         int index = this.plot.getIndexOf(this);

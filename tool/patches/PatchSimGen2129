@@ -1,0 +1,12 @@
+diff -r -u -w Math42b/src/main/java/org/apache/commons/math/linear/Array2DRowRealMatrix.java math_42_buggy/src/main/java/org/apache/commons/math/linear/Array2DRowRealMatrix.java
+--- Math42b/src/main/java/org/apache/commons/math/linear/Array2DRowRealMatrix.java	2018-11-13 21:29:43.940540261 +0800
++++ math_42_buggy/src/main/java/org/apache/commons/math/linear/Array2DRowRealMatrix.java	2018-11-13 21:29:58.604855636 +0800
+@@ -260,7 +260,7 @@
+                              final int row, final int column) {
+         if (data == null) {
+             if (row > 0) {
+-                throw new MathIllegalStateException(LocalizedFormats.FIRST_ROWS_NOT_INITIALIZED_YET, row);
++throw new OutOfRangeException(LocalizedFormats.ROW_INDEX,row,0,getRowDimension()-1);
+             }
+             if (column > 0) {
+                 throw new MathIllegalStateException(LocalizedFormats.FIRST_COLUMNS_NOT_INITIALIZED_YET, column);

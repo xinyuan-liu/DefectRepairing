@@ -1,0 +1,13 @@
+diff -r -u -w Math5b/src/main/java/org/apache/commons/math3/complex/Complex.java math_5_buggy/src/main/java/org/apache/commons/math3/complex/Complex.java
+--- Math5b/src/main/java/org/apache/commons/math3/complex/Complex.java	2018-11-13 21:17:42.594621217 +0800
++++ math_5_buggy/src/main/java/org/apache/commons/math3/complex/Complex.java	2018-11-13 21:17:57.567333239 +0800
+@@ -342,6 +342,9 @@
+         }
+         if (other instanceof Complex){
+             Complex c = (Complex)other;
++if(Double.isInfinite(real)||Double.isInfinite(imaginary)){
++return INF;
++}
+             if (c.isNaN) {
+                 return isNaN;
+             } else {

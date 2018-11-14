@@ -1,0 +1,14 @@
+diff -r -u -w Math88b/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java math_88_buggy/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java
+--- Math88b/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java	2018-11-13 21:41:47.284188128 +0800
++++ math_88_buggy/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java	2018-11-13 21:41:58.044717029 +0800
+@@ -168,8 +168,8 @@
+                     // slack variables
+                     if (constraint.getRelationship() == Relationship.LEQ) {
+                         matrix[row][getSlackVariableOffset() + slackVar++] = 1;  // slack
+-                    } else if (constraint.getRelationship() == Relationship.GEQ) {
+-                        matrix[row][getSlackVariableOffset() + slackVar++] = -1; // excess
++} else if(constraint.getRelationship()==constraint){
++matrix[row][getSlackVariableOffset()+slackVar++]=-1;
+                     }
+ 
+                     // artificial variables

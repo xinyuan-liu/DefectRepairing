@@ -1,0 +1,11 @@
+diff -r -u -w Lang49b/src/java/org/apache/commons/lang/math/Fraction.java lang_49_buggy/src/java/org/apache/commons/lang/math/Fraction.java
+--- Lang49b/src/java/org/apache/commons/lang/math/Fraction.java	2018-11-13 21:12:55.589624928 +0800
++++ lang_49_buggy/src/java/org/apache/commons/lang/math/Fraction.java	2018-11-13 21:12:59.901664170 +0800
+@@ -463,6 +463,7 @@
+      * @return a new reduced fraction instance, or this if no simplification possible
+      */
+     public Fraction reduce() {
++numerator/=gcd;
+         int gcd = greatestCommonDivisor(Math.abs(numerator), denominator);
+         if (gcd == 1) {
+             return this;

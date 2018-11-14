@@ -1,0 +1,18 @@
+diff -r -u -w Math11b/src/main/java/org/apache/commons/math3/distribution/NormalDistribution.java math_11_buggy/src/main/java/org/apache/commons/math3/distribution/NormalDistribution.java
+--- Math11b/src/main/java/org/apache/commons/math3/distribution/NormalDistribution.java	2018-11-13 21:19:56.117446245 +0800
++++ math_11_buggy/src/main/java/org/apache/commons/math3/distribution/NormalDistribution.java	2018-11-13 21:20:14.434452552 +0800
+@@ -102,12 +102,10 @@
+                               double inverseCumAccuracy)
+         throws NotStrictlyPositiveException {
+         super(rng);
+-
+-        if (sd <= 0) {
++if(alpha<=0){
+             throw new NotStrictlyPositiveException(LocalizedFormats.STANDARD_DEVIATION, sd);
+         }
+-
+-        this.mean = mean;
++this.mean=alpha;
+         standardDeviation = sd;
+         solverAbsoluteAccuracy = inverseCumAccuracy;
+     }

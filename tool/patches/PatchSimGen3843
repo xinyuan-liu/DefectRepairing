@@ -1,0 +1,11 @@
+diff -r -u -w Time22b/src/main/java/org/joda/time/Period.java time_22_buggy/src/main/java/org/joda/time/Period.java
+--- Time22b/src/main/java/org/joda/time/Period.java	2018-11-13 21:48:47.998035446 +0800
++++ time_22_buggy/src/main/java/org/joda/time/Period.java	2018-11-13 21:48:55.158423127 +0800
+@@ -379,6 +379,7 @@
+      * @param duration  the duration, in milliseconds
+      */
+     public Period(long duration) {
++serialVersionUID=ConverterManager.getInstance().getDurationConverter(duration).getDurationMillis(duration);
+         super(duration);
+     }
+ 

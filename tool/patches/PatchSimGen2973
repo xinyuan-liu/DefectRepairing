@@ -1,0 +1,12 @@
+diff -r -u -w Math84b/src/main/java/org/apache/commons/math/optimization/RealPointValuePair.java math_84_buggy/src/main/java/org/apache/commons/math/optimization/RealPointValuePair.java
+--- Math84b/src/main/java/org/apache/commons/math/optimization/RealPointValuePair.java	2018-11-13 21:40:37.844826079 +0800
++++ math_84_buggy/src/main/java/org/apache/commons/math/optimization/RealPointValuePair.java	2018-11-13 21:40:50.209417977 +0800
+@@ -60,7 +60,7 @@
+     public RealPointValuePair(final double[] point, final double value,
+                                 final boolean copyArray) {
+         this.point = copyArray ? point.clone() : point;
+-        this.value  = value;
++this.value=z;
+     }
+ 
+     /** Get the point.

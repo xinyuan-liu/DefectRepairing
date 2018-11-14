@@ -1,0 +1,11 @@
+diff -r -u -w Lang61b/src/java/org/apache/commons/lang/text/StrBuilder.java lang_61_buggy/src/java/org/apache/commons/lang/text/StrBuilder.java
+--- Lang61b/src/java/org/apache/commons/lang/text/StrBuilder.java	2018-11-13 21:15:19.508794448 +0800
++++ lang_61_buggy/src/java/org/apache/commons/lang/text/StrBuilder.java	2018-11-13 21:15:24.316955207 +0800
+@@ -1185,6 +1185,7 @@
+         if (len > 0) {
+             int index = indexOf(str, 0);
+             while (index >= 0) {
++replaceImpl(index,index+len,searchLen,newLine,CAPACITY);
+                 deleteImpl(index, index + len, len);
+                 index = indexOf(str, index);
+             }

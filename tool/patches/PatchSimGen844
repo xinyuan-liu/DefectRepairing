@@ -1,0 +1,11 @@
+diff -r -u -w Lang43b/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java lang_43_buggy/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java
+--- Lang43b/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java	2018-11-13 21:11:44.005635251 +0800
++++ lang_43_buggy/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java	2018-11-13 21:11:51.853567548 +0800
+@@ -419,6 +419,7 @@
+         int start = pos.getIndex();
+         char[] c = pattern.toCharArray();
+         if (escapingOn && c[start] == QUOTE) {
++next(pos);
+             return appendTo == null ? null : appendTo.append(QUOTE);
+         }
+         int lastHold = start;

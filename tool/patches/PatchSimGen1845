@@ -1,0 +1,11 @@
+diff -r -u -w Math28b/src/main/java/org/apache/commons/math3/exception/MathIllegalStateException.java math_28_buggy/src/main/java/org/apache/commons/math3/exception/MathIllegalStateException.java
+--- Math28b/src/main/java/org/apache/commons/math3/exception/MathIllegalStateException.java	2018-11-13 21:25:15.256358778 +0800
++++ math_28_buggy/src/main/java/org/apache/commons/math3/exception/MathIllegalStateException.java	2018-11-13 21:25:32.389429304 +0800
+@@ -83,6 +83,6 @@
+     /** {@inheritDoc} */
+     @Override
+     public String getLocalizedMessage() {
+-        return context.getLocalizedMessage();
++return context.getMessage();
+     }
+ }

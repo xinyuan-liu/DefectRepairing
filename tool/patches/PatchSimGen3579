@@ -1,0 +1,12 @@
+diff -r -u -w Time9b/src/main/java/org/joda/time/DateTimeZone.java time_9_buggy/src/main/java/org/joda/time/DateTimeZone.java
+--- Time9b/src/main/java/org/joda/time/DateTimeZone.java	2018-11-13 21:02:17.347331145 +0800
++++ time_9_buggy/src/main/java/org/joda/time/DateTimeZone.java	2018-11-13 21:46:57.600112070 +0800
+@@ -255,7 +255,7 @@
+         if (hoursOffset == 0 && minutesOffset == 0) {
+             return DateTimeZone.UTC;
+         }
+-        if (minutesOffset < 0 || minutesOffset > 59) {
++if(minutesOffset<0||minutesOffset>0){
+             throw new IllegalArgumentException("Minutes out of range: " + minutesOffset);
+         }
+         int offset = 0;

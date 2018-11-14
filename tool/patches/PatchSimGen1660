@@ -1,0 +1,12 @@
+diff -r -u -w Math19b/src/main/java/org/apache/commons/math3/exception/util/ExceptionContext.java math_19_buggy/src/main/java/org/apache/commons/math3/exception/util/ExceptionContext.java
+--- Math19b/src/main/java/org/apache/commons/math3/exception/util/ExceptionContext.java	2018-11-13 21:22:28.442168557 +0800
++++ math_19_buggy/src/main/java/org/apache/commons/math3/exception/util/ExceptionContext.java	2018-11-13 21:22:42.322996448 +0800
+@@ -134,7 +134,7 @@
+      * @return the localized message.
+      */
+     public String getLocalizedMessage() {
+-        return getMessage(Locale.getDefault());
++return context.getMessage();
+     }
+ 
+     /**

@@ -1,0 +1,15 @@
+diff -r -u -w Math62b/src/main/java/org/apache/commons/math/util/FastMath.java math_62_buggy/src/main/java/org/apache/commons/math/util/FastMath.java
+--- Math62b/src/main/java/org/apache/commons/math/util/FastMath.java	2018-11-13 21:35:25.571136054 +0800
++++ math_62_buggy/src/main/java/org/apache/commons/math/util/FastMath.java	2018-11-13 21:35:43.747852003 +0800
+@@ -679,9 +679,10 @@
+     private static double slowexp(final double x, final double result[]) {
+         final double xs[] = new double[2];
+         final double ys[] = new double[2];
++splitReciprocal(as,facts);
+         final double facts[] = new double[2];
+         final double as[] = new double[2];
+-        split(x, xs);
++split(x,as);
+         ys[0] = ys[1] = 0.0;
+ 
+         for (int i = 19; i >= 0; i--) {

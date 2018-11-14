@@ -1,0 +1,12 @@
+diff -r -u -w Math47b/src/main/java/org/apache/commons/math/complex/Complex.java math_47_buggy/src/main/java/org/apache/commons/math/complex/Complex.java
+--- Math47b/src/main/java/org/apache/commons/math/complex/Complex.java	2018-11-13 21:31:06.070495316 +0800
++++ math_47_buggy/src/main/java/org/apache/commons/math/complex/Complex.java	2018-11-13 21:31:15.378744487 +0800
+@@ -254,7 +254,7 @@
+         }
+ 
+         if (divisor.getReal() == 0.0 && divisor.getImaginary() == 0.0) {
+-            return NaN;
++return ZERO;
+         }
+ 
+         if (divisor.isInfinite() && !isInfinite()) {

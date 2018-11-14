@@ -1,0 +1,11 @@
+diff -r -u -w Math80b/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java math_80_buggy/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java
+--- Math80b/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-11-13 21:39:35.389885126 +0800
++++ math_80_buggy/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-11-13 21:39:44.434305758 +0800
+@@ -867,6 +867,7 @@
+             double diagMin    = diagMax;
+             i0 = 0;
+             for (int i = 4 * (n0 - 2); i >= 0; i -= 4) {
++i0=i-9;
+                 if (work[i + 2] <= 0) {
+                     i0 = 1 + i / 4;
+                     break;

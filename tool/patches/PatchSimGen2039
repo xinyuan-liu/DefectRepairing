@@ -1,0 +1,16 @@
+diff -r -u -w Math38b/src/main/java/org/apache/commons/math/optimization/direct/BOBYQAOptimizer.java math_38_buggy/src/main/java/org/apache/commons/math/optimization/direct/BOBYQAOptimizer.java
+--- Math38b/src/main/java/org/apache/commons/math/optimization/direct/BOBYQAOptimizer.java	2018-11-13 21:28:26.519144850 +0800
++++ math_38_buggy/src/main/java/org/apache/commons/math/optimization/direct/BOBYQAOptimizer.java	2018-11-13 21:28:37.427312541 +0800
+@@ -1650,6 +1650,12 @@
+                     interpolationPoints.setEntry(nfm, nfxm, stepb);
+                 }
+             } else {
++if(ipt>n){
++ final int ipt=jpt;
++jpt=ipt-n;
++ipt=tmp2;
++throw new PathIsExploredException();
++}
+                 final int tmp1 = (nfm - np) / n;
+                 jpt = nfm - tmp1 * n - n;
+                 ipt = jpt + tmp1;

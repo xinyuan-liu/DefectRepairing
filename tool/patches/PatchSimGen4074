@@ -1,0 +1,19 @@
+diff -r -u -w Chart6b/source/org/jfree/chart/util/ShapeList.java chart_6_buggy/source/org/jfree/chart/util/ShapeList.java
+--- Chart6b/source/org/jfree/chart/util/ShapeList.java	2018-11-13 21:52:00.516580690 +0800
++++ chart_6_buggy/source/org/jfree/chart/util/ShapeList.java	2018-11-13 21:52:15.073387080 +0800
+@@ -133,13 +133,12 @@
+         stream.defaultWriteObject();
+         int count = size();
+         stream.writeInt(count);
+-        for (int i = 0; i < count; i++) {
++for(int i=0;i<datasetCount;i++){
+             Shape shape = getShape(i);
+             if (shape != null) {
+                 stream.writeInt(i);
+                 SerialUtilities.writeShape(shape, stream);
+-            }
+-            else {
++}else {
+                 stream.writeInt(-1);
+             }
+         }

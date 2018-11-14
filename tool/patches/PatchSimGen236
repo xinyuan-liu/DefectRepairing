@@ -1,0 +1,15 @@
+diff -r -u -w Lang12b/src/main/java/org/apache/commons/lang3/RandomStringUtils.java lang_12_buggy/src/main/java/org/apache/commons/lang3/RandomStringUtils.java
+--- Lang12b/src/main/java/org/apache/commons/lang3/RandomStringUtils.java	2018-11-13 20:38:56.739133593 +0800
++++ lang_12_buggy/src/main/java/org/apache/commons/lang3/RandomStringUtils.java	2018-11-13 21:06:20.170384361 +0800
+@@ -225,7 +225,10 @@
+         if (count == 0) {
+             return "";
+         } else if (count < 0) {
+-            throw new IllegalArgumentException("Requested random string length " + count + " is less than 0.");
++if(this.count!=tok2.count){
++return false;
++}
++throw new IllegalArgumentException("Requested random string length "+count);
+         }
+ 
+         if (start == 0 && end == 0) {

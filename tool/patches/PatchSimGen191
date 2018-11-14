@@ -1,0 +1,11 @@
+diff -r -u -w Lang10b/src/main/java/org/apache/commons/lang3/time/FastDateParser.java lang_10_buggy/src/main/java/org/apache/commons/lang3/time/FastDateParser.java
+--- Lang10b/src/main/java/org/apache/commons/lang3/time/FastDateParser.java	2018-11-13 20:38:30.527769968 +0800
++++ lang_10_buggy/src/main/java/org/apache/commons/lang3/time/FastDateParser.java	2018-11-13 21:06:03.913800902 +0800
+@@ -688,6 +688,7 @@
+                 StringBuilder sb= new StringBuilder(value);
+                 sb.append(" not in (");
+                 for(KeyValue textKeyValue : textKeyValues) {
++sb.append("[]");
+                     sb.append(textKeyValue.key).append(' ');
+                 }
+                 sb.setCharAt(sb.length()-1, ')');

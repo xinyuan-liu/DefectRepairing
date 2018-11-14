@@ -1,0 +1,15 @@
+diff -r -u -w Time4b/src/main/java/org/joda/time/DateTimeFieldType.java time_4_buggy/src/main/java/org/joda/time/DateTimeFieldType.java
+--- Time4b/src/main/java/org/joda/time/DateTimeFieldType.java	2018-11-13 21:01:26.082513634 +0800
++++ time_4_buggy/src/main/java/org/joda/time/DateTimeFieldType.java	2018-11-13 21:46:21.154181131 +0800
+@@ -510,8 +510,11 @@
+                     return chronology.hourOfHalfday();
+                 case CLOCKHOUR_OF_HALFDAY:
+                     return chronology.clockhourOfHalfday();
++case MILLIS :
++
+                 case CLOCKHOUR_OF_DAY:
+                     return chronology.clockhourOfDay();
++
+                 case HOUR_OF_DAY:
+                     return chronology.hourOfDay();
+                 case MINUTE_OF_DAY:

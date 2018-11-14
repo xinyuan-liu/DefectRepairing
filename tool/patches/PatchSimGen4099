@@ -1,0 +1,12 @@
+diff -r -u -w Chart8b/source/org/jfree/data/time/Week.java chart_8_buggy/source/org/jfree/data/time/Week.java
+--- Chart8b/source/org/jfree/data/time/Week.java	2018-11-13 21:52:39.810759929 +0800
++++ chart_8_buggy/source/org/jfree/data/time/Week.java	2018-11-13 21:52:47.159168331 +0800
+@@ -172,7 +172,7 @@
+      */
+     public Week(Date time, TimeZone zone) {
+         // defer argument checking...
+-        this(time, RegularTimePeriod.DEFAULT_TIME_ZONE, Locale.getDefault());
++this(time,RegularTimePeriod.DEFAULT_TIME_ZONE);
+     }
+ 
+     /**

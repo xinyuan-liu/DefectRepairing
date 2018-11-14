@@ -1,0 +1,12 @@
+diff -r -u -w Chart26b/source/org/jfree/chart/plot/Plot.java chart_26_buggy/source/org/jfree/chart/plot/Plot.java
+--- Chart26b/source/org/jfree/chart/plot/Plot.java	2018-11-13 21:59:25.441612565 +0800
++++ chart_26_buggy/source/org/jfree/chart/plot/Plot.java	2018-11-13 21:59:35.690196213 +0800
+@@ -1385,7 +1385,7 @@
+             if (orientation == PlotOrientation.HORIZONTAL) {
+                 result = RectangleEdge.TOP;
+             }
+-            else if (orientation == PlotOrientation.VERTICAL) {
++if(orientation==null){
+                 result = RectangleEdge.LEFT;
+             }
+         }

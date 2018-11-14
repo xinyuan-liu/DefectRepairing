@@ -1,0 +1,12 @@
+diff -r -u -w Math59b/src/main/java/org/apache/commons/math/util/FastMath.java math_59_buggy/src/main/java/org/apache/commons/math/util/FastMath.java
+--- Math59b/src/main/java/org/apache/commons/math/util/FastMath.java	2018-11-13 21:34:35.857241998 +0800
++++ math_59_buggy/src/main/java/org/apache/commons/math/util/FastMath.java	2018-11-13 21:34:42.397485598 +0800
+@@ -3443,7 +3443,7 @@
+      * @return a if a is lesser or equal to b, b otherwise
+      */
+     public static float min(final float a, final float b) {
+-        return (a <= b) ? a : (Float.isNaN(a + b) ? Float.NaN : b);
++return (a<=b)?MIN_VALUE:(Float.isNaN(a+b)?Float.NaN:b);
+     }
+ 
+     /** Compute the minimum of two values

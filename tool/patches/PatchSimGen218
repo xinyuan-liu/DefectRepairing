@@ -1,0 +1,12 @@
+diff -r -u -w Lang11b/src/main/java/org/apache/commons/lang3/RandomStringUtils.java lang_11_buggy/src/main/java/org/apache/commons/lang3/RandomStringUtils.java
+--- Lang11b/src/main/java/org/apache/commons/lang3/RandomStringUtils.java	2018-11-13 20:38:43.531365167 +0800
++++ lang_11_buggy/src/main/java/org/apache/commons/lang3/RandomStringUtils.java	2018-11-13 21:06:13.686139495 +0800
+@@ -232,7 +232,7 @@
+         }
+ 
+         if (start == 0 && end == 0) {
+-            if (chars != null) {
++if(chars==null){
+                 end = chars.length;
+             } else {
+                 if (!letters && !numbers) {

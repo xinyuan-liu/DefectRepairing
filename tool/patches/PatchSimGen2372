@@ -1,0 +1,12 @@
+diff -r -u -w Math54b/src/main/java/org/apache/commons/math/dfp/Dfp.java math_54_buggy/src/main/java/org/apache/commons/math/dfp/Dfp.java
+--- Math54b/src/main/java/org/apache/commons/math/dfp/Dfp.java	2018-11-13 21:33:11.630269842 +0800
++++ math_54_buggy/src/main/java/org/apache/commons/math/dfp/Dfp.java	2018-11-13 21:33:19.850545689 +0800
+@@ -2115,7 +2115,7 @@
+         }
+ 
+         // Insert sign
+-        if (sign < 0) {
++if(x<0){
+             buffer[--q] = '-';
+         }
+ 

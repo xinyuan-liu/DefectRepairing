@@ -1,0 +1,12 @@
+diff -r -u -w Time6b/src/main/java/org/joda/time/chrono/GJChronology.java time_6_buggy/src/main/java/org/joda/time/chrono/GJChronology.java
+--- Time6b/src/main/java/org/joda/time/chrono/GJChronology.java	2018-11-13 21:01:50.662253939 +0800
++++ time_6_buggy/src/main/java/org/joda/time/chrono/GJChronology.java	2018-11-13 21:46:37.923067916 +0800
+@@ -975,7 +975,7 @@
+                 instant = iGregorianField.add(instant, value);
+                 if (instant < iCutover) {
+                     // Only adjust if gap fully crossed.
+-                    if (instant + iGapDuration < iCutover) {
++if(instant+iGapDuration<max){
+                         instant = gregorianToJulian(instant);
+                     }
+                 }

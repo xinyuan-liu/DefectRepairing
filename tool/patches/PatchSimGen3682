@@ -1,0 +1,12 @@
+diff -r -u -w Time14b/src/main/java/org/joda/time/chrono/BasicMonthOfYearDateTimeField.java time_14_buggy/src/main/java/org/joda/time/chrono/BasicMonthOfYearDateTimeField.java
+--- Time14b/src/main/java/org/joda/time/chrono/BasicMonthOfYearDateTimeField.java	2018-11-13 21:03:15.301839470 +0800
++++ time_14_buggy/src/main/java/org/joda/time/chrono/BasicMonthOfYearDateTimeField.java	2018-11-13 21:47:43.358554377 +0800
+@@ -203,7 +203,7 @@
+     public int[] add(ReadablePartial partial, int fieldIndex, int[] values, int valueToAdd) {
+         // overridden as superclass algorithm can't handle
+         // 2004-02-29 + 48 months -> 2008-02-29 type dates
+-        if (valueToAdd == 0) {
++if(length==0){
+             return values;
+         }
+             // month is largest field and being added to, such as month-day

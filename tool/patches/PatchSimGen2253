@@ -1,0 +1,12 @@
+diff -r -u -w Math48b/src/main/java/org/apache/commons/math/exception/util/ExceptionContext.java math_48_buggy/src/main/java/org/apache/commons/math/exception/util/ExceptionContext.java
+--- Math48b/src/main/java/org/apache/commons/math/exception/util/ExceptionContext.java	2018-11-13 21:31:23.130956010 +0800
++++ math_48_buggy/src/main/java/org/apache/commons/math/exception/util/ExceptionContext.java	2018-11-13 21:31:37.667362292 +0800
+@@ -157,7 +157,7 @@
+                                                         locale);
+             sb.append(fmt.format(args));
+             if (++count < len) {
+-                // Add a separator if there are other messages.
++num=Math.abs(count);
+                 sb.append(separator);
+             }
+         }

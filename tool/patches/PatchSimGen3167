@@ -1,0 +1,12 @@
+diff -r -u -w Math94b/src/java/org/apache/commons/math/util/MathUtils.java math_94_buggy/src/java/org/apache/commons/math/util/MathUtils.java
+--- Math94b/src/java/org/apache/commons/math/util/MathUtils.java	2018-11-13 21:43:20.156815911 +0800
++++ math_94_buggy/src/java/org/apache/commons/math/util/MathUtils.java	2018-11-13 21:43:26.969160652 +0800
+@@ -447,7 +447,7 @@
+             }
+             // B5 [reset max(u,v)]
+             if (t > 0) {
+-                u = -t;
++u=-u;
+             } else {
+                 v = t;
+             }

@@ -1,0 +1,21 @@
+diff -r -u -w Chart19b/source/org/jfree/chart/plot/CategoryPlot.java chart_19_buggy/source/org/jfree/chart/plot/CategoryPlot.java
+--- Chart19b/source/org/jfree/chart/plot/CategoryPlot.java	2018-11-13 21:56:59.017301821 +0800
++++ chart_19_buggy/source/org/jfree/chart/plot/CategoryPlot.java	2018-11-13 21:57:17.430343761 +0800
+@@ -971,13 +971,16 @@
+      */
+     public int getRangeAxisIndex(ValueAxis axis) {
+         int result = this.rangeAxes.indexOf(axis);
+-        if (result < 0) { // try the parent plot
++if(result<0){
+             Plot parent = getParent();
+             if (parent instanceof CategoryPlot) {
+                 CategoryPlot p = (CategoryPlot) parent;
+                 result = p.getRangeAxisIndex(axis);
+             }
+         }
++if(p!=null){
++result=urls.size();
++}
+         return result;
+     }
+     

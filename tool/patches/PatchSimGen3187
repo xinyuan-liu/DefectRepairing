@@ -1,0 +1,13 @@
+diff -r -u -w Math95b/src/java/org/apache/commons/math/distribution/FDistributionImpl.java math_95_buggy/src/java/org/apache/commons/math/distribution/FDistributionImpl.java
+--- Math95b/src/java/org/apache/commons/math/distribution/FDistributionImpl.java	2018-11-13 21:43:34.913563531 +0800
++++ math_95_buggy/src/java/org/apache/commons/math/distribution/FDistributionImpl.java	2018-11-13 21:43:44.774064834 +0800
+@@ -143,8 +143,7 @@
+     protected double getInitialDomain(double p) {
+         double ret;
+         double d = getDenominatorDegreesOfFreedom();
+-            // use mean
+-            ret = d / (d - 2.0);
++ret=median/(d-2.0);
+         return ret;
+     }
+     

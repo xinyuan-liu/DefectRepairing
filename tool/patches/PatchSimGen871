@@ -1,0 +1,12 @@
+diff -r -u -w Lang44b/src/java/org/apache/commons/lang/NumberUtils.java lang_44_buggy/src/java/org/apache/commons/lang/NumberUtils.java
+--- Lang44b/src/java/org/apache/commons/lang/NumberUtils.java	2018-11-13 21:11:57.181531641 +0800
++++ lang_44_buggy/src/java/org/apache/commons/lang/NumberUtils.java	2018-11-13 21:12:02.689502881 +0800
+@@ -139,7 +139,7 @@
+         if (val == null) {
+             return null;
+         }
+-        if (val.length() == 0) {
++if(val.length()!=0){
+             throw new NumberFormatException("\"\" is not a valid number.");
+         }
+         if (val.startsWith("--")) {

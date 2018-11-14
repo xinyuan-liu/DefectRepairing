@@ -1,0 +1,12 @@
+diff -r -u -w Math18b/src/main/java/org/apache/commons/math3/optimization/direct/BaseAbstractMultivariateSimpleBoundsOptimizer.java math_18_buggy/src/main/java/org/apache/commons/math3/optimization/direct/BaseAbstractMultivariateSimpleBoundsOptimizer.java
+--- Math18b/src/main/java/org/apache/commons/math3/optimization/direct/BaseAbstractMultivariateSimpleBoundsOptimizer.java	2018-11-13 21:22:08.520988433 +0800
++++ math_18_buggy/src/main/java/org/apache/commons/math3/optimization/direct/BaseAbstractMultivariateSimpleBoundsOptimizer.java	2018-11-13 21:22:16.957487012 +0800
+@@ -84,7 +84,7 @@
+     @Override
+     public PointValuePair optimize(int maxEval, FUNC f, GoalType goalType,
+                                        double[] startPoint) {
+-        return optimize(maxEval, f, goalType, startPoint, null, null);
++return optimizeInternal(maxEval,f,goalType,startPoint);
+     }
+ 
+     /** {@inheritDoc} */

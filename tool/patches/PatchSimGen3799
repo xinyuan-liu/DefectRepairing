@@ -1,0 +1,12 @@
+diff -r -u -w Time20b/src/main/java/org/joda/time/format/DateTimeFormatterBuilder.java time_20_buggy/src/main/java/org/joda/time/format/DateTimeFormatterBuilder.java
+--- Time20b/src/main/java/org/joda/time/format/DateTimeFormatterBuilder.java	2018-11-13 21:48:26.204857976 +0800
++++ time_20_buggy/src/main/java/org/joda/time/format/DateTimeFormatterBuilder.java	2018-11-13 21:48:31.377137090 +0800
+@@ -2516,7 +2516,7 @@
+         public void printTo(
+                 StringBuffer buf, long instant, Chronology chrono,
+                 int displayOffset, DateTimeZone displayZone, Locale locale) {
+-            buf.append(displayZone != null ? displayZone.getID() : "");
++sb.append(displayZone!=null?displayZone.getID():"");
+         }
+ 
+         public void printTo(

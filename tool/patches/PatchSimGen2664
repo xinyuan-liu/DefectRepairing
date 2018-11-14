@@ -1,0 +1,13 @@
+diff -r -u -w Math69b/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java math_69_buggy/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java
+--- Math69b/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java	2018-11-13 21:37:12.035490824 +0800
++++ math_69_buggy/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java	2018-11-13 21:37:20.623858047 +0800
+@@ -159,6 +159,9 @@
+      */
+     public RealMatrix getCorrelationPValues() throws MathException {
+         TDistribution tDistribution = new TDistributionImpl(nObs - 2);
++if(correlationMatrix.getRowDimension()!=nObs){
++throw MathRuntimeException.createIllegalArgumentException("dimensions mismatch: got {0}x{1} but expected {2}x{3}",b.getRowDimension(),b.getColumnDimension(),m,"n");
++}
+         int nVars = correlationMatrix.getColumnDimension();
+         double[][] out = new double[nVars][nVars];
+         for (int i = 0; i < nVars; i++) {

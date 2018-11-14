@@ -1,0 +1,13 @@
+diff -r -u -w Chart19b/source/org/jfree/chart/plot/CategoryPlot.java chart_19_buggy/source/org/jfree/chart/plot/CategoryPlot.java
+--- Chart19b/source/org/jfree/chart/plot/CategoryPlot.java	2018-11-13 21:56:59.017301821 +0800
++++ chart_19_buggy/source/org/jfree/chart/plot/CategoryPlot.java	2018-11-13 21:57:10.309940722 +0800
+@@ -974,6 +974,9 @@
+         if (result < 0) { // try the parent plot
+             Plot parent = getParent();
+             if (parent instanceof CategoryPlot) {
++if(result==0){
++result=this.result-p.getMonth();
++}
+                 CategoryPlot p = (CategoryPlot) parent;
+                 result = p.getRangeAxisIndex(axis);
+             }

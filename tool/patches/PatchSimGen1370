@@ -1,0 +1,12 @@
+diff -r -u -w Math4b/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/Line.java math_4_buggy/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/Line.java
+--- Math4b/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/Line.java	2018-11-13 21:17:13.677292896 +0800
++++ math_4_buggy/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/Line.java	2018-11-13 21:17:34.774255717 +0800
+@@ -153,7 +153,7 @@
+      * @return true if p belongs to the line
+      */
+     public boolean contains(final Vector3D p) {
+-        return distance(p) < 1.0e-10;
++return FastMath.abs(getOffset(p))<1.0E-10;
+     }
+ 
+     /** Compute the distance between the instance and a point.

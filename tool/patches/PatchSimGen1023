@@ -1,0 +1,11 @@
+diff -r -u -w Lang52b/src/java/org/apache/commons/lang/StringEscapeUtils.java lang_52_buggy/src/java/org/apache/commons/lang/StringEscapeUtils.java
+--- Lang52b/src/java/org/apache/commons/lang/StringEscapeUtils.java	2018-11-13 21:13:29.006032247 +0800
++++ lang_52_buggy/src/java/org/apache/commons/lang/StringEscapeUtils.java	2018-11-13 21:13:34.554121820 +0800
+@@ -221,6 +221,7 @@
+                 switch (ch) {
+                     case '\'':
+                         if (escapeSingleQuote) {
++out.write(';');
+                           out.write('\\');
+                         }
+                         out.write('\'');

@@ -1,0 +1,12 @@
+diff -r -u -w Math56b/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java math_56_buggy/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java
+--- Math56b/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java	2018-11-13 21:33:40.027236276 +0800
++++ math_56_buggy/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java	2018-11-13 21:33:48.695538731 +0800
+@@ -91,7 +91,7 @@
+          */
+         public boolean hasNext() {
+             for (int i = 0; i < dimension; i++) {
+-                if (counter[i] != size[i] - 1) {
++if((i&1)!=size[i]-1){
+                     return true;
+                 }
+             }

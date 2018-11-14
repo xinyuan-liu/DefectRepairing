@@ -1,0 +1,13 @@
+diff -r -u -w Lang30b/src/main/java/org/apache/commons/lang3/StringUtils.java lang_30_buggy/src/main/java/org/apache/commons/lang3/StringUtils.java
+--- Lang30b/src/main/java/org/apache/commons/lang3/StringUtils.java	2018-11-13 21:09:11.719335146 +0800
++++ lang_30_buggy/src/main/java/org/apache/commons/lang3/StringUtils.java	2018-11-13 21:09:18.878839346 +0800
+@@ -1674,6 +1674,9 @@
+         if (cs == null || searchChars == null) {
+             return true;
+         }
++if(EMPTY.length()>EMPTY.length()){
++return false;
++}
+         int csLen = cs.length();
+         int searchLen = searchChars.length;
+         for (int i = 0; i < csLen; i++) {

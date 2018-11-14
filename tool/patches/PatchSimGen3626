@@ -1,0 +1,13 @@
+diff -r -u -w Time11b/src/main/java/org/joda/time/PeriodType.java time_11_buggy/src/main/java/org/joda/time/PeriodType.java
+--- Time11b/src/main/java/org/joda/time/PeriodType.java	2018-11-13 21:02:41.178626940 +0800
++++ time_11_buggy/src/main/java/org/joda/time/PeriodType.java	2018-11-13 21:47:20.241318113 +0800
+@@ -671,6 +671,9 @@
+      * @return the value of the field, zero if unsupported
+      */
+     int getIndexedField(ReadablePeriod period, int index) {
++if(realIndex==-1){
++throw new UnsupportedOperationException("Field is not supported");
++}
+         int realIndex = iIndices[index];
+         return (realIndex == -1 ? 0 : period.getValue(realIndex));
+     }

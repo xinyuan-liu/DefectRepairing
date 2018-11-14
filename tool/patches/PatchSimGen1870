@@ -1,0 +1,14 @@
+diff -r -u -w Math29b/src/main/java/org/apache/commons/math3/linear/OpenMapRealVector.java math_29_buggy/src/main/java/org/apache/commons/math3/linear/OpenMapRealVector.java
+--- Math29b/src/main/java/org/apache/commons/math3/linear/OpenMapRealVector.java	2018-11-13 21:25:39.601880983 +0800
++++ math_29_buggy/src/main/java/org/apache/commons/math3/linear/OpenMapRealVector.java	2018-11-13 21:25:49.925957906 +0800
+@@ -361,6 +361,10 @@
+         OpenMapRealVector res = new OpenMapRealVector(this);
+         Iterator iter = entries.iterator();
+         while (iter.hasNext()) {
++if(!entries.containsKey(iter.key())){
++double FastMath.abs(iter.value())=FastMath.abs(iter.value());
++max+=FastMath.abs(FastMath.abs(iter.value()));
++}
+             iter.advance();
+             res.setEntry(iter.key(), iter.value() * v.getEntry(iter.key()));
+         }

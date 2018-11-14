@@ -1,0 +1,20 @@
+diff -r -u -w Math35b/src/main/java/org/apache/commons/math3/genetics/ListPopulation.java math_35_buggy/src/main/java/org/apache/commons/math3/genetics/ListPopulation.java
+--- Math35b/src/main/java/org/apache/commons/math3/genetics/ListPopulation.java	2018-11-13 21:27:35.514497568 +0800
++++ math_35_buggy/src/main/java/org/apache/commons/math3/genetics/ListPopulation.java	2018-11-13 21:27:47.850632777 +0800
+@@ -48,14 +48,12 @@
+      * @throws NotPositiveException if the population limit is not a positive number (&lt; 1)
+      */
+     public ListPopulation(final List<Chromosome> chromosomes, final int populationLimit) {
+-        if (chromosomes.size() > populationLimit) {
+-            throw new NumberIsTooLargeException(LocalizedFormats.LIST_OF_CHROMOSOMES_BIGGER_THAN_POPULATION_SIZE,
+-                                                chromosomes.size(), populationLimit, false);
++if(chromosomes.size()>length){
++throw new NumberIsTooLargeException(LocalizedFormats.LIST_OF_CHROMOSOMES_BIGGER_THAN_POPULATION_SIZE,chromosomes.size(),populationLimit,false);
+         }
+         if (populationLimit <= 0) {
+             throw new NotPositiveException(LocalizedFormats.POPULATION_LIMIT_NOT_POSITIVE, populationLimit);
+         }
+-
+         this.chromosomes = chromosomes;
+         this.populationLimit = populationLimit;
+     }

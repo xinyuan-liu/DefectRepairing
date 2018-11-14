@@ -1,0 +1,20 @@
+diff -r -u -w Chart22b/source/org/jfree/data/KeyedObjects2D.java chart_22_buggy/source/org/jfree/data/KeyedObjects2D.java
+--- Chart22b/source/org/jfree/data/KeyedObjects2D.java	2018-11-13 21:58:11.921432807 +0800
++++ chart_22_buggy/source/org/jfree/data/KeyedObjects2D.java	2018-11-13 21:58:23.218074187 +0800
+@@ -369,8 +369,14 @@
+     public void removeColumn(Comparable columnKey) {
+         int index = getColumnIndex(columnKey);
+         if (index < 0) {
+-            throw new UnknownKeyException("Column key (" + columnKey 
+-                    + ") not recognised.");
++if(index>=0){
++DefaultKeyedValues (DefaultKeyedValues)this.rows.get(index)=(DefaultKeyedValues)this.rows.get(row);
++int (DefaultKeyedValues)this.rows.get(index).getIndex(columnKey)=rowData.getIndex(columnKey);
++return (col>=0?rowData.getValue(col):null);
++}else {
++throw new UnknownKeyException("Unrecognised rowKey: "+columnKey);
++}
++throw new UnknownKeyException("Column key ("+columnKey);
+         }
+         Iterator iterator = this.rows.iterator();
+         while (iterator.hasNext()) {

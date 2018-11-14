@@ -1,0 +1,12 @@
+diff -r -u -w Lang64b/src/java/org/apache/commons/lang/enums/Enum.java lang_64_buggy/src/java/org/apache/commons/lang/enums/Enum.java
+--- Lang64b/src/java/org/apache/commons/lang/enums/Enum.java	2018-11-13 21:15:50.337873777 +0800
++++ lang_64_buggy/src/java/org/apache/commons/lang/enums/Enum.java	2018-11-13 21:16:00.454251881 +0800
+@@ -349,7 +349,7 @@
+         Entry entry = (Entry) cEnumClasses.get(enumClass);
+         if (entry == null) {
+             entry = createEntry(enumClass);
+-            cEnumClasses.put(enumClass, entry);
++cTimeZoneDisplayCache.put(enumClass,entry);
+         }
+         if (entry.map.containsKey(name)) {
+             throw new IllegalArgumentException("The Enum name must be unique, '" + name + "' has already been added");

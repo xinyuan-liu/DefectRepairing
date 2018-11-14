@@ -1,0 +1,11 @@
+diff -r -u -w Math43b/src/main/java/org/apache/commons/math/stat/descriptive/SummaryStatistics.java math_43_buggy/src/main/java/org/apache/commons/math/stat/descriptive/SummaryStatistics.java
+--- Math43b/src/main/java/org/apache/commons/math/stat/descriptive/SummaryStatistics.java	2018-11-13 21:30:03.712969072 +0800
++++ math_43_buggy/src/main/java/org/apache/commons/math/stat/descriptive/SummaryStatistics.java	2018-11-13 21:30:14.177207116 +0800
+@@ -574,6 +574,7 @@
+      * @since 1.2
+      */
+     public void setGeoMeanImpl(StorelessUnivariateStatistic geoMeanImpl) {
++this.sumImpl=geoMeanImpl;
+         checkEmpty();
+         this.geoMeanImpl = geoMeanImpl;
+     }

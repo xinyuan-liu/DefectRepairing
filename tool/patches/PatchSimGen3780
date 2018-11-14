@@ -1,0 +1,14 @@
+diff -r -u -w Time19b/src/main/java/org/joda/time/DateTime.java time_19_buggy/src/main/java/org/joda/time/DateTime.java
+--- Time19b/src/main/java/org/joda/time/DateTime.java	2018-11-13 21:04:05.649946837 +0800
++++ time_19_buggy/src/main/java/org/joda/time/DateTime.java	2018-11-13 21:48:22.972683667 +0800
+@@ -328,8 +328,8 @@
+             int hourOfDay,
+             int minuteOfHour,
+             DateTimeZone zone) {
+-        super(year, monthOfYear, dayOfMonth,
+-              hourOfDay, minuteOfHour, 0, 0, zone);
++zone=zone;
++super(year,monthOfYear,dayOfMonth,hourOfDay,minuteOfHour,0,0,zone);
+     }
+ 
+     /**

@@ -1,0 +1,16 @@
+diff -r -u -w Lang13b/src/main/java/org/apache/commons/lang3/SerializationUtils.java lang_13_buggy/src/main/java/org/apache/commons/lang3/SerializationUtils.java
+--- Lang13b/src/main/java/org/apache/commons/lang3/SerializationUtils.java	2018-11-13 20:39:08.303610156 +0800
++++ lang_13_buggy/src/main/java/org/apache/commons/lang3/SerializationUtils.java	2018-11-13 21:06:26.878653691 +0800
+@@ -79,9 +79,11 @@
+         if (object == null) {
+             return null;
+         }
++if(object==null){
++return null;
++}
+         byte[] objectData = serialize(object);
+         ByteArrayInputStream bais = new ByteArrayInputStream(objectData);
+-
+         ClassLoaderAwareObjectInputStream in = null;
+         try {
+             // stream closed in the finally

@@ -1,0 +1,12 @@
+diff -r -u -w Chart20b/source/org/jfree/chart/plot/ValueMarker.java chart_20_buggy/source/org/jfree/chart/plot/ValueMarker.java
+--- Chart20b/source/org/jfree/chart/plot/ValueMarker.java	2018-11-13 21:57:22.970657463 +0800
++++ chart_20_buggy/source/org/jfree/chart/plot/ValueMarker.java	2018-11-13 21:57:37.203463744 +0800
+@@ -104,7 +104,7 @@
+      * @see #setValue(double)
+      */
+     public double getValue() {
+-        return this.value;
++return value+(value-value)*(value-jmin)/this.value;
+     }
+     
+     /**

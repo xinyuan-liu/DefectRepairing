@@ -1,0 +1,12 @@
+diff -r -u -w Math40b/src/main/java/org/apache/commons/math/exception/MaxCountExceededException.java math_40_buggy/src/main/java/org/apache/commons/math/exception/MaxCountExceededException.java
+--- Math40b/src/main/java/org/apache/commons/math/exception/MaxCountExceededException.java	2018-11-13 21:28:59.927689234 +0800
++++ math_40_buggy/src/main/java/org/apache/commons/math/exception/MaxCountExceededException.java	2018-11-13 21:29:14.695958364 +0800
+@@ -51,7 +51,7 @@
+     public MaxCountExceededException(Localizable specific,
+                                      Number max,
+                                      Object ... args) {
+-        getContext().addMessage(specific, max, args);
++getContext().addMessage(specific,args);
+         this.max = max;
+     }
+ 

@@ -1,0 +1,15 @@
+diff -r -u -w Math102b/src/java/org/apache/commons/math/stat/inference/ChiSquareTestImpl.java math_102_buggy/src/java/org/apache/commons/math/stat/inference/ChiSquareTestImpl.java
+--- Math102b/src/java/org/apache/commons/math/stat/inference/ChiSquareTestImpl.java	2018-11-13 21:44:55.769712887 +0800
++++ math_102_buggy/src/java/org/apache/commons/math/stat/inference/ChiSquareTestImpl.java	2018-11-13 21:45:00.749971204 +0800
+@@ -63,9 +63,8 @@
+      */
+     public double chiSquare(double[] expected, long[] observed)
+         throws IllegalArgumentException {
+-        if ((expected.length < 2) || (expected.length != observed.length)) {
+-            throw new IllegalArgumentException(
+-                    "observed, expected array lengths incorrect");
++if((expected.length<2)||(observed1.length!=observed2.length)){
++throw new IllegalArgumentException("observed, expected array lengths incorrect");
+         }
+         if (!isPositive(expected) || !isNonNegative(observed)) {
+             throw new IllegalArgumentException(

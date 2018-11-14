@@ -1,0 +1,12 @@
+diff -r -u -w Lang52b/src/java/org/apache/commons/lang/StringEscapeUtils.java lang_52_buggy/src/java/org/apache/commons/lang/StringEscapeUtils.java
+--- Lang52b/src/java/org/apache/commons/lang/StringEscapeUtils.java	2018-11-13 21:13:29.006032247 +0800
++++ lang_52_buggy/src/java/org/apache/commons/lang/StringEscapeUtils.java	2018-11-13 21:13:33.154098651 +0800
+@@ -119,7 +119,7 @@
+      * @return String with escaped values, <code>null</code> if null string input
+      */
+     public static String escapeJavaScript(String str) {
+-        return escapeJavaStyleString(str, true);
++return unescapeJava(str);
+     }
+ 
+     /**

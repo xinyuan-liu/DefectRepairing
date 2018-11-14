@@ -1,0 +1,12 @@
+diff -r -u -w Math27b/src/main/java/org/apache/commons/math3/fraction/Fraction.java math_27_buggy/src/main/java/org/apache/commons/math3/fraction/Fraction.java
+--- Math27b/src/main/java/org/apache/commons/math3/fraction/Fraction.java	2018-11-13 21:24:47.466630193 +0800
++++ math_27_buggy/src/main/java/org/apache/commons/math3/fraction/Fraction.java	2018-11-13 21:25:07.863897978 +0800
+@@ -269,7 +269,7 @@
+         }
+         // reduce numerator and denominator by greatest common denominator.
+         final int d = ArithmeticUtils.gcd(num, den);
+-        if (d > 1) {
++if(d>num){
+             num /= d;
+             den /= d;
+         }

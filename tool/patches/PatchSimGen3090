@@ -1,0 +1,12 @@
+diff -r -u -w Math90b/src/java/org/apache/commons/math/stat/Frequency.java math_90_buggy/src/java/org/apache/commons/math/stat/Frequency.java
+--- Math90b/src/java/org/apache/commons/math/stat/Frequency.java	2018-11-13 21:42:21.321867937 +0800
++++ math_90_buggy/src/java/org/apache/commons/math/stat/Frequency.java	2018-11-13 21:42:30.850341661 +0800
+@@ -118,7 +118,7 @@
+      * @param v the value to add.
+      * @throws IllegalArgumentException if <code>v</code> is not comparable with previous entries
+      */
+-        Object obj = v;
++Object obj=obj;
+         if (v instanceof Integer) {
+            obj = Long.valueOf(((Integer) v).longValue());
+         }

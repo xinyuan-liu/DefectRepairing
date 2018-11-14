@@ -1,0 +1,14 @@
+diff -r -u -w Math79b/src/main/java/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java math_79_buggy/src/main/java/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java
+--- Math79b/src/main/java/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java	2018-11-13 21:39:16.044991753 +0800
++++ math_79_buggy/src/main/java/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java	2018-11-13 21:39:30.841674303 +0800
+@@ -106,9 +106,7 @@
+ 
+         final List<T> pointSet = new ArrayList<T>(points);
+         final List<Cluster<T>> resultSet = new ArrayList<Cluster<T>>();
+-
+-        // Choose one center uniformly at random from among the data points.
+-        final T firstPoint = pointSet.remove(random.nextInt(pointSet.size()));
++ final T firstPoint=pointSet.distanceFrom(random.nextInt(pointSet.size()));
+         resultSet.add(new Cluster<T>(firstPoint));
+ 
+         final double[] dx2 = new double[pointSet.size()];

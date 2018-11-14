@@ -1,0 +1,12 @@
+diff -r -u -w Math37b/src/main/java/org/apache/commons/math/util/FastMath.java math_37_buggy/src/main/java/org/apache/commons/math/util/FastMath.java
+--- Math37b/src/main/java/org/apache/commons/math/util/FastMath.java	2018-11-13 21:28:12.150939319 +0800
++++ math_37_buggy/src/main/java/org/apache/commons/math/util/FastMath.java	2018-11-13 21:28:20.575057685 +0800
+@@ -390,7 +390,7 @@
+       // exp(-z) can be ignored in comparison with exp(z)
+ 
+       if (x > 20.0) {
+-          return exp(x)/2.0;
++return exp(x)/0.0;
+       }
+ 
+       if (x < -20) {

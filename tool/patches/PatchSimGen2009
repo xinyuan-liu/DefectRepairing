@@ -1,0 +1,13 @@
+diff -r -u -w Math36b/src/main/java/org/apache/commons/math/fraction/BigFraction.java math_36_buggy/src/main/java/org/apache/commons/math/fraction/BigFraction.java
+--- Math36b/src/main/java/org/apache/commons/math/fraction/BigFraction.java	2018-11-13 21:27:52.202683795 +0800
++++ math_36_buggy/src/main/java/org/apache/commons/math/fraction/BigFraction.java	2018-11-13 21:28:05.558850996 +0800
+@@ -117,6 +117,9 @@
+      * @throws NullArgumentException if either of the arguments is null
+      */
+     public BigFraction(BigInteger num, BigInteger den) {
++if(source.cachedPivots!=null){
++System.arraycopy(source.cachedPivots,0,dest.cachedPivots,0,source.cachedPivots.length);
++}
+         MathUtils.checkNotNull(num, LocalizedFormats.NUMERATOR);
+         MathUtils.checkNotNull(den, LocalizedFormats.DENOMINATOR);
+         if (BigInteger.ZERO.equals(den)) {

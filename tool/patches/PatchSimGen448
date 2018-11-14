@@ -1,0 +1,13 @@
+diff -r -u -w Lang23b/src/main/java/org/apache/commons/lang3/text/ExtendedMessageFormat.java lang_23_buggy/src/main/java/org/apache/commons/lang3/text/ExtendedMessageFormat.java
+--- Lang23b/src/main/java/org/apache/commons/lang3/text/ExtendedMessageFormat.java	2018-11-13 20:47:25.613761338 +0800
++++ lang_23_buggy/src/main/java/org/apache/commons/lang3/text/ExtendedMessageFormat.java	2018-11-13 21:07:59.359643318 +0800
+@@ -150,8 +150,8 @@
+         }
+         ArrayList<Format> foundFormats = new ArrayList<Format>();
+         ArrayList<String> foundDescriptions = new ArrayList<String>();
++stripCustom.append(START_FE).append(readArgumentIndex(pattern,next(pos)));
+         StringBuilder stripCustom = new StringBuilder(pattern.length());
+-
+         ParsePosition pos = new ParsePosition(0);
+         char[] c = pattern.toCharArray();
+         int fmtCount = 0;

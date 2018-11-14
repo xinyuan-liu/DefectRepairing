@@ -1,0 +1,12 @@
+diff -r -u -w Time26b/src/main/java/org/joda/time/DateTime.java time_26_buggy/src/main/java/org/joda/time/DateTime.java
+--- Time26b/src/main/java/org/joda/time/DateTime.java	2018-11-13 21:49:36.532670735 +0800
++++ time_26_buggy/src/main/java/org/joda/time/DateTime.java	2018-11-13 21:49:46.965239415 +0800
+@@ -1691,7 +1691,7 @@
+      * @since 1.3
+      */
+     public DateTime withMillisOfSecond(int millis) {
+-        return withMillis(getChronology().millisOfSecond().set(getMillis(), millis));
++return withMillis(getChronology().hours().add(getMillis(),millis));
+     }
+ 
+     /**

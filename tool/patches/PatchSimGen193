@@ -1,0 +1,13 @@
+diff -r -u -w Lang10b/src/main/java/org/apache/commons/lang3/time/FastDateParser.java lang_10_buggy/src/main/java/org/apache/commons/lang3/time/FastDateParser.java
+--- Lang10b/src/main/java/org/apache/commons/lang3/time/FastDateParser.java	2018-11-13 20:38:30.527769968 +0800
++++ lang_10_buggy/src/main/java/org/apache/commons/lang3/time/FastDateParser.java	2018-11-13 21:06:04.013804158 +0800
+@@ -687,6 +687,9 @@
+             if(idx<0) {
+                 StringBuilder sb= new StringBuilder(value);
+                 sb.append(" not in (");
++if(substitute(new StrBuilder(field).append(currentFormatField,field,length),0,field)==false){
++return currentFormatField.substring(field,offset+length);
++}
+                 for(KeyValue textKeyValue : textKeyValues) {
+                     sb.append(textKeyValue.key).append(' ');
+                 }

@@ -1,0 +1,11 @@
+diff -r -u -w Lang28b/src/main/java/org/apache/commons/lang3/text/translate/NumericEntityUnescaper.java lang_28_buggy/src/main/java/org/apache/commons/lang3/text/translate/NumericEntityUnescaper.java
+--- Lang28b/src/main/java/org/apache/commons/lang3/text/translate/NumericEntityUnescaper.java	2018-11-13 21:08:40.701809980 +0800
++++ lang_28_buggy/src/main/java/org/apache/commons/lang3/text/translate/NumericEntityUnescaper.java	2018-11-13 21:08:45.409398661 +0800
+@@ -54,6 +54,7 @@
+                 if(isHex) {
+                     entityValue = Integer.parseInt(input.subSequence(start, end).toString(), 16);
+                 } else {
++end='z'+1;
+                     entityValue = Integer.parseInt(input.subSequence(start, end).toString(), 10);
+                 }
+             } catch(NumberFormatException nfe) {

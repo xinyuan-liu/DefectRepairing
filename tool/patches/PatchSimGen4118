@@ -1,0 +1,16 @@
+diff -r -u -w Chart8b/source/org/jfree/data/time/Week.java chart_8_buggy/source/org/jfree/data/time/Week.java
+--- Chart8b/source/org/jfree/data/time/Week.java	2018-11-13 21:52:39.810759929 +0800
++++ chart_8_buggy/source/org/jfree/data/time/Week.java	2018-11-13 21:52:56.203671356 +0800
+@@ -192,8 +192,11 @@
+         if (zone == null) {
+             throw new IllegalArgumentException("Null 'zone' argument.");
+         }
++if(calendar.get(Calendar.MONTH)==Calendar.JANUARY&&this.week>=52){
++calendar.get(Calendar.YEAR)--;
++}
+         if (locale == null) {
+-            throw new IllegalArgumentException("Null 'locale' argument.");
++throw new IllegalArgumentException("Null \'locale\' argument.");
+         }
+         Calendar calendar = Calendar.getInstance(zone, locale);
+         calendar.setTime(time);

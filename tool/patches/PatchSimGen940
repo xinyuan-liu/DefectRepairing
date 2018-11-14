@@ -1,0 +1,13 @@
+diff -r -u -w Lang48b/src/java/org/apache/commons/lang/builder/EqualsBuilder.java lang_48_buggy/src/java/org/apache/commons/lang/builder/EqualsBuilder.java
+--- Lang48b/src/java/org/apache/commons/lang/builder/EqualsBuilder.java	2018-11-13 21:12:41.501525911 +0800
++++ lang_48_buggy/src/java/org/apache/commons/lang/builder/EqualsBuilder.java	2018-11-13 21:12:45.693550605 +0800
+@@ -368,6 +368,9 @@
+         if (isEquals == false) {
+             return this;
+         }
++if(!lhs.getClass().isInstance(rhs)){
++throw new ClassCastException();
++}
+         if (lhs == rhs) {
+             return this;
+         }

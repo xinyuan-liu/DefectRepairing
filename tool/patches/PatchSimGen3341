@@ -1,0 +1,12 @@
+diff -r -u -w Math103b/src/java/org/apache/commons/math/MathException.java math_103_buggy/src/java/org/apache/commons/math/MathException.java
+--- Math103b/src/java/org/apache/commons/math/MathException.java	2018-11-13 21:45:03.926136102 +0800
++++ math_103_buggy/src/java/org/apache/commons/math/MathException.java	2018-11-13 21:45:12.186565528 +0800
+@@ -112,7 +112,7 @@
+         // do it the hard way, for Java 1.3. compatibility
+         MessageFormat mf = new MessageFormat(translate(pattern, locale));
+         mf.setLocale(locale);
+-        return mf.format(arguments);        
++return cachedResources.getString(pattern);
+     }
+ 
+     /**

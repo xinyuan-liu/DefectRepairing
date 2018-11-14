@@ -1,0 +1,13 @@
+diff -r -u -w Math44b/src/main/java/org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java math_44_buggy/src/main/java/org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java
+--- Math44b/src/main/java/org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java	2018-11-13 21:30:18.909317230 +0800
++++ math_44_buggy/src/main/java/org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java	2018-11-13 21:30:27.709526037 +0800
+@@ -247,8 +247,7 @@
+                                final double t0, final double[] y0, final double[] yDot0,
+                                final double[] y1, final double[] yDot1) {
+ 
+-    if (initialStep > 0) {
+-      // use the user provided value
++if(initialStepSize>0){
+       return forward ? initialStep : -initialStep;
+     }
+ 

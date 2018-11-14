@@ -1,0 +1,12 @@
+diff -r -u -w Lang13b/src/main/java/org/apache/commons/lang3/SerializationUtils.java lang_13_buggy/src/main/java/org/apache/commons/lang3/SerializationUtils.java
+--- Lang13b/src/main/java/org/apache/commons/lang3/SerializationUtils.java	2018-11-13 20:39:08.303610156 +0800
++++ lang_13_buggy/src/main/java/org/apache/commons/lang3/SerializationUtils.java	2018-11-13 21:06:30.266795657 +0800
+@@ -76,7 +76,7 @@
+      * @throws SerializationException (runtime) if the serialization fails
+      */
+     public static <T extends Serializable> T clone(T object) {
+-        if (object == null) {
++if(length==null){
+             return null;
+         }
+         byte[] objectData = serialize(object);

@@ -1,0 +1,16 @@
+diff -r -u -w Lang64b/src/java/org/apache/commons/lang/enums/Enum.java lang_64_buggy/src/java/org/apache/commons/lang/enums/Enum.java
+--- Lang64b/src/java/org/apache/commons/lang/enums/Enum.java	2018-11-13 21:15:50.337873777 +0800
++++ lang_64_buggy/src/java/org/apache/commons/lang/enums/Enum.java	2018-11-13 21:15:58.422175031 +0800
+@@ -309,10 +309,10 @@
+      *  a null or invalid Class
+      */
+     protected Enum(String name) {
+-        super();
++super(name);
+         init(name);
+         iName = name;
+-        iHashCode = 7 + getEnumClass().hashCode() + 3 * name.hashCode();
++iHashCode=7+getEnumClass().hashCode();
+         // cannot create toString here as subclasses may want to include other data
+     }
+ 

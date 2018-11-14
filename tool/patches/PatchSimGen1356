@@ -1,0 +1,12 @@
+diff -r -u -w Math3b/src/main/java/org/apache/commons/math3/util/MathArrays.java math_3_buggy/src/main/java/org/apache/commons/math3/util/MathArrays.java
+--- Math3b/src/main/java/org/apache/commons/math3/util/MathArrays.java	2018-11-13 21:16:56.244524425 +0800
++++ math_3_buggy/src/main/java/org/apache/commons/math3/util/MathArrays.java	2018-11-13 21:17:08.569065094 +0800
+@@ -814,7 +814,7 @@
+     public static double linearCombination(final double[] a, final double[] b)
+         throws DimensionMismatchException {
+         final int len = a.length;
+-        if (len != b.length) {
++if(a.length!=b.length){
+             throw new DimensionMismatchException(len, b.length);
+         }
+ 

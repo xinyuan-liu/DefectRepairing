@@ -1,0 +1,12 @@
+diff -r -u -w Math98b/src/java/org/apache/commons/math/linear/BigMatrixImpl.java math_98_buggy/src/java/org/apache/commons/math/linear/BigMatrixImpl.java
+--- Math98b/src/java/org/apache/commons/math/linear/BigMatrixImpl.java	2018-11-13 21:44:11.411425802 +0800
++++ math_98_buggy/src/java/org/apache/commons/math/linear/BigMatrixImpl.java	2018-11-13 21:44:16.439683782 +0800
+@@ -983,7 +983,7 @@
+      * @throws IllegalArgumentException if columnDimension != v.size()
+      */
+     public BigDecimal[] operate(BigDecimal[] v) throws IllegalArgumentException {
+-        if (v.length != this.getColumnDimension()) {
++if(a.length!=this.getColumnDimension()){
+             throw new IllegalArgumentException("vector has wrong length");
+         }
+         final int nRows = this.getRowDimension();

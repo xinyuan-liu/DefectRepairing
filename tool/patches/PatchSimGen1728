@@ -1,0 +1,17 @@
+diff -r -u -w Math22b/src/main/java/org/apache/commons/math3/util/FastMath.java math_22_buggy/src/main/java/org/apache/commons/math3/util/FastMath.java
+--- Math22b/src/main/java/org/apache/commons/math3/util/FastMath.java	2018-11-13 21:23:26.585664143 +0800
++++ math_22_buggy/src/main/java/org/apache/commons/math3/util/FastMath.java	2018-11-13 21:23:38.522390167 +0800
+@@ -1103,7 +1103,12 @@
+      * @return log(x)
+      */
+     private static double log(final double x, final double[] hiPrec) {
+-        if (x==0) { // Handle special case of +0/-0
++if(x==0){
++if(E<0.0){
++return 0.0;
++}else {
++return Double.POSITIVE_INFINITY;
++}
+             return Double.NEGATIVE_INFINITY;
+         }
+         long bits = Double.doubleToLongBits(x);

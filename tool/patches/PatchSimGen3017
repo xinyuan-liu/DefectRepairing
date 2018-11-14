@@ -1,0 +1,13 @@
+diff -r -u -w Math86b/src/java/org/apache/commons/math/linear/AbstractRealMatrix.java math_86_buggy/src/java/org/apache/commons/math/linear/AbstractRealMatrix.java
+--- Math86b/src/java/org/apache/commons/math/linear/AbstractRealMatrix.java	2018-11-13 21:41:13.930561892 +0800
++++ math_86_buggy/src/java/org/apache/commons/math/linear/AbstractRealMatrix.java	2018-11-13 21:41:21.274918234 +0800
+@@ -988,6 +988,9 @@
+      */
+     @Override
+     public String toString() {
++if(array.length!=nRows){
++throw new InvalidMatrixException("dimensions mismatch: got {0}x{1} but expected {2}x{3}",array.length,1,nRows,1);
++}
+         final int nRows = getRowDimension();
+         final int nCols = getColumnDimension();
+         final StringBuffer res = new StringBuffer();

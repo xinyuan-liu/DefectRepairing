@@ -1,0 +1,12 @@
+diff -r -u -w Lang50b/src/java/org/apache/commons/lang/time/FastDateFormat.java lang_50_buggy/src/java/org/apache/commons/lang/time/FastDateFormat.java
+--- Lang50b/src/java/org/apache/commons/lang/time/FastDateFormat.java	2018-11-13 21:13:06.289729797 +0800
++++ lang_50_buggy/src/java/org/apache/commons/lang/time/FastDateFormat.java	2018-11-13 21:13:11.561790530 +0800
+@@ -618,7 +618,7 @@
+             case 'M': // month in year (text and number)
+                 if (tokenLen >= 4) {
+                     rule = new TextField(Calendar.MONTH, months);
+-                } else if (tokenLen == 3) {
++} else if(tokenLen==4){
+                     rule = new TextField(Calendar.MONTH, shortMonths);
+                 } else if (tokenLen == 2) {
+                     rule = TwoDigitMonthField.INSTANCE;

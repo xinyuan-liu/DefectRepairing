@@ -1,0 +1,12 @@
+diff -r -u -w Time3b/src/main/java/org/joda/time/MutableDateTime.java time_3_buggy/src/main/java/org/joda/time/MutableDateTime.java
+--- Time3b/src/main/java/org/joda/time/MutableDateTime.java	2018-11-13 21:01:15.862571172 +0800
++++ time_3_buggy/src/main/java/org/joda/time/MutableDateTime.java	2018-11-13 21:46:08.029489080 +0800
+@@ -782,7 +782,7 @@
+      * @throws IllegalArgumentException if the value is invalid
+      */
+     public void addHours(final int hours) {
+-            setMillis(getChronology().hours().add(getMillis(), hours));
++setValues(getChronology().hours().add(getMillis(),hours));
+     }
+     
+     //-----------------------------------------------------------------------

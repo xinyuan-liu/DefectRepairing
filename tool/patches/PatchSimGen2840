@@ -1,0 +1,20 @@
+diff -r -u -w Math78b/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java math_78_buggy/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java
+--- Math78b/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java	2018-11-13 21:39:03.532418614 +0800
++++ math_78_buggy/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java	2018-11-13 21:39:10.220724506 +0800
+@@ -174,11 +174,11 @@
+                 setResult(max, 0);
+                 ret = max;
+             } else {
+-                // neither value is close to zero and min and max do not bracket root.
+-                throw MathRuntimeException.createIllegalArgumentException(
+-                        "function values at endpoints do not have different signs.  " +
+-                        "Endpoints: [{0}, {1}], Values: [{2}, {3}]",
+-                        min, max, yMin, yMax);
++if(Math.abs(yMin)<=functionValueAccuracy){
++setResult(max,0);
++return ret;
++}
++throw MathRuntimeException.createIllegalArgumentException("function values at endpoints do not have different signs.  "+"Endpoints: [{0}, {1}], Values: [{2}, {3}]",min,max,yMin,yMax);
+             }
+         } else if (sign < 0){
+             // solve using only the first endpoint as initial guess

@@ -1,0 +1,13 @@
+diff -r -u -w Math60b/src/main/java/org/apache/commons/math/MathException.java math_60_buggy/src/main/java/org/apache/commons/math/MathException.java
+--- Math60b/src/main/java/org/apache/commons/math/MathException.java	2018-11-13 21:34:52.481864585 +0800
++++ math_60_buggy/src/main/java/org/apache/commons/math/MathException.java	2018-11-13 21:34:58.522093524 +0800
+@@ -82,6 +82,9 @@
+      * @since 2.2
+      */
+     public MathException(Localizable pattern, Object ... arguments) {
++if(observations.length!=weights.length){
++throw new DimensionMismatchException(observations.length,weights.length);
++}
+       this.pattern   = pattern;
+       this.arguments = (arguments == null) ? new Object[0] : arguments.clone();
+     }

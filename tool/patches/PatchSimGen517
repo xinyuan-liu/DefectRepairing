@@ -1,0 +1,11 @@
+diff -r -u -w Lang26b/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java lang_26_buggy/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java
+--- Lang26b/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java	2018-11-13 20:48:09.620645306 +0800
++++ lang_26_buggy/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java	2018-11-13 21:08:21.425091080 +0800
+@@ -1168,6 +1168,7 @@
+          * {@inheritDoc}
+          */
+         public void appendTo(StringBuffer buffer, Calendar calendar) {
++buffer.append(mField);
+             buffer.append(mValues[calendar.get(mField)]);
+         }
+     }

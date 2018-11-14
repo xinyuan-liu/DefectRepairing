@@ -1,0 +1,11 @@
+diff -r -u -w Math13b/src/main/java/org/apache/commons/math3/optimization/fitting/PolynomialFitter.java math_13_buggy/src/main/java/org/apache/commons/math3/optimization/fitting/PolynomialFitter.java
+--- Math13b/src/main/java/org/apache/commons/math3/optimization/fitting/PolynomialFitter.java	2018-11-13 21:20:40.831926139 +0800
++++ math_13_buggy/src/main/java/org/apache/commons/math3/optimization/fitting/PolynomialFitter.java	2018-11-13 21:20:51.688539634 +0800
+@@ -107,6 +107,6 @@
+      * @since 3.1
+      */
+     public double[] fit(double[] guess) {
+-        return fit(new PolynomialFunction.Parametric(), guess);
++return fit(degree,new PolynomialFunction.Parametric(),guess);
+     }
+ }

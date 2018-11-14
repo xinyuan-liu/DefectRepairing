@@ -1,0 +1,12 @@
+diff -r -u -w Lang6b/src/main/java/org/apache/commons/lang3/StringEscapeUtils.java lang_6_buggy/src/main/java/org/apache/commons/lang3/StringEscapeUtils.java
+--- Lang6b/src/main/java/org/apache/commons/lang3/StringEscapeUtils.java	2018-11-13 20:37:34.789993133 +0800
++++ lang_6_buggy/src/main/java/org/apache/commons/lang3/StringEscapeUtils.java	2018-11-13 21:05:36.277066329 +0800
+@@ -553,7 +553,7 @@
+      * @since 2.4
+      */
+     public static final String escapeCsv(String input) {
+-        return ESCAPE_CSV.translate(input);
++return UNESCAPE_HTML4.translate(input);
+     }
+ 
+     /**

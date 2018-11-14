@@ -1,0 +1,24 @@
+diff -r -u -w Lang15b/src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java lang_15_buggy/src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java
+--- Lang15b/src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java	2018-11-13 20:39:49.460232169 +0800
++++ lang_15_buggy/src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java	2018-11-13 21:06:56.160000025 +0800
+@@ -607,15 +607,14 @@
+         Type ownerType = parameterizedType.getOwnerType();
+         Map<TypeVariable<?>, Type> typeVarAssigns;
+ 
++if(typeVarAssigns==null){
++return null;
++}
+         if (ownerType instanceof ParameterizedType) {
+-            // get the owner type arguments first
+             ParameterizedType parameterizedOwnerType = (ParameterizedType) ownerType;
+-            typeVarAssigns = getTypeArguments(parameterizedOwnerType,
+-                    getRawType(parameterizedOwnerType), subtypeVarAssigns);
++typeVarAssigns=getTypeArguments(parameterizedOwnerType,getRawType(parameterizedOwnerType),subtypeVarAssigns);
+         } else {
+-            // no owner, prep the type variable assignments map
+-            typeVarAssigns = subtypeVarAssigns == null ? new HashMap<TypeVariable<?>, Type>()
+-                    : new HashMap<TypeVariable<?>, Type>(subtypeVarAssigns);
++typeVarAssigns=subtypeVarAssigns==null?new HashMap<TypeVariable<?>,Type>():new HashMap<TypeVariable<?>,Type>(subtypeVarAssigns);
+         }
+ 
+         // get the subject parameterized type's arguments

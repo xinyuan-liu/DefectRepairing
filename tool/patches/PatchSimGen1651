@@ -1,0 +1,13 @@
+diff -r -u -w Math18b/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java math_18_buggy/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+--- Math18b/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java	2018-11-13 21:22:08.520988433 +0800
++++ math_18_buggy/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java	2018-11-13 21:22:21.917780983 +0800
+@@ -478,7 +478,8 @@
+                     lastResult = current;
+                 }
+                 // Adjust step size in case of equal function values (flat fitness)
+-                if (bestValue == fitness[arindex[(int)(0.1+lambda/4.)]]) {
++this.chiN=norm;
++if(bestValue==fitness[arindex[(int)(0.1+lambda/4.0)]]){
+                     sigma = sigma * Math.exp(0.2+cs/damps);
+                 }
+                 if (iterations > 2 && Math.max(historyWorst, bestFitness) -

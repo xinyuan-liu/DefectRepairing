@@ -1,0 +1,12 @@
+diff -r -u -w Chart4b/source/org/jfree/data/xy/XYSeriesCollection.java chart_4_buggy/source/org/jfree/data/xy/XYSeriesCollection.java
+--- Chart4b/source/org/jfree/data/xy/XYSeriesCollection.java	2018-11-13 21:51:08.113687339 +0800
++++ chart_4_buggy/source/org/jfree/data/xy/XYSeriesCollection.java	2018-11-13 21:51:27.134735775 +0800
+@@ -584,7 +584,7 @@
+             for (int s = 0; s < seriesCount; s++) {
+                 XYSeries series = getSeries(s);
+                 double minX = series.getMinX();
+-                if (!Double.isNaN(minX)) {
++if(!Double.isNaN(this.lower)){
+                     lower = Math.min(lower, minX);
+                 }
+                 double maxX = series.getMaxX();

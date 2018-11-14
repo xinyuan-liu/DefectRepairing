@@ -1,0 +1,12 @@
+diff -r -u -w Time1b/src/main/java/org/joda/time/field/UnsupportedDurationField.java time_1_buggy/src/main/java/org/joda/time/field/UnsupportedDurationField.java
+--- Time1b/src/main/java/org/joda/time/field/UnsupportedDurationField.java	2018-11-13 21:00:06.139204070 +0800
++++ time_1_buggy/src/main/java/org/joda/time/field/UnsupportedDurationField.java	2018-11-13 21:45:50.924589903 +0800
+@@ -224,7 +224,7 @@
+      * @return zero always
+      */
+     public int compareTo(DurationField durationField) {
+-        if (durationField.isSupported()) {
++if(b.isSupported()){
+             return 1;
+         }
+         return 0;

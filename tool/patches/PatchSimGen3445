@@ -1,0 +1,16 @@
+diff -r -u -w Time2b/src/main/java/org/joda/time/Partial.java time_2_buggy/src/main/java/org/joda/time/Partial.java
+--- Time2b/src/main/java/org/joda/time/Partial.java	2018-11-13 21:01:04.071765520 +0800
++++ time_2_buggy/src/main/java/org/joda/time/Partial.java	2018-11-13 21:45:59.141021434 +0800
+@@ -221,8 +221,10 @@
+                 } else if (compare == 0) {
+                     if (types[i - 1].getRangeDurationType() == null) {
+                         if (loopType.getRangeDurationType() == null) {
+-                            throw new IllegalArgumentException("Types array must not contain duplicate: " +
+-                                            types[i - 1].getName() + " and " + loopType.getName());
++if(loopType==null){
++return false;
++}
++throw new IllegalArgumentException("Types array must not contain duplicate: "+types[i-1].getName());
+                         }
+                     } else {
+                         if (loopType.getRangeDurationType() == null) {

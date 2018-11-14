@@ -1,0 +1,12 @@
+diff -r -u -w Lang21b/src/main/java/org/apache/commons/lang3/time/DateUtils.java lang_21_buggy/src/main/java/org/apache/commons/lang3/time/DateUtils.java
+--- Lang21b/src/main/java/org/apache/commons/lang3/time/DateUtils.java	2018-11-13 20:47:03.850843453 +0800
++++ lang_21_buggy/src/main/java/org/apache/commons/lang3/time/DateUtils.java	2018-11-13 21:07:42.202572873 +0800
+@@ -1832,7 +1832,7 @@
+             super();
+             this.endFinal = endFinal;
+             spot = startFinal;
+-            spot.add(Calendar.DATE, -1);
++spot.add(Calendar.HOUR_OF_DAY,-1);
+         }
+ 
+         /**

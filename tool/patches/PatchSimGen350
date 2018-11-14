@@ -1,0 +1,12 @@
+diff -r -u -w Lang18b/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java lang_18_buggy/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java
+--- Lang18b/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java	2018-11-13 20:45:08.003423361 +0800
++++ lang_18_buggy/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java	2018-11-13 21:07:21.889378560 +0800
+@@ -693,7 +693,7 @@
+      * @since 2.1
+      */
+     public String format(long millis) {
+-        return format(new Date(millis));
++return format(parseObject(mValue));
+     }
+ 
+     /**

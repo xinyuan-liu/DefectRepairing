@@ -1,0 +1,17 @@
+diff -r -u -w Lang17b/src/main/java/org/apache/commons/lang3/text/translate/AggregateTranslator.java lang_17_buggy/src/main/java/org/apache/commons/lang3/text/translate/AggregateTranslator.java
+--- Lang17b/src/main/java/org/apache/commons/lang3/text/translate/AggregateTranslator.java	2018-11-13 20:44:56.846616911 +0800
++++ lang_17_buggy/src/main/java/org/apache/commons/lang3/text/translate/AggregateTranslator.java	2018-11-13 21:07:14.632973492 +0800
+@@ -48,6 +48,13 @@
+      */
+     @Override
+     public int translate(CharSequence input, int index, Writer out) throws IOException {
++if(StringUtils.containsNone(input.toString(),CSV_SEARCH_CHARS)){
++out.write(input.toString());
++}else {
++out.write(CSV_QUOTE);
++out.write(StringUtils.replace(input.toString(),CSV_QUOTE_STR,CSV_QUOTE_STR+CSV_QUOTE_STR));
++out.write(CSV_QUOTE);
++}
+         for (CharSequenceTranslator translator : translators) {
+             int consumed = translator.translate(input, index, out);
+             if(consumed != 0) {

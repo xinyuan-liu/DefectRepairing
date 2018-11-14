@@ -1,0 +1,15 @@
+diff -r -u -w Math80b/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java math_80_buggy/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java
+--- Math80b/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-11-13 21:39:35.389885126 +0800
++++ math_80_buggy/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2018-11-13 21:39:44.118291028 +0800
+@@ -868,6 +868,11 @@
+             i0 = 0;
+             for (int i = 4 * (n0 - 2); i >= 0; i -= 4) {
+                 if (work[i + 2] <= 0) {
++work[i+2]=-sigma;
++diagMax=0;
++offDiagMin=work[i+6];
++previousEMin=work[i+7];
++
+                     i0 = 1 + i / 4;
+                     break;
+                 }

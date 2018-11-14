@@ -1,0 +1,14 @@
+diff -r -u -w Math95b/src/java/org/apache/commons/math/distribution/FDistributionImpl.java math_95_buggy/src/java/org/apache/commons/math/distribution/FDistributionImpl.java
+--- Math95b/src/java/org/apache/commons/math/distribution/FDistributionImpl.java	2018-11-13 21:43:34.913563531 +0800
++++ math_95_buggy/src/java/org/apache/commons/math/distribution/FDistributionImpl.java	2018-11-13 21:43:44.850068703 +0800
+@@ -141,9 +141,9 @@
+      * @return initial domain value
+      */
+     protected double getInitialDomain(double p) {
++super.increment(d);
+         double ret;
+         double d = getDenominatorDegreesOfFreedom();
+-            // use mean
+             ret = d / (d - 2.0);
+         return ret;
+     }

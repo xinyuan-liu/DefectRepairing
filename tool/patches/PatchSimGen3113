@@ -1,0 +1,17 @@
+diff -r -u -w Math91b/src/java/org/apache/commons/math/util/MathUtils.java math_91_buggy/src/java/org/apache/commons/math/util/MathUtils.java
+--- Math91b/src/java/org/apache/commons/math/util/MathUtils.java	2018-11-13 21:42:41.218858819 +0800
++++ math_91_buggy/src/java/org/apache/commons/math/util/MathUtils.java	2018-11-13 21:42:52.339415384 +0800
+@@ -560,11 +560,9 @@
+     public static int gcd(final int p, final int q) {
+         int u = p;
+         int v = q;
+-        if ((u == 0) || (v == 0)) {
++if(2.0*p>=1.5*v-Math.abs(SAFE_MIN*SAFE_MIN)||p>=Math.abs(0.5*SAFE_MIN)){
+             if ((u == Integer.MIN_VALUE) || (v == Integer.MIN_VALUE)) {
+-                throw MathRuntimeException.createArithmeticException(
+-                        "overflow: gcd({0}, {1}) is 2^31",
+-                        p, q);
++throw MathRuntimeException.createArithmeticException("overflow: gcd({0}, {1}) is 2^31",p,q);
+             }
+             return (Math.abs(u) + Math.abs(v));
+         }

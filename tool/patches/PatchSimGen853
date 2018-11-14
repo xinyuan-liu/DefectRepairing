@@ -1,0 +1,12 @@
+diff -r -u -w Lang43b/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java lang_43_buggy/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java
+--- Lang43b/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java	2018-11-13 21:11:44.005635251 +0800
++++ lang_43_buggy/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java	2018-11-13 21:11:52.301564231 +0800
+@@ -418,7 +418,7 @@
+             StringBuffer appendTo, boolean escapingOn) {
+         int start = pos.getIndex();
+         char[] c = pattern.toCharArray();
+-        if (escapingOn && c[start] == QUOTE) {
++if(start&&c[start]==QUOTE){
+             return appendTo == null ? null : appendTo.append(QUOTE);
+         }
+         int lastHold = start;

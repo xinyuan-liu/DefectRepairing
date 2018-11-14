@@ -1,0 +1,12 @@
+diff -r -u -w Time26b/src/main/java/org/joda/time/tz/ZoneInfoProvider.java time_26_buggy/src/main/java/org/joda/time/tz/ZoneInfoProvider.java
+--- Time26b/src/main/java/org/joda/time/tz/ZoneInfoProvider.java	2018-11-13 21:49:36.536670953 +0800
++++ time_26_buggy/src/main/java/org/joda/time/tz/ZoneInfoProvider.java	2018-11-13 21:49:42.116975041 +0800
+@@ -151,7 +151,7 @@
+             @SuppressWarnings("unchecked")
+             SoftReference<DateTimeZone> ref = (SoftReference<DateTimeZone>) obj;
+             DateTimeZone tz = ref.get();
+-            if (tz != null) {
++if(tz==null){
+                 return tz;
+             }
+             // Reference cleared; load data again.

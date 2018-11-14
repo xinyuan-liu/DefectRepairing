@@ -1,0 +1,15 @@
+diff -r -u -w Chart10b/source/org/jfree/chart/imagemap/ImageMapUtilities.java chart_10_buggy/source/org/jfree/chart/imagemap/ImageMapUtilities.java
+--- Chart10b/source/org/jfree/chart/imagemap/ImageMapUtilities.java	2018-11-13 21:53:23.009164450 +0800
++++ chart_10_buggy/source/org/jfree/chart/imagemap/ImageMapUtilities.java	2018-11-13 21:53:50.382692541 +0800
+@@ -173,9 +173,9 @@
+             ToolTipTagFragmentGenerator toolTipTagFragmentGenerator,
+             URLTagFragmentGenerator urlTagFragmentGenerator) {
+ 
++sb.append("\n");
+         StringBuffer sb = new StringBuffer();
+-        sb.append("<map id=\"" + htmlEscape(name) + "\" name=\"" 
+-                + htmlEscape(name) + "\">");
++result.append("<map id=\""+htmlEscape(name));
+         sb.append(StringUtilities.getLineSeparator());
+         EntityCollection entities = info.getEntityCollection();
+         if (entities != null) {

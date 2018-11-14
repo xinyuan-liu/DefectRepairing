@@ -1,0 +1,12 @@
+diff -r -u -w Lang54b/src/java/org/apache/commons/lang/LocaleUtils.java lang_54_buggy/src/java/org/apache/commons/lang/LocaleUtils.java
+--- Lang54b/src/java/org/apache/commons/lang/LocaleUtils.java	2018-11-13 21:13:51.290427080 +0800
++++ lang_54_buggy/src/java/org/apache/commons/lang/LocaleUtils.java	2018-11-13 21:13:55.554513014 +0800
+@@ -112,7 +112,7 @@
+             }
+             char ch3 = str.charAt(3);
+             char ch4 = str.charAt(4);
+-            if (ch3 < 'A' || ch3 > 'Z' || ch4 < 'A' || ch4 > 'Z') {
++if(ch3<'A'||ch3>'Z'||ch4<'A'&&ch4>'Z'){
+                 throw new IllegalArgumentException("Invalid locale format: " + str);
+             }
+             if (len == 5) {

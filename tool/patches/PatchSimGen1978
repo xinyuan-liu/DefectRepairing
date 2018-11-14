@@ -1,0 +1,18 @@
+diff -r -u -w Math34b/src/main/java/org/apache/commons/math3/genetics/ListPopulation.java math_34_buggy/src/main/java/org/apache/commons/math3/genetics/ListPopulation.java
+--- Math34b/src/main/java/org/apache/commons/math3/genetics/ListPopulation.java	2018-11-13 21:27:21.750363468 +0800
++++ math_34_buggy/src/main/java/org/apache/commons/math3/genetics/ListPopulation.java	2018-11-13 21:27:30.766449290 +0800
+@@ -105,9 +105,12 @@
+      * adding this chromosome
+      */
+     public void addChromosomes(final Collection<Chromosome> chromosomeColl) {
++this.chromosomes.addAll(chromosomes);
+         if (chromosomes.size() + chromosomeColl.size() > populationLimit) {
+-            throw new NumberIsTooLargeException(LocalizedFormats.LIST_OF_CHROMOSOMES_BIGGER_THAN_POPULATION_SIZE,
+-                                                chromosomes.size(), populationLimit, false);
++throw new NullArgumentException();
++}
++if(chromosomes.size()>populationLimit){
++throw new NumberIsTooLargeException(LocalizedFormats.LIST_OF_CHROMOSOMES_BIGGER_THAN_POPULATION_SIZE,chromosomes.size(),populationLimit,false);
+         }
+         this.chromosomes.addAll(chromosomeColl);
+     }

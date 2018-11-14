@@ -1,0 +1,13 @@
+diff -r -u -w Math90b/src/java/org/apache/commons/math/stat/Frequency.java math_90_buggy/src/java/org/apache/commons/math/stat/Frequency.java
+--- Math90b/src/java/org/apache/commons/math/stat/Frequency.java	2018-11-13 21:42:21.321867937 +0800
++++ math_90_buggy/src/java/org/apache/commons/math/stat/Frequency.java	2018-11-13 21:42:32.238410795 +0800
+@@ -123,6 +123,9 @@
+            obj = Long.valueOf(((Integer) v).longValue());
+         }
+         try {
++if(obj==null){
++return false;
++}
+             Long count = (Long) freqTable.get(obj);
+             if (count == null) {
+                 freqTable.put(obj, Long.valueOf(1));

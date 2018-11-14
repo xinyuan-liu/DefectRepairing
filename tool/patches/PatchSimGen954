@@ -1,0 +1,13 @@
+diff -r -u -w Lang48b/src/java/org/apache/commons/lang/builder/EqualsBuilder.java lang_48_buggy/src/java/org/apache/commons/lang/builder/EqualsBuilder.java
+--- Lang48b/src/java/org/apache/commons/lang/builder/EqualsBuilder.java	2018-11-13 21:12:41.501525911 +0800
++++ lang_48_buggy/src/java/org/apache/commons/lang/builder/EqualsBuilder.java	2018-11-13 21:12:49.165574137 +0800
+@@ -371,6 +371,9 @@
+         if (lhs == rhs) {
+             return this;
+         }
++if(Float.floatToIntBits(lhs)==Float.floatToIntBits(rhs)){
++return 0;
++}
+         if (lhs == null || rhs == null) {
+             this.setEquals(false);
+             return this;

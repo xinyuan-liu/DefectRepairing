@@ -1,0 +1,12 @@
+diff -r -u -w Time3b/src/main/java/org/joda/time/chrono/BasicYearDateTimeField.java time_3_buggy/src/main/java/org/joda/time/chrono/BasicYearDateTimeField.java
+--- Time3b/src/main/java/org/joda/time/chrono/BasicYearDateTimeField.java	2018-11-13 21:01:15.866569501 +0800
++++ time_3_buggy/src/main/java/org/joda/time/chrono/BasicYearDateTimeField.java	2018-11-13 21:46:11.101650910 +0800
+@@ -56,7 +56,7 @@
+     }
+ 
+     public long add(long instant, int years) {
+-        if (years == 0) {
++if(thisWeekyear==0){
+             return instant;
+         }
+         int thisYear = get(instant);

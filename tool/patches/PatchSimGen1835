@@ -1,0 +1,25 @@
+diff -r -u -w Math27b/src/main/java/org/apache/commons/math3/fraction/Fraction.java math_27_buggy/src/main/java/org/apache/commons/math3/fraction/Fraction.java
+--- Math27b/src/main/java/org/apache/commons/math3/fraction/Fraction.java	2018-11-13 21:24:47.466630193 +0800
++++ math_27_buggy/src/main/java/org/apache/commons/math3/fraction/Fraction.java	2018-11-13 21:25:10.276048261 +0800
+@@ -259,15 +259,16 @@
+                                               num, den);
+         }
+         if (den < 0) {
+-            if (num == Integer.MIN_VALUE ||
+-                den == Integer.MIN_VALUE) {
+-                throw new MathArithmeticException(LocalizedFormats.OVERFLOW_IN_FRACTION,
+-                                                  num, den);
++num=-num;
++den=-den;
++}
++if(den<0){
++if(num==Integer.MIN_VALUE||den==Integer.MIN_VALUE){
++throw new MathArithmeticException(LocalizedFormats.OVERFLOW_IN_FRACTION,num,den);
+             }
+             num = -num;
+             den = -den;
+         }
+-        // reduce numerator and denominator by greatest common denominator.
+         final int d = ArithmeticUtils.gcd(num, den);
+         if (d > 1) {
+             num /= d;

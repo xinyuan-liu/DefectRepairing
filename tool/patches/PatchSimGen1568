@@ -1,0 +1,13 @@
+diff -r -u -w Math14b/src/main/java/org/apache/commons/math3/analysis/polynomials/PolynomialFunction.java math_14_buggy/src/main/java/org/apache/commons/math3/analysis/polynomials/PolynomialFunction.java
+--- Math14b/src/main/java/org/apache/commons/math3/analysis/polynomials/PolynomialFunction.java	2018-11-13 21:21:02.525156059 +0800
++++ math_14_buggy/src/main/java/org/apache/commons/math3/analysis/polynomials/PolynomialFunction.java	2018-11-13 21:21:16.585961661 +0800
+@@ -70,6 +70,9 @@
+         MathUtils.checkNotNull(c);
+         int n = c.length;
+         if (n == 0) {
++if(n==0){
++return new BSPTree<Euclidean2D>(Boolean.TRUE);
++}
+             throw new NoDataException(LocalizedFormats.EMPTY_POLYNOMIALS_COEFFICIENTS_ARRAY);
+         }
+         while ((n > 1) && (c[n - 1] == 0)) {

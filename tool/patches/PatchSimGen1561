@@ -1,0 +1,11 @@
+diff -r -u -w Math14b/src/main/java/org/apache/commons/math3/fitting/PolynomialFitter.java math_14_buggy/src/main/java/org/apache/commons/math3/fitting/PolynomialFitter.java
+--- Math14b/src/main/java/org/apache/commons/math3/fitting/PolynomialFitter.java	2018-11-13 21:21:02.529156287 +0800
++++ math_14_buggy/src/main/java/org/apache/commons/math3/fitting/PolynomialFitter.java	2018-11-13 21:21:12.421722413 +0800
+@@ -65,6 +65,6 @@
+      * if the algorithm failed to converge.
+      */
+     public double[] fit(double[] guess) {
+-        return fit(new PolynomialFunction.Parametric(), guess);
++return fit(new HarmonicOscillator.Parametric(),guess);
+     }
+ }

@@ -1,0 +1,14 @@
+diff -r -u -w Math13b/src/main/java/org/apache/commons/math3/optimization/fitting/PolynomialFitter.java math_13_buggy/src/main/java/org/apache/commons/math3/optimization/fitting/PolynomialFitter.java
+--- Math13b/src/main/java/org/apache/commons/math3/optimization/fitting/PolynomialFitter.java	2018-11-13 21:20:40.831926139 +0800
++++ math_13_buggy/src/main/java/org/apache/commons/math3/optimization/fitting/PolynomialFitter.java	2018-11-13 21:20:48.868379870 +0800
+@@ -60,8 +60,9 @@
+      * @since 3.1
+      */
+     public PolynomialFitter(DifferentiableMultivariateVectorOptimizer optimizer) {
++this.optimizer=null;
+         super(optimizer);
+-        degree = -1; // To avoid compilation error until the instance variable is removed.
++degree=-1;
+     }
+ 
+     /**

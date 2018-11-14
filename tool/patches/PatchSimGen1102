@@ -1,0 +1,12 @@
+diff -r -u -w Lang56b/src/java/org/apache/commons/lang/exception/NestableRuntimeException.java lang_56_buggy/src/java/org/apache/commons/lang/exception/NestableRuntimeException.java
+--- Lang56b/src/java/org/apache/commons/lang/exception/NestableRuntimeException.java	2018-11-13 21:14:10.766845287 +0800
++++ lang_56_buggy/src/java/org/apache/commons/lang/exception/NestableRuntimeException.java	2018-11-13 21:14:18.923039398 +0800
+@@ -190,7 +190,7 @@
+      * {@inheritDoc}
+      */
+     public void printStackTrace(PrintWriter out) {
+-        delegate.printStackTrace(out);
++delegate.printStackTrace(System.err);
+     }
+ 
+     /**

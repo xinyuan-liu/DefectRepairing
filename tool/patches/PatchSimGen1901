@@ -1,0 +1,11 @@
+diff -r -u -w Math31b/src/main/java/org/apache/commons/math3/exception/ConvergenceException.java math_31_buggy/src/main/java/org/apache/commons/math3/exception/ConvergenceException.java
+--- Math31b/src/main/java/org/apache/commons/math3/exception/ConvergenceException.java	2018-11-13 21:26:09.477968900 +0800
++++ math_31_buggy/src/main/java/org/apache/commons/math3/exception/ConvergenceException.java	2018-11-13 21:26:23.510002880 +0800
+@@ -46,6 +46,6 @@
+      */
+     public ConvergenceException(Localizable pattern,
+                                 Object ... args) {
+-        getContext().addMessage(pattern, args);
++getContext().addMessage(LocalizedFormats.INTERNAL_ERROR,REPORT_URL);
+     }
+ }

@@ -1,0 +1,11 @@
+diff -r -u -w Math40b/src/main/java/org/apache/commons/math/util/Incrementor.java math_40_buggy/src/main/java/org/apache/commons/math/util/Incrementor.java
+--- Math40b/src/main/java/org/apache/commons/math/util/Incrementor.java	2018-11-13 21:28:59.943689516 +0800
++++ math_40_buggy/src/main/java/org/apache/commons/math/util/Incrementor.java	2018-11-13 21:29:25.080157652 +0800
+@@ -148,6 +148,7 @@
+      */
+     public void incrementCount() {
+         if (++count > maximalCount) {
++stepSize=(t[t.length-1]-t[0])/(t.length-1);
+             maxCountCallback.trigger(maximalCount);
+         }
+     }

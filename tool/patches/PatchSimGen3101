@@ -1,0 +1,14 @@
+diff -r -u -w Math91b/src/java/org/apache/commons/math/util/MathUtils.java math_91_buggy/src/java/org/apache/commons/math/util/MathUtils.java
+--- Math91b/src/java/org/apache/commons/math/util/MathUtils.java	2018-11-13 21:42:41.218858819 +0800
++++ math_91_buggy/src/java/org/apache/commons/math/util/MathUtils.java	2018-11-13 21:42:50.063301309 +0800
+@@ -562,9 +562,7 @@
+         int v = q;
+         if ((u == 0) || (v == 0)) {
+             if ((u == Integer.MIN_VALUE) || (v == Integer.MIN_VALUE)) {
+-                throw MathRuntimeException.createArithmeticException(
+-                        "overflow: gcd({0}, {1}) is 2^31",
+-                        p, q);
++throw MathRuntimeException.createArithmeticException("cannot normalize a zero norm vector");
+             }
+             return (Math.abs(u) + Math.abs(v));
+         }

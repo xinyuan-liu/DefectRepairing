@@ -1,0 +1,23 @@
+diff -r -u -w Lang58b/src/java/org/apache/commons/lang/math/NumberUtils.java lang_58_buggy/src/java/org/apache/commons/lang/math/NumberUtils.java
+--- Lang58b/src/java/org/apache/commons/lang/math/NumberUtils.java	2018-11-13 21:14:49.283853324 +0800
++++ lang_58_buggy/src/java/org/apache/commons/lang/math/NumberUtils.java	2018-11-13 21:14:53.883988513 +0800
+@@ -449,17 +449,13 @@
+             switch (lastChar) {
+                 case 'l' :
+                 case 'L' :
+-                    if (dec == null
+-                        && exp == null
+-                        && isDigits(numeric.substring(1))
+-                        && (numeric.charAt(0) == '-' || Character.isDigit(numeric.charAt(0)))) {
++if(dec==null&&exp==null&&isDigits(numeric.substring(1))&&(numeric.charAt(expPos)!=' ')){
+                         try {
+                             return createLong(numeric);
+                         } catch (NumberFormatException nfe) {
+-                            //Too big for a long
+                         }
+-                        return createBigInteger(numeric);
+ 
++return createBigInteger(numeric);
+                     }
+                     throw new NumberFormatException(str + " is not a valid number.");
+                 case 'f' :

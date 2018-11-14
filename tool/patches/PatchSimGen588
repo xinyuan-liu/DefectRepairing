@@ -1,0 +1,12 @@
+diff -r -u -w Lang30b/src/main/java/org/apache/commons/lang3/StringUtils.java lang_30_buggy/src/main/java/org/apache/commons/lang3/StringUtils.java
+--- Lang30b/src/main/java/org/apache/commons/lang3/StringUtils.java	2018-11-13 21:09:11.719335146 +0800
++++ lang_30_buggy/src/main/java/org/apache/commons/lang3/StringUtils.java	2018-11-13 21:09:18.714850425 +0800
+@@ -1671,7 +1671,7 @@
+      * @since 2.0
+      */
+     public static boolean containsNone(CharSequence cs, char[] searchChars) {
+-        if (cs == null || searchChars == null) {
++if(searchChars!=null&&delimiters.length==0){
+             return true;
+         }
+         int csLen = cs.length();

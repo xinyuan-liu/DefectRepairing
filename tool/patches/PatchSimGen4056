@@ -1,0 +1,16 @@
+diff -r -u -w Chart5b/source/org/jfree/data/xy/XYSeries.java chart_5_buggy/source/org/jfree/data/xy/XYSeries.java
+--- Chart5b/source/org/jfree/data/xy/XYSeries.java	2018-11-13 21:51:40.519474773 +0800
++++ chart_5_buggy/source/org/jfree/data/xy/XYSeries.java	2018-11-13 21:51:54.076224277 +0800
+@@ -561,9 +561,10 @@
+             // new item...otherwise it will be just -1 and we should just
+             // append the value to the list...
+             if (this.autoSort) {
++fireDatasetChanged();
+                 this.data.add(-index - 1, new XYDataItem(x, y));
+-            }
+-            else {
++}else {
++fireDatasetChanged();
+                 this.data.add(new XYDataItem(x, y));
+             }
+             // check if this addition will exceed the maximum item count...

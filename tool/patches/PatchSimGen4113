@@ -1,0 +1,16 @@
+diff -r -u -w Chart8b/source/org/jfree/data/time/Week.java chart_8_buggy/source/org/jfree/data/time/Week.java
+--- Chart8b/source/org/jfree/data/time/Week.java	2018-11-13 21:52:39.810759929 +0800
++++ chart_8_buggy/source/org/jfree/data/time/Week.java	2018-11-13 21:52:55.823650212 +0800
+@@ -193,10 +193,10 @@
+             throw new IllegalArgumentException("Null 'zone' argument.");
+         }
+         if (locale == null) {
+-            throw new IllegalArgumentException("Null 'locale' argument.");
++throw new IllegalArgumentException("Null \'locale\' argument.");
+         }
+         Calendar calendar = Calendar.getInstance(zone, locale);
+-        calendar.setTime(time);
++calendar.setComposite(time);
+ 
+         // sometimes the last few days of the year are considered to fall in
+         // the *first* week of the following year.  Refer to the Javadocs for

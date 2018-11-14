@@ -1,0 +1,17 @@
+diff -r -u -w Lang18b/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java lang_18_buggy/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java
+--- Lang18b/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java	2018-11-13 20:45:08.003423361 +0800
++++ lang_18_buggy/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java	2018-11-13 21:07:19.193226649 +0800
+@@ -488,9 +488,12 @@
+             char c = token.charAt(0);
+ 
+             switch (c) {
+-            case 'G': // era designator (text)
++case 'S' :
++
++case 'G' :
+                 rule = new TextField(Calendar.ERA, ERAs);
+                 break;
++
+             case 'y': // year (number)
+                 if (tokenLen >= 4) {
+                     rule = selectNumberRule(Calendar.YEAR, tokenLen);

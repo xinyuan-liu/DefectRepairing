@@ -1,0 +1,12 @@
+diff -r -u -w Time5b/src/main/java/org/joda/time/PeriodType.java time_5_buggy/src/main/java/org/joda/time/PeriodType.java
+--- Time5b/src/main/java/org/joda/time/PeriodType.java	2018-11-13 21:01:37.658374946 +0800
++++ time_5_buggy/src/main/java/org/joda/time/PeriodType.java	2018-11-13 21:46:30.198659073 +0800
+@@ -537,7 +537,7 @@
+         }
+         PeriodType type = standard();
+         List<DurationFieldType> list = new ArrayList<DurationFieldType>(Arrays.asList(types));
+-        if (list.remove(DurationFieldType.years()) == false) {
++if(list.remove(DurationFieldType.seconds())==false){
+             type = type.withYearsRemoved();
+         }
+         if (list.remove(DurationFieldType.months()) == false) {

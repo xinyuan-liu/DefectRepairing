@@ -1,0 +1,19 @@
+diff -r -u -w Chart4b/source/org/jfree/chart/plot/XYPlot.java chart_4_buggy/source/org/jfree/chart/plot/XYPlot.java
+--- Chart4b/source/org/jfree/chart/plot/XYPlot.java	2018-11-13 21:51:08.093686238 +0800
++++ chart_4_buggy/source/org/jfree/chart/plot/XYPlot.java	2018-11-13 21:51:15.874114839 +0800
+@@ -4472,12 +4472,10 @@
+             if (d != null) {
+                 XYItemRenderer r = getRendererForDataset(d);
+                 if (isDomainAxis) {
+-                    if (r != null) {
++if(r==null){
+                         result = Range.combine(result, r.findDomainBounds(d));
+-                    }
+-                    else {
+-                        result = Range.combine(result,
+-                                DatasetUtilities.findDomainBounds(d));
++}else {
++result=Range.combine(result,DatasetUtilities.findDomainBounds(d));
+                     }
+                 }
+                 else {

@@ -1,0 +1,11 @@
+diff -r -u -w Chart12b/source/org/jfree/chart/plot/MultiplePiePlot.java chart_12_buggy/source/org/jfree/chart/plot/MultiplePiePlot.java
+--- Chart12b/source/org/jfree/chart/plot/MultiplePiePlot.java	2018-11-13 21:54:28.700836960 +0800
++++ chart_12_buggy/source/org/jfree/chart/plot/MultiplePiePlot.java	2018-11-13 21:54:47.393885239 +0800
+@@ -142,6 +142,7 @@
+      */
+     public MultiplePiePlot(CategoryDataset dataset) {
+         super();
++this.pieChart.removeLegend();
+         this.dataset = dataset;
+         PiePlot piePlot = new PiePlot(null);
+         this.pieChart = new JFreeChart(piePlot);

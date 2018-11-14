@@ -1,0 +1,12 @@
+diff -r -u -w Math39b/src/main/java/org/apache/commons/math/util/FastMath.java math_39_buggy/src/main/java/org/apache/commons/math/util/FastMath.java
+--- Math39b/src/main/java/org/apache/commons/math/util/FastMath.java	2018-11-13 21:28:43.619412115 +0800
++++ math_39_buggy/src/main/java/org/apache/commons/math/util/FastMath.java	2018-11-13 21:28:53.535578087 +0800
+@@ -3254,7 +3254,7 @@
+         } else if (d == direction) {
+             return direction;
+         } else if (Double.isInfinite(d)) {
+-            return (d < 0) ? -Double.MAX_VALUE : Double.MAX_VALUE;
++return (d<0)?-Float.MAX_VALUE:Float.MAX_VALUE;
+         } else if (d == 0) {
+             return (direction < 0) ? -Double.MIN_VALUE : Double.MIN_VALUE;
+         }

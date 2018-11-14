@@ -1,0 +1,16 @@
+diff -r -u -w Lang56b/src/java/org/apache/commons/lang/time/FastDateFormat.java lang_56_buggy/src/java/org/apache/commons/lang/time/FastDateFormat.java
+--- Lang56b/src/java/org/apache/commons/lang/time/FastDateFormat.java	2018-11-13 21:14:10.766845287 +0800
++++ lang_56_buggy/src/java/org/apache/commons/lang/time/FastDateFormat.java	2018-11-13 21:14:23.163144562 +0800
+@@ -627,9 +627,10 @@
+                     rule = UnpaddedMonthField.INSTANCE;
+                 }
+                 break;
+-            case 'd': // day in month (number)
+-                rule = selectNumberRule(Calendar.DAY_OF_MONTH, tokenLen);
++case 'd' :
++rule=selectNumberRule(Calendar.HOUR_OF_DAY,tokenLen);
+                 break;
++
+             case 'h': // hour in am/pm (number, 1..12)
+                 rule = new TwelveHourField(selectNumberRule(Calendar.HOUR, tokenLen));
+                 break;

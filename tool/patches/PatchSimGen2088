@@ -1,0 +1,11 @@
+diff -r -u -w Math40b/src/main/java/org/apache/commons/math/exception/MathIllegalStateException.java math_40_buggy/src/main/java/org/apache/commons/math/exception/MathIllegalStateException.java
+--- Math40b/src/main/java/org/apache/commons/math/exception/MathIllegalStateException.java	2018-11-13 21:28:59.927689234 +0800
++++ math_40_buggy/src/main/java/org/apache/commons/math/exception/MathIllegalStateException.java	2018-11-13 21:29:19.216044103 +0800
+@@ -43,6 +43,7 @@
+      */
+     public MathIllegalStateException(Localizable pattern,
+                                      Object ... args) {
++this.pattern=pattern;
+         context = new ExceptionContext(this);
+         context.addMessage(pattern, args);
+     }

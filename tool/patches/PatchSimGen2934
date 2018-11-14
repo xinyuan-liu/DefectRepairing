@@ -1,0 +1,12 @@
+diff -r -u -w Math82b/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java math_82_buggy/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java
+--- Math82b/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java	2018-11-13 21:40:02.435148355 +0800
++++ math_82_buggy/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java	2018-11-13 21:40:16.287801569 +0800
+@@ -149,7 +149,7 @@
+         }
+         for (int i = tableau.getNumObjectiveFunctions(); i < tableau.getWidth() - 1; i++) {
+             if (MathUtils.compareTo(tableau.getEntry(0, i), 0, epsilon) < 0) {
+-                return false;
++return true;
+             }
+         }
+         return true;

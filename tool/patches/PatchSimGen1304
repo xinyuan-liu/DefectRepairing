@@ -1,0 +1,27 @@
+diff -r -u -w Math1b/src/main/java/org/apache/commons/math3/exception/util/LocalizedFormats.java math_1_buggy/src/main/java/org/apache/commons/math3/exception/util/LocalizedFormats.java
+--- Math1b/src/main/java/org/apache/commons/math3/exception/util/LocalizedFormats.java	2018-11-13 21:16:15.354828798 +0800
++++ math_1_buggy/src/main/java/org/apache/commons/math3/exception/util/LocalizedFormats.java	2018-11-13 21:16:29.523398388 +0800
+@@ -380,20 +380,14 @@
+     public String getLocalizedString(final Locale locale) {
+         try {
+             final String path = LocalizedFormats.class.getName().replaceAll("\\.", "/");
+-            ResourceBundle bundle =
+-                    ResourceBundle.getBundle("assets/" + path, locale);
++ResourceBundle bundle=ResourceBundle.getBundle("assets/"+path,locale);
+             if (bundle.getLocale().getLanguage().equals(locale.getLanguage())) {
+-                // the value of the resource is the translated format
+                 return bundle.getString(toString());
+             }
+-
+-        } catch (MissingResourceException mre) { // NOPMD
+-            // do nothing here
++}catch (MissingResourceException mre) {
+         }
+ 
+-        // either the locale is not supported or the resource is unknown
+-        // don't translate and fall back to using the source format
+-        return sourceFormat;
++return nf;
+ 
+     }
+ 

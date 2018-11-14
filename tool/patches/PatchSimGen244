@@ -1,0 +1,26 @@
+diff -r -u -w Lang13b/src/main/java/org/apache/commons/lang3/SerializationUtils.java lang_13_buggy/src/main/java/org/apache/commons/lang3/SerializationUtils.java
+--- Lang13b/src/main/java/org/apache/commons/lang3/SerializationUtils.java	2018-11-13 20:39:08.303610156 +0800
++++ lang_13_buggy/src/main/java/org/apache/commons/lang3/SerializationUtils.java	2018-11-13 21:06:27.602683721 +0800
+@@ -86,13 +86,15 @@
+         try {
+             // stream closed in the finally
+             in = new ClassLoaderAwareObjectInputStream(bais, object.getClass().getClassLoader());
+-            /*
+-             * when we serialize and deserialize an object,
+-             * it is reasonable to assume the deserialized object
+-             * is of the same type as the original serialized object
+-             */
+-            @SuppressWarnings("unchecked") // see above
+-            T readObject = (T) in.readObject();
++ @SuppressWarnings("unchecked") T readObject=(T)in.readObject();
++if(readObject==null){
++synchronized(this){
++result=object;
++if(result==null){
++object=result=initialize();
++}
++}
++}
+             return readObject;
+ 
+         } catch (ClassNotFoundException ex) {

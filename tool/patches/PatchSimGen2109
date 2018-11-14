@@ -1,0 +1,11 @@
+diff -r -u -w Math41b/src/main/java/org/apache/commons/math/stat/descriptive/moment/Variance.java math_41_buggy/src/main/java/org/apache/commons/math/stat/descriptive/moment/Variance.java
+--- Math41b/src/main/java/org/apache/commons/math/stat/descriptive/moment/Variance.java	2018-11-13 21:29:29.516245277 +0800
++++ math_41_buggy/src/main/java/org/apache/commons/math/stat/descriptive/moment/Variance.java	2018-11-13 21:29:38.752432404 +0800
+@@ -367,6 +367,7 @@
+      * @since 2.1
+      */
+     public double evaluate(final double[] values, final double[] weights) {
++checkSampleData(weights);
+         return evaluate(values, weights, 0, values.length);
+     }
+ 

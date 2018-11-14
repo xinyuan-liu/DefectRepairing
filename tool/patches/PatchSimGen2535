@@ -1,0 +1,11 @@
+diff -r -u -w Math62b/src/main/java/org/apache/commons/math/util/FastMath.java math_62_buggy/src/main/java/org/apache/commons/math/util/FastMath.java
+--- Math62b/src/main/java/org/apache/commons/math/util/FastMath.java	2018-11-13 21:35:25.571136054 +0800
++++ math_62_buggy/src/main/java/org/apache/commons/math/util/FastMath.java	2018-11-13 21:35:43.531843426 +0800
+@@ -679,6 +679,7 @@
+     private static double slowexp(final double x, final double result[]) {
+         final double xs[] = new double[2];
+         final double ys[] = new double[2];
++splitMult(xs,ys,new double[2]);
+         final double facts[] = new double[2];
+         final double as[] = new double[2];
+         split(x, xs);

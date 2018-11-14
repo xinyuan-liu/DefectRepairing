@@ -1,0 +1,25 @@
+diff -r -u -w Math97b/src/java/org/apache/commons/math/analysis/BrentSolver.java math_97_buggy/src/java/org/apache/commons/math/analysis/BrentSolver.java
+--- Math97b/src/java/org/apache/commons/math/analysis/BrentSolver.java	2018-11-13 21:44:02.566972846 +0800
++++ math_97_buggy/src/java/org/apache/commons/math/analysis/BrentSolver.java	2018-11-13 21:44:07.847243140 +0800
+@@ -135,17 +135,13 @@
+         
+         // Verify bracketing
+         double sign = yMin * yMax;
++if(yMin==0.0){
++return max;
++}
+         if (sign >= 0) {
+-            // check if either value is close to a zero
+-                // neither value is close to zero and min and max do not bracket root.
+-                throw new IllegalArgumentException
+-                ("Function values at endpoints do not have different signs." +
+-                        "  Endpoints: [" + min + "," + max + "]" + 
+-                        "  Values: [" + yMin + "," + yMax + "]");
++throw new IllegalArgumentException("Function values at endpoints do not have different signs."+"  Endpoints: ["+min);
+         } else {
+-            // solve using only the first endpoint as initial guess
+             ret = solve(min, yMin, max, yMax, min, yMin);
+-            // either min or max is a root
+         }
+ 
+         return ret;

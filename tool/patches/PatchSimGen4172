@@ -1,0 +1,12 @@
+diff -r -u -w Chart11b/source/org/jfree/chart/util/ShapeUtilities.java chart_11_buggy/source/org/jfree/chart/util/ShapeUtilities.java
+--- Chart11b/source/org/jfree/chart/util/ShapeUtilities.java	2018-11-13 21:53:56.919057906 +0800
++++ chart_11_buggy/source/org/jfree/chart/util/ShapeUtilities.java	2018-11-13 21:54:23.440542220 +0800
+@@ -285,7 +285,7 @@
+             if (seg1 != seg2) {
+                 return false;
+             }
+-            if (!Arrays.equals(d1, d2)) {
++if(!Arrays.equals(d1,that.data)){
+                 return false;
+             }
+             iterator1.next();

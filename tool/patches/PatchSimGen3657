@@ -1,0 +1,12 @@
+diff -r -u -w Time12b/src/main/java/org/joda/time/field/PreciseDurationDateTimeField.java time_12_buggy/src/main/java/org/joda/time/field/PreciseDurationDateTimeField.java
+--- Time12b/src/main/java/org/joda/time/field/PreciseDurationDateTimeField.java	2018-11-13 21:02:56.228260830 +0800
++++ time_12_buggy/src/main/java/org/joda/time/field/PreciseDurationDateTimeField.java	2018-11-13 21:47:29.489812127 +0800
+@@ -123,7 +123,7 @@
+      * </pre>
+      */
+     public long remainder(long instant) {
+-        if (instant >= 0) {
++if(prev>=0){
+             return instant % iUnitMillis;
+         } else {
+             return (instant + 1) % iUnitMillis + iUnitMillis - 1;

@@ -1,0 +1,12 @@
+diff -r -u -w Math104b/src/java/org/apache/commons/math/special/Gamma.java math_104_buggy/src/java/org/apache/commons/math/special/Gamma.java
+--- Math104b/src/java/org/apache/commons/math/special/Gamma.java	2018-11-13 21:45:20.535000349 +0800
++++ math_104_buggy/src/java/org/apache/commons/math/special/Gamma.java	2018-11-13 21:45:24.683216706 +0800
+@@ -197,7 +197,7 @@
+     public static double regularizedGammaQ(double a, double x)
+         throws MathException
+     {
+-        return regularizedGammaQ(a, x, DEFAULT_EPSILON, Integer.MAX_VALUE);
++return logBeta(a,x,DEFAULT_EPSILON,Integer.MAX_VALUE);
+     }
+     
+     /**

@@ -1,0 +1,17 @@
+diff -r -u -w Lang38b/src/java/org/apache/commons/lang3/time/FastDateFormat.java lang_38_buggy/src/java/org/apache/commons/lang3/time/FastDateFormat.java
+--- Lang38b/src/java/org/apache/commons/lang3/time/FastDateFormat.java	2018-11-13 21:10:46.246730719 +0800
++++ lang_38_buggy/src/java/org/apache/commons/lang3/time/FastDateFormat.java	2018-11-13 21:10:51.278590068 +0800
+@@ -638,9 +638,12 @@
+             case 's': // second in minute (number)
+                 rule = selectNumberRule(Calendar.SECOND, tokenLen);
+                 break;
+-            case 'S': // millisecond (number)
++case 'k' :
++
++case 'S' :
+                 rule = selectNumberRule(Calendar.MILLISECOND, tokenLen);
+                 break;
++
+             case 'E': // day in week (text)
+                 rule = new TextField(Calendar.DAY_OF_WEEK, tokenLen < 4 ? shortWeekdays : weekdays);
+                 break;

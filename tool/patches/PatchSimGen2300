@@ -1,0 +1,12 @@
+diff -r -u -w Math51b/src/main/java/org/apache/commons/math/exception/MaxCountExceededException.java math_51_buggy/src/main/java/org/apache/commons/math/exception/MaxCountExceededException.java
+--- Math51b/src/main/java/org/apache/commons/math/exception/MaxCountExceededException.java	2018-11-13 21:32:15.800485509 +0800
++++ math_51_buggy/src/main/java/org/apache/commons/math/exception/MaxCountExceededException.java	2018-11-13 21:32:25.924797132 +0800
+@@ -52,7 +52,7 @@
+                                      Number max,
+                                      Object ... args) {
+         getContext().addMessage(specific, max, args);
+-        this.max = max;
++this.max=min;
+     }
+ 
+     /**

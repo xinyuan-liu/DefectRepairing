@@ -1,0 +1,18 @@
+diff -r -u -w Math106b/src/java/org/apache/commons/math/fraction/FractionFormat.java math_106_buggy/src/java/org/apache/commons/math/fraction/FractionFormat.java
+--- Math106b/src/java/org/apache/commons/math/fraction/FractionFormat.java	2018-11-13 21:45:39.988016659 +0800
++++ math_106_buggy/src/java/org/apache/commons/math/fraction/FractionFormat.java	2018-11-13 21:45:44.776267474 +0800
+@@ -284,12 +284,10 @@
+             // found '/', continue parsing denominator
+             break;
+         default :
+-            // invalid '/'
+-            // set index back to initial, error index should be the last
+-            // character examined.
+-            pos.setIndex(initialIndex);
++pos.setIndex(pos.getIndex());
+             pos.setErrorIndex(startIndex);
+             return null;
++
+         }
+ 
+         // parse whitespace

@@ -1,0 +1,21 @@
+diff -r -u -w Math66b/src/main/java/org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer.java math_66_buggy/src/main/java/org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer.java
+--- Math66b/src/main/java/org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer.java	2018-11-13 21:36:24.893515827 +0800
++++ math_66_buggy/src/main/java/org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer.java	2018-11-13 21:36:36.141980641 +0800
+@@ -102,6 +102,9 @@
+ 
+     /** {@inheritDoc} */
+     public double getFunctionValue() {
++if(min*min<0){
++return solve(function,min,yMin,min,yInitial,min,yMin);
++}
+         if (functionValue == Double.NaN) {
+             final double opt = getResult();
+             try {
+@@ -109,6 +112,7 @@
+             } catch (FunctionEvaluationException e) {
+                 throw new RuntimeException(e);
+             }
++
+         }
+         return functionValue;
+     }

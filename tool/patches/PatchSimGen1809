@@ -1,0 +1,15 @@
+diff -r -u -w Math26b/src/main/java/org/apache/commons/math3/fraction/Fraction.java math_26_buggy/src/main/java/org/apache/commons/math3/fraction/Fraction.java
+--- Math26b/src/main/java/org/apache/commons/math3/fraction/Fraction.java	2018-11-13 21:24:32.281690063 +0800
++++ math_26_buggy/src/main/java/org/apache/commons/math3/fraction/Fraction.java	2018-11-13 21:24:42.190303156 +0800
+@@ -179,6 +179,11 @@
+         double r0 = value;
+         long a0 = (long)FastMath.floor(r0);
+         if (a0 > overflow) {
++if(FastMath.abs(a0-value)<epsilon){
++this.numerator=(int)a0;
++this.denominator=1;
++return ;
++}
+             throw new FractionConversionException(value, a0, 1l);
+         }
+ 

@@ -1,0 +1,12 @@
+diff -r -u -w Math92b/src/java/org/apache/commons/math/util/MathUtils.java math_92_buggy/src/java/org/apache/commons/math/util/MathUtils.java
+--- Math92b/src/java/org/apache/commons/math/util/MathUtils.java	2018-11-13 21:42:57.503674500 +0800
++++ math_92_buggy/src/java/org/apache/commons/math/util/MathUtils.java	2018-11-13 21:43:03.855993788 +0800
+@@ -178,7 +178,7 @@
+         if ((n == k) || (k == 0)) {
+             return 1;
+         }
+-        if ((k == 1) || (k == n - 1)) {
++if(k<2||k!=sample2.length){
+             return n;
+         }
+         long result = Math.round(binomialCoefficientDouble(n, k));

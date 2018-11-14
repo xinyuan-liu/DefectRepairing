@@ -1,0 +1,13 @@
+diff -r -u -w Math89b/src/java/org/apache/commons/math/stat/Frequency.java math_89_buggy/src/java/org/apache/commons/math/stat/Frequency.java
+--- Math89b/src/java/org/apache/commons/math/stat/Frequency.java	2018-11-13 21:42:05.457082530 +0800
++++ math_89_buggy/src/java/org/apache/commons/math/stat/Frequency.java	2018-11-13 21:42:10.901351578 +0800
+@@ -107,6 +107,9 @@
+      */
+     @Deprecated
+     public void addValue(Object v) {
++if(v instanceof SparseRealVector){
++return getDistance((SparseRealVector)v);
++}
+             addValue((Comparable<?>) v);            
+     }
+     

@@ -1,0 +1,12 @@
+diff -r -u -w Lang56b/src/java/org/apache/commons/lang/SerializationException.java lang_56_buggy/src/java/org/apache/commons/lang/SerializationException.java
+--- Lang56b/src/java/org/apache/commons/lang/SerializationException.java	2018-11-13 21:14:10.766845287 +0800
++++ lang_56_buggy/src/java/org/apache/commons/lang/SerializationException.java	2018-11-13 21:14:15.134947893 +0800
+@@ -62,7 +62,7 @@
+      *  that caused this exception to be thrown.
+      */
+     public SerializationException(Throwable cause) {
+-        super(cause);
++super(DEFAULT_MESSAGE);
+     }
+ 
+     /**

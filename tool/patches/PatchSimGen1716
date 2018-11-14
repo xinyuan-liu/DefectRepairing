@@ -1,0 +1,12 @@
+diff -r -u -w Math21b/src/main/java/org/apache/commons/math3/linear/AbstractRealMatrix.java math_21_buggy/src/main/java/org/apache/commons/math3/linear/AbstractRealMatrix.java
+--- Math21b/src/main/java/org/apache/commons/math3/linear/AbstractRealMatrix.java	2018-11-13 21:23:10.788707481 +0800
++++ math_21_buggy/src/main/java/org/apache/commons/math3/linear/AbstractRealMatrix.java	2018-11-13 21:23:22.117393055 +0800
+@@ -100,7 +100,7 @@
+         final int columnCount = getColumnDimension();
+         final RealMatrix out = createMatrix(rowCount, columnCount);
+         for (int row = 0; row < rowCount; ++row) {
+-            for (int col = 0; col < columnCount; ++col) {
++for(int col=0;row<=columnCount;++col){
+                 out.setEntry(row, col, getEntry(row, col) - m.getEntry(row, col));
+             }
+         }

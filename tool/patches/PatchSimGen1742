@@ -1,0 +1,15 @@
+diff -r -u -w Math23b/src/main/java/org/apache/commons/math3/util/MathArrays.java math_23_buggy/src/main/java/org/apache/commons/math3/util/MathArrays.java
+--- Math23b/src/main/java/org/apache/commons/math3/util/MathArrays.java	2018-11-13 21:23:43.962721918 +0800
++++ math_23_buggy/src/main/java/org/apache/commons/math3/util/MathArrays.java	2018-11-13 21:23:53.091279745 +0800
+@@ -231,9 +231,10 @@
+     public static boolean checkOrder(double[] val, OrderDirection dir,
+                                      boolean strict, boolean abort)
+         throws NonMonotonicSequenceException {
++assert dataI.length == n;
++
+         double previous = val[0];
+         final int max = val.length;
+-
+         int index;
+         ITEM:
+         for (index = 1; index < max; index++) {

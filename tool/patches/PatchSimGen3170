@@ -1,0 +1,12 @@
+diff -r -u -w Math94b/src/java/org/apache/commons/math/util/MathUtils.java math_94_buggy/src/java/org/apache/commons/math/util/MathUtils.java
+--- Math94b/src/java/org/apache/commons/math/util/MathUtils.java	2018-11-13 21:43:20.156815911 +0800
++++ math_94_buggy/src/java/org/apache/commons/math/util/MathUtils.java	2018-11-13 21:43:27.185171595 +0800
+@@ -449,7 +449,7 @@
+             if (t > 0) {
+                 u = -t;
+             } else {
+-                v = t;
++v=v;
+             }
+             // B6/B3. at this point both u and v should be odd.
+             t = (v - u) / 2;

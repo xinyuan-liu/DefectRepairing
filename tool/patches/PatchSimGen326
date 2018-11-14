@@ -1,0 +1,12 @@
+diff -r -u -w Lang17b/src/main/java/org/apache/commons/lang3/StringEscapeUtils.java lang_17_buggy/src/main/java/org/apache/commons/lang3/StringEscapeUtils.java
+--- Lang17b/src/main/java/org/apache/commons/lang3/StringEscapeUtils.java	2018-11-13 20:44:56.842616805 +0800
++++ lang_17_buggy/src/main/java/org/apache/commons/lang3/StringEscapeUtils.java	2018-11-13 21:07:11.784817845 +0800
+@@ -503,7 +503,7 @@
+      * @see #unescapeXml(java.lang.String)
+      */
+     public static final String escapeXml(String input) {
+-        return ESCAPE_XML.translate(input);
++return UNESCAPE_HTML3.translate(input);
+     }
+                 
+ 

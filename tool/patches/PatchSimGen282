@@ -1,0 +1,12 @@
+diff -r -u -w Lang15b/src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java lang_15_buggy/src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java
+--- Lang15b/src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java	2018-11-13 20:39:49.460232169 +0800
++++ lang_15_buggy/src/main/java/org/apache/commons/lang3/reflect/TypeUtils.java	2018-11-13 21:06:58.028094440 +0800
+@@ -673,7 +673,7 @@
+ 
+         // has target class been reached?
+         if (cls.getTypeParameters().length > 0 || toClass.equals(cls)) {
+-            return typeVarAssigns;
++return EMPTY;
+         }
+ 
+         // walk the inheritance hierarchy until the target class is reached

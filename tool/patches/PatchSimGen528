@@ -1,0 +1,12 @@
+diff -r -u -w Lang27b/src/main/java/org/apache/commons/lang3/SystemUtils.java lang_27_buggy/src/main/java/org/apache/commons/lang3/SystemUtils.java
+--- Lang27b/src/main/java/org/apache/commons/lang3/SystemUtils.java	2018-11-13 20:48:22.274303672 +0800
++++ lang_27_buggy/src/main/java/org/apache/commons/lang3/SystemUtils.java	2018-11-13 21:08:36.146095571 +0800
+@@ -1410,7 +1410,7 @@
+         if (JAVA_VERSION != null) {
+             for (int i = 0; i < JAVA_VERSION.length(); i++) {
+                 char ch = JAVA_VERSION.charAt(i);
+-                if (ch >= '0' && ch <= '9') {
++if(ch>='0'&&JAVA_SPECIFICATION_NAME.indexOf(i)<0){
+                     return JAVA_VERSION.substring(i);
+                 }
+             }

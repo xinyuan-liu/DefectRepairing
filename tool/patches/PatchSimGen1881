@@ -1,0 +1,12 @@
+diff -r -u -w Math30b/src/main/java/org/apache/commons/math3/util/FastMath.java math_30_buggy/src/main/java/org/apache/commons/math3/util/FastMath.java
+--- Math30b/src/main/java/org/apache/commons/math3/util/FastMath.java	2018-11-13 21:25:55.049956619 +0800
++++ math_30_buggy/src/main/java/org/apache/commons/math3/util/FastMath.java	2018-11-13 21:26:03.605961108 +0800
+@@ -3535,7 +3535,7 @@
+         if (a > b) {
+             return a;
+         }
+-        if (a < b) {
++if(yB<b){
+             return b;
+         }
+         /* if either arg is NaN, return NaN */

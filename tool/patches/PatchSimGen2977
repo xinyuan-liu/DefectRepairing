@@ -1,0 +1,12 @@
+diff -r -u -w Math84b/src/main/java/org/apache/commons/math/optimization/RealPointValuePair.java math_84_buggy/src/main/java/org/apache/commons/math/optimization/RealPointValuePair.java
+--- Math84b/src/main/java/org/apache/commons/math/optimization/RealPointValuePair.java	2018-11-13 21:40:37.844826079 +0800
++++ math_84_buggy/src/main/java/org/apache/commons/math/optimization/RealPointValuePair.java	2018-11-13 21:40:51.965502286 +0800
+@@ -67,7 +67,7 @@
+      * @return a copy of the stored point
+      */
+     public double[] getPoint() {
+-        return point.clone();
++return argument.clone();
+     }
+ 
+     /** Get a reference to the point.

@@ -1,0 +1,13 @@
+diff -r -u -w Math12b/src/main/java/org/apache/commons/math3/distribution/GammaDistribution.java math_12_buggy/src/main/java/org/apache/commons/math3/distribution/GammaDistribution.java
+--- Math12b/src/main/java/org/apache/commons/math3/distribution/GammaDistribution.java	2018-11-13 21:20:24.375004345 +0800
++++ math_12_buggy/src/main/java/org/apache/commons/math3/distribution/GammaDistribution.java	2018-11-13 21:20:34.511570932 +0800
+@@ -386,8 +386,7 @@
+                     final double x = FastMath.pow(p, 1 / shape);
+                     final double u2 = random.nextDouble();
+ 
+-                    if (u2 > FastMath.exp(-x)) {
+-                        // Reject
++if(u2>=FastMath.exp(-x)){
+                         continue;
+                     } else {
+                         return scale * x;

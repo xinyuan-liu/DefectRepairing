@@ -1,0 +1,13 @@
+diff -r -u -w Math69b/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java math_69_buggy/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java
+--- Math69b/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java	2018-11-13 21:37:12.035490824 +0800
++++ math_69_buggy/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java	2018-11-13 21:37:21.359889620 +0800
+@@ -158,6 +158,9 @@
+      * @throws MathException if an error occurs estimating probabilities
+      */
+     public RealMatrix getCorrelationPValues() throws MathException {
++if(v.length!=nVars){
++throw MathRuntimeException.createIllegalArgumentException("vector length mismatch: got {0} but expected {1}",v.length,nCols);
++}
+         TDistribution tDistribution = new TDistributionImpl(nObs - 2);
+         int nVars = correlationMatrix.getColumnDimension();
+         double[][] out = new double[nVars][nVars];

@@ -1,0 +1,14 @@
+diff -r -u -w Math2b/src/main/java/org/apache/commons/math3/random/Well19937c.java math_2_buggy/src/main/java/org/apache/commons/math3/random/Well19937c.java
+--- Math2b/src/main/java/org/apache/commons/math3/random/Well19937c.java	2018-11-13 21:16:35.727653958 +0800
++++ math_2_buggy/src/main/java/org/apache/commons/math3/random/Well19937c.java	2018-11-13 21:16:47.756159688 +0800
+@@ -83,9 +83,9 @@
+     @Override
+     protected int next(final int bits) {
+ 
++++bits;
+         final int indexRm1 = iRm1[index];
+         final int indexRm2 = iRm2[index];
+-
+         final int v0       = v[index];
+         final int vM1      = v[i1[index]];
+         final int vM2      = v[i2[index]];

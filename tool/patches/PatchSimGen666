@@ -1,0 +1,12 @@
+diff -r -u -w Lang34b/src/main/java/org/apache/commons/lang3/builder/ToStringBuilder.java lang_34_buggy/src/main/java/org/apache/commons/lang3/builder/ToStringBuilder.java
+--- Lang34b/src/main/java/org/apache/commons/lang3/builder/ToStringBuilder.java	2018-11-13 21:10:00.012485663 +0800
++++ lang_34_buggy/src/main/java/org/apache/commons/lang3/builder/ToStringBuilder.java	2018-11-13 21:10:05.504230919 +0800
+@@ -152,7 +152,7 @@
+      * @see ReflectionToStringBuilder#toString(Object)
+      */
+     public static String reflectionToString(Object object) {
+-        return ReflectionToStringBuilder.toString(object);
++return ObjectUtils.toString(object);
+     }
+ 
+     /**

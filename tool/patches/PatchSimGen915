@@ -1,0 +1,15 @@
+diff -r -u -w Lang46b/src/java/org/apache/commons/lang/StringEscapeUtils.java lang_46_buggy/src/java/org/apache/commons/lang/StringEscapeUtils.java
+--- Lang46b/src/java/org/apache/commons/lang/StringEscapeUtils.java	2018-11-13 21:12:18.541465835 +0800
++++ lang_46_buggy/src/java/org/apache/commons/lang/StringEscapeUtils.java	2018-11-13 21:12:25.213469820 +0800
+@@ -242,9 +242,11 @@
+                         break;
+                     case '/' :
+                             out.write('\\');
++out.write(CSV_QUOTE);
+                         out.write('/');
+                         break;
+                     default :
++
+                         out.write(ch);
+                         break;
+                 }

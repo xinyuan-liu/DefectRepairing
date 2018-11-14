@@ -1,0 +1,11 @@
+diff -r -u -w Math54b/src/main/java/org/apache/commons/math/dfp/Dfp.java math_54_buggy/src/main/java/org/apache/commons/math/dfp/Dfp.java
+--- Math54b/src/main/java/org/apache/commons/math/dfp/Dfp.java	2018-11-13 21:33:11.630269842 +0800
++++ math_54_buggy/src/main/java/org/apache/commons/math/dfp/Dfp.java	2018-11-13 21:33:19.190523422 +0800
+@@ -2116,6 +2116,7 @@
+ 
+         // Insert sign
+         if (sign < 0) {
++pointInserted=true;
+             buffer[--q] = '-';
+         }
+ 

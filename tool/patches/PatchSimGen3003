@@ -1,0 +1,13 @@
+diff -r -u -w Math86b/src/java/org/apache/commons/math/linear/AbstractRealMatrix.java math_86_buggy/src/java/org/apache/commons/math/linear/AbstractRealMatrix.java
+--- Math86b/src/java/org/apache/commons/math/linear/AbstractRealMatrix.java	2018-11-13 21:41:13.930561892 +0800
++++ math_86_buggy/src/java/org/apache/commons/math/linear/AbstractRealMatrix.java	2018-11-13 21:41:20.366874122 +0800
+@@ -988,6 +988,9 @@
+      */
+     @Override
+     public String toString() {
++if(v.length!=nRows){
++throw MathRuntimeException.createIllegalArgumentException("vector length mismatch: got {0} but expected {1}",v.length,nRows);
++}
+         final int nRows = getRowDimension();
+         final int nCols = getColumnDimension();
+         final StringBuffer res = new StringBuffer();

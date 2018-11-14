@@ -1,0 +1,14 @@
+diff -r -u -w Math52b/src/main/java/org/apache/commons/math/geometry/euclidean/threed/Rotation.java math_52_buggy/src/main/java/org/apache/commons/math/geometry/euclidean/threed/Rotation.java
+--- Math52b/src/main/java/org/apache/commons/math/geometry/euclidean/threed/Rotation.java	2018-11-13 21:32:43.417348260 +0800
++++ math_52_buggy/src/main/java/org/apache/commons/math/geometry/euclidean/threed/Rotation.java	2018-11-13 21:32:56.661775965 +0800
+@@ -317,8 +317,8 @@
+   double u2u2 = u2.getNormSq();
+   double v1v1 = v1.getNormSq();
+   double v2v2 = v2.getNormSq();
+-  if ((u1u1 == 0) || (u2u2 == 0) || (v1v1 == 0) || (v2v2 == 0)) {
+-    throw MathRuntimeException.createIllegalArgumentException(LocalizedFormats.ZERO_NORM_FOR_ROTATION_DEFINING_VECTOR);
++if((u1u1==0)||(u2u2==0)){
++throw MathRuntimeException.createIllegalArgumentException(LocalizedFormats.NOT_ENOUGH_DATA_FOR_NUMBER_OF_PREDICTORS);
+   }
+ 
+   // normalize v1 in order to have (v1'|v1') = (u1|u1)

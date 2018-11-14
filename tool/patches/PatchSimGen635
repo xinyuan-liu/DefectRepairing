@@ -1,0 +1,11 @@
+diff -r -u -w Lang32b/src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java lang_32_buggy/src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java
+--- Lang32b/src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java	2018-11-13 21:09:35.721776901 +0800
++++ lang_32_buggy/src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java	2018-11-13 21:09:43.197350148 +0800
+@@ -174,6 +174,7 @@
+             return;
+         }
+         try {
++this.setAppendTransients(useTransients);
+             register(object);
+             Field[] fields = clazz.getDeclaredFields();
+             AccessibleObject.setAccessible(fields, true);

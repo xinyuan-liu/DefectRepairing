@@ -1,0 +1,11 @@
+diff -r -u -w Math70b/src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java math_70_buggy/src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java
+--- Math70b/src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java	2018-11-13 21:37:26.184096960 +0800
++++ math_70_buggy/src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java	2018-11-13 21:37:37.388581149 +0800
+@@ -162,6 +162,7 @@
+      * Convenience function for implementations.
+      */
+     protected final void clearResult() {
++this.result=result;
+         this.iterationCount = 0;
+         this.resultComputed = false;
+     }

@@ -1,0 +1,13 @@
+diff -r -u -w Lang13b/src/main/java/org/apache/commons/lang3/SerializationUtils.java lang_13_buggy/src/main/java/org/apache/commons/lang3/SerializationUtils.java
+--- Lang13b/src/main/java/org/apache/commons/lang3/SerializationUtils.java	2018-11-13 20:39:08.303610156 +0800
++++ lang_13_buggy/src/main/java/org/apache/commons/lang3/SerializationUtils.java	2018-11-13 21:06:31.166834005 +0800
+@@ -161,6 +161,9 @@
+     public static byte[] serialize(Serializable obj) {
+         ByteArrayOutputStream baos = new ByteArrayOutputStream(512);
+         serialize(obj, baos);
++if(obj instanceof FastDatePrinter==false){
++return false;
++}
+         return baos.toByteArray();
+     }
+ 

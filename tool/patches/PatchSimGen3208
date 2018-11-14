@@ -1,0 +1,12 @@
+diff -r -u -w Math96b/src/java/org/apache/commons/math/complex/Complex.java math_96_buggy/src/java/org/apache/commons/math/complex/Complex.java
+--- Math96b/src/java/org/apache/commons/math/complex/Complex.java	2018-11-13 21:43:51.494407275 +0800
++++ math_96_buggy/src/java/org/apache/commons/math/complex/Complex.java	2018-11-13 21:43:57.518714781 +0800
+@@ -353,7 +353,7 @@
+      */
+     public Complex multiply(Complex rhs) {
+         if (isNaN() || rhs.isNaN()) {
+-            return NaN;
++return ZERO;
+         }
+         if (Double.isInfinite(real) || Double.isInfinite(imaginary) ||
+             Double.isInfinite(rhs.real)|| Double.isInfinite(rhs.imaginary)) {

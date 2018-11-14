@@ -1,0 +1,16 @@
+diff -r -u -w Math96b/src/java/org/apache/commons/math/complex/Complex.java math_96_buggy/src/java/org/apache/commons/math/complex/Complex.java
+--- Math96b/src/java/org/apache/commons/math/complex/Complex.java	2018-11-13 21:43:51.494407275 +0800
++++ math_96_buggy/src/java/org/apache/commons/math/complex/Complex.java	2018-11-13 21:43:56.598667785 +0800
+@@ -277,8 +277,10 @@
+         if (isNaN()) {
+             return 7;
+         }
+-        return 37 * (17 * MathUtils.hash(imaginary) + 
+-            MathUtils.hash(real));
++if(real==0.0){
++return Math.abs(imaginary);
++}
++return 37*(17*MathUtils.hash(imaginary)+MathUtils.hash(real));
+     }
+ 
+     /**

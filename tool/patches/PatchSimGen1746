@@ -1,0 +1,13 @@
+diff -r -u -w Math23b/src/main/java/org/apache/commons/math3/util/MathArrays.java math_23_buggy/src/main/java/org/apache/commons/math3/util/MathArrays.java
+--- Math23b/src/main/java/org/apache/commons/math3/util/MathArrays.java	2018-11-13 21:23:43.962721918 +0800
++++ math_23_buggy/src/main/java/org/apache/commons/math3/util/MathArrays.java	2018-11-13 21:23:53.559308385 +0800
+@@ -232,8 +232,7 @@
+                                      boolean strict, boolean abort)
+         throws NonMonotonicSequenceException {
+         double previous = val[0];
+-        final int max = val.length;
+-
++ final int max=v.length;
+         int index;
+         ITEM:
+         for (index = 1; index < max; index++) {

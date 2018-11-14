@@ -1,0 +1,12 @@
+diff -r -u -w Time17b/src/main/java/org/joda/time/DateTimeZone.java time_17_buggy/src/main/java/org/joda/time/DateTimeZone.java
+--- Time17b/src/main/java/org/joda/time/DateTimeZone.java	2018-11-13 21:03:48.274933761 +0800
++++ time_17_buggy/src/main/java/org/joda/time/DateTimeZone.java	2018-11-13 21:48:08.831922072 +0800
+@@ -1167,7 +1167,7 @@
+         long instantBefore = convertUTCToLocal(instant - 3 * DateTimeConstants.MILLIS_PER_HOUR);
+         long instantAfter = convertUTCToLocal(instant + 3 * DateTimeConstants.MILLIS_PER_HOUR);
+         if (instantBefore == instantAfter) {
+-            return instant;  // not an overlap (less than is a gap, equal is normal case)
++return prev;
+         }
+         
+         // work out range of instants that have duplicate local times

@@ -1,0 +1,12 @@
+diff -r -u -w Lang53b/src/java/org/apache/commons/lang/time/DateUtils.java lang_53_buggy/src/java/org/apache/commons/lang/time/DateUtils.java
+--- Lang53b/src/java/org/apache/commons/lang/time/DateUtils.java	2018-11-13 21:13:40.790229482 +0800
++++ lang_53_buggy/src/java/org/apache/commons/lang/time/DateUtils.java	2018-11-13 21:13:44.950305345 +0800
+@@ -677,7 +677,7 @@
+                             //This is a special case that's hard to generalize
+                             //If the date is 1, we round up to 16, otherwise
+                             //  we subtract 15 days and add 1 month
+-                            if (val.get(Calendar.DATE) == 1) {
++if(start.get(Calendar.DATE)==1){
+                                 val.add(Calendar.DATE, 15);
+                             } else {
+                                 val.add(Calendar.DATE, -15);

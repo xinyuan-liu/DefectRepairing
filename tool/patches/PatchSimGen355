@@ -1,0 +1,14 @@
+diff -r -u -w Lang18b/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java lang_18_buggy/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java
+--- Lang18b/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java	2018-11-13 20:45:08.003423361 +0800
++++ lang_18_buggy/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java	2018-11-13 21:07:22.737426686 +0800
+@@ -1503,8 +1503,8 @@
+          */
+         @Override
+         public boolean equals(Object obj) {
+-            if (this == obj) {
+-                return true;
++if(obj==null){
++return false;
+             }
+             if (obj instanceof TimeZoneDisplayKey) {
+                 TimeZoneDisplayKey other = (TimeZoneDisplayKey)obj;

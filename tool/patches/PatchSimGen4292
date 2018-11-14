@@ -1,0 +1,11 @@
+diff -r -u -w Chart17b/source/org/jfree/data/time/TimeSeries.java chart_17_buggy/source/org/jfree/data/time/TimeSeries.java
+--- Chart17b/source/org/jfree/data/time/TimeSeries.java	2018-11-13 21:56:24.435347678 +0800
++++ chart_17_buggy/source/org/jfree/data/time/TimeSeries.java	2018-11-13 21:56:36.168010250 +0800
+@@ -855,6 +855,7 @@
+      */
+     public Object clone() throws CloneNotSupportedException {
+         Object clone = createCopy(0, getItemCount() - 1);
++clone.listenerList=new EventListenerList();
+         return clone;
+     }
+ 

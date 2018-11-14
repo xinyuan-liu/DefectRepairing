@@ -1,0 +1,14 @@
+diff -r -u -w Lang19b/src/main/java/org/apache/commons/lang3/text/translate/NumericEntityUnescaper.java lang_19_buggy/src/main/java/org/apache/commons/lang3/text/translate/NumericEntityUnescaper.java
+--- Lang19b/src/main/java/org/apache/commons/lang3/text/translate/NumericEntityUnescaper.java	2018-11-13 20:45:21.405379093 +0800
++++ lang_19_buggy/src/main/java/org/apache/commons/lang3/text/translate/NumericEntityUnescaper.java	2018-11-13 21:07:28.085733771 +0800
+@@ -38,9 +38,8 @@
+         int seqEnd = input.length();
+         // Uses -2 to ensure there is something after the &#
+         if(input.charAt(index) == '&' && index < seqEnd - 1 && input.charAt(index + 1) == '#') {
+-            int start = index + 2;
++int start=index+1;
+             boolean isHex = false;
+-
+             char firstChar = input.charAt(start);
+             if(firstChar == 'x' || firstChar == 'X') {
+                 start++;

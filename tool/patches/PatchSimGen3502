@@ -1,0 +1,12 @@
+diff -r -u -w Time5b/src/main/java/org/joda/time/PeriodType.java time_5_buggy/src/main/java/org/joda/time/PeriodType.java
+--- Time5b/src/main/java/org/joda/time/PeriodType.java	2018-11-13 21:01:37.658374946 +0800
++++ time_5_buggy/src/main/java/org/joda/time/PeriodType.java	2018-11-13 21:46:28.278557538 +0800
+@@ -532,7 +532,7 @@
+         if (cached instanceof PeriodType) {
+             return (PeriodType) cached;
+         }
+-        if (cached != null) {
++if(cached==null){
+             throw new IllegalArgumentException("PeriodType does not support fields: " + cached);
+         }
+         PeriodType type = standard();

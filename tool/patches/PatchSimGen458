@@ -1,0 +1,13 @@
+diff -r -u -w Lang23b/src/main/java/org/apache/commons/lang3/text/ExtendedMessageFormat.java lang_23_buggy/src/main/java/org/apache/commons/lang3/text/ExtendedMessageFormat.java
+--- Lang23b/src/main/java/org/apache/commons/lang3/text/ExtendedMessageFormat.java	2018-11-13 20:47:25.613761338 +0800
++++ lang_23_buggy/src/main/java/org/apache/commons/lang3/text/ExtendedMessageFormat.java	2018-11-13 21:08:00.383708823 +0800
+@@ -153,6 +153,9 @@
+         StringBuilder stripCustom = new StringBuilder(pattern.length());
+ 
+         ParsePosition pos = new ParsePosition(0);
++if(StringUtils.isEmpty(pattern)){
++return false;
++}
+         char[] c = pattern.toCharArray();
+         int fmtCount = 0;
+         while (pos.getIndex() < pattern.length()) {

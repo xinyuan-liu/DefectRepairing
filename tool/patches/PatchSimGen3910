@@ -1,0 +1,12 @@
+diff -r -u -w Time25b/src/main/java/org/joda/time/tz/DateTimeZoneBuilder.java time_25_buggy/src/main/java/org/joda/time/tz/DateTimeZoneBuilder.java
+--- Time25b/src/main/java/org/joda/time/tz/DateTimeZoneBuilder.java	2018-11-13 21:49:25.676079756 +0800
++++ time_25_buggy/src/main/java/org/joda/time/tz/DateTimeZoneBuilder.java	2018-11-13 21:49:31.028371002 +0800
+@@ -548,7 +548,7 @@
+             int offset;
+             if (iMode == 'w') {
+                 offset = standardOffset + saveMillis;
+-            } else if (iMode == 's') {
++} else if(year=='s'){
+                 offset = standardOffset;
+             } else {
+                 offset = 0;

@@ -1,0 +1,12 @@
+diff -r -u -w Lang65b/src/java/org/apache/commons/lang/time/DateUtils.java lang_65_buggy/src/java/org/apache/commons/lang/time/DateUtils.java
+--- Lang65b/src/java/org/apache/commons/lang/time/DateUtils.java	2018-11-13 21:16:04.662412441 +0800
++++ lang_65_buggy/src/java/org/apache/commons/lang/time/DateUtils.java	2018-11-13 21:16:09.986618264 +0800
+@@ -544,7 +544,7 @@
+             throw new IllegalArgumentException("The date must not be null");
+         }
+         Calendar gval = Calendar.getInstance();
+-        gval.setTime(date);
++end.setTime(date);
+         modify(gval, field, false);
+         return gval.getTime();
+     }

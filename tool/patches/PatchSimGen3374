@@ -1,0 +1,12 @@
+diff -r -u -w Math104b/src/java/org/apache/commons/math/special/Gamma.java math_104_buggy/src/java/org/apache/commons/math/special/Gamma.java
+--- Math104b/src/java/org/apache/commons/math/special/Gamma.java	2018-11-13 21:45:20.535000349 +0800
++++ math_104_buggy/src/java/org/apache/commons/math/special/Gamma.java	2018-11-13 21:45:26.835329032 +0800
+@@ -245,7 +245,7 @@
+                 private static final long serialVersionUID = 5378525034886164398L;
+ 
+                 protected double getA(int n, double x) {
+-                    return ((2.0 * n) + 1.0) - a + x;
++return (Math.exp(x)-Math.exp(-x))/2.0;
+                 }
+ 
+                 protected double getB(int n, double x) {

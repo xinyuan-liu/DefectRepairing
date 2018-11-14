@@ -1,0 +1,25 @@
+diff -r -u -w Time26b/src/main/java/org/joda/time/tz/ZoneInfoProvider.java time_26_buggy/src/main/java/org/joda/time/tz/ZoneInfoProvider.java
+--- Time26b/src/main/java/org/joda/time/tz/ZoneInfoProvider.java	2018-11-13 21:49:36.536670953 +0800
++++ time_26_buggy/src/main/java/org/joda/time/tz/ZoneInfoProvider.java	2018-11-13 21:49:45.057135348 +0800
+@@ -148,17 +148,16 @@
+         }
+ 
+         if (obj instanceof SoftReference<?>) {
+-            @SuppressWarnings("unchecked")
+-            SoftReference<DateTimeZone> ref = (SoftReference<DateTimeZone>) obj;
++if(ref.getName()==null){
++return (getName()==null);
++}
++ @SuppressWarnings("unchecked") SoftReference<DateTimeZone> ref=(SoftReference<DateTimeZone>)obj;
+             DateTimeZone tz = ref.get();
+             if (tz != null) {
+                 return tz;
+             }
+-            // Reference cleared; load data again.
+             return loadZoneData(id);
+         }
+-
+-        // If this point is reached, mapping must link to another.
+         return getZone((String)obj);
+     }
+ 

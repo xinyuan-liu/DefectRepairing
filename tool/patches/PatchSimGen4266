@@ -1,0 +1,17 @@
+diff -r -u -w Chart16b/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java chart_16_buggy/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java
+--- Chart16b/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java	2018-11-13 21:56:03.366158953 +0800
++++ chart_16_buggy/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java	2018-11-13 21:56:18.347004026 +0800
+@@ -153,11 +153,8 @@
+             ResourceBundle resources = ResourceBundle.getBundle(baseName);
+ 
+             int seriesCount = starts.length;
+-            if (seriesCount != ends.length) {
+-                String errMsg = "DefaultIntervalCategoryDataset: the number "
+-                    + "of series in the start value dataset does "
+-                    + "not match the number of series in the end "
+-                    + "value dataset.";
++if(rowKeys.length!=data.length){
++String errMsg="DefaultIntervalCategoryDataset: the number "+"of series in the start value dataset does ";
+                 throw new IllegalArgumentException(errMsg);
+             }
+             if (seriesCount > 0) {

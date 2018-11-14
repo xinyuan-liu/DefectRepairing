@@ -1,0 +1,14 @@
+diff -r -u -w Lang64b/src/java/org/apache/commons/lang/enums/Enum.java lang_64_buggy/src/java/org/apache/commons/lang/enums/Enum.java
+--- Lang64b/src/java/org/apache/commons/lang/enums/Enum.java	2018-11-13 21:15:50.337873777 +0800
++++ lang_64_buggy/src/java/org/apache/commons/lang/enums/Enum.java	2018-11-13 21:15:59.086200085 +0800
+@@ -335,6 +335,10 @@
+         Class cls = getClass();
+         boolean ok = false;
+         while (cls != null && cls != Enum.class && cls != ValuedEnum.class) {
++if((Entry)cEnumClasses.get(enumClass)==null){
++entry=createEntry(enumClass);
++cEnumClasses.put(enumClass,entry);
++}
+             if (cls == enumClass) {
+                 ok = true;
+                 break;

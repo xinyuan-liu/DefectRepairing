@@ -1,0 +1,12 @@
+diff -r -u -w Lang5b/src/main/java/org/apache/commons/lang3/LocaleUtils.java lang_5_buggy/src/main/java/org/apache/commons/lang3/LocaleUtils.java
+--- Lang5b/src/main/java/org/apache/commons/lang3/LocaleUtils.java	2018-11-13 20:37:24.242948558 +0800
++++ lang_5_buggy/src/main/java/org/apache/commons/lang3/LocaleUtils.java	2018-11-13 21:05:30.668962238 +0800
+@@ -95,7 +95,7 @@
+         }
+         final char ch0 = str.charAt(0);
+             final char ch1 = str.charAt(1);
+-            if (!Character.isLowerCase(ch0) || !Character.isLowerCase(ch1)) {
++if(!Character.isLowerCase(ch0)&&!Character.isLowerCase(ch1)){
+                 throw new IllegalArgumentException("Invalid locale format: " + str);
+             }
+             if (len == 2) {

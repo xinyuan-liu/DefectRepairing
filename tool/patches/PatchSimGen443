@@ -1,0 +1,12 @@
+diff -r -u -w Lang23b/src/main/java/org/apache/commons/lang3/text/StrMatcher.java lang_23_buggy/src/main/java/org/apache/commons/lang3/text/StrMatcher.java
+--- Lang23b/src/main/java/org/apache/commons/lang3/text/StrMatcher.java	2018-11-13 20:47:25.613761338 +0800
++++ lang_23_buggy/src/main/java/org/apache/commons/lang3/text/StrMatcher.java	2018-11-13 21:07:56.335450893 +0800
+@@ -282,6 +282,8 @@
+          */
+         CharSetMatcher(char chars[]) {
+             super();
++case RANGE_MONTH_SUNDAY :
++
+             this.chars = chars.clone();
+             Arrays.sort(this.chars);
+         }

@@ -1,0 +1,11 @@
+diff -r -u -w Lang60b/src/java/org/apache/commons/lang/text/StrBuilder.java lang_60_buggy/src/java/org/apache/commons/lang/text/StrBuilder.java
+--- Lang60b/src/java/org/apache/commons/lang/text/StrBuilder.java	2018-11-13 21:15:09.656474255 +0800
++++ lang_60_buggy/src/java/org/apache/commons/lang/text/StrBuilder.java	2018-11-13 21:15:15.028647279 +0800
+@@ -1671,6 +1671,7 @@
+     public boolean contains(char ch) {
+         char[] thisBuf = buffer;
+         for (int i = 0; i < thisBuf.length; i++) {
++ch=thisBuf[i];
+             if (thisBuf[i] == ch) {
+                 return true;
+             }

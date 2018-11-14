@@ -1,0 +1,11 @@
+diff -r -u -w Lang48b/src/java/org/apache/commons/lang/builder/EqualsBuilder.java lang_48_buggy/src/java/org/apache/commons/lang/builder/EqualsBuilder.java
+--- Lang48b/src/java/org/apache/commons/lang/builder/EqualsBuilder.java	2018-11-13 21:12:41.501525911 +0800
++++ lang_48_buggy/src/java/org/apache/commons/lang/builder/EqualsBuilder.java	2018-11-13 21:12:45.769551087 +0800
+@@ -369,6 +369,7 @@
+             return this;
+         }
+         if (lhs == rhs) {
++comparison=-1;
+             return this;
+         }
+         if (lhs == null || rhs == null) {

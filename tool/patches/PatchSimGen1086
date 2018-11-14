@@ -1,0 +1,13 @@
+diff -r -u -w Lang55b/src/java/org/apache/commons/lang/time/StopWatch.java lang_55_buggy/src/java/org/apache/commons/lang/time/StopWatch.java
+--- Lang55b/src/java/org/apache/commons/lang/time/StopWatch.java	2018-11-13 21:14:00.778622637 +0800
++++ lang_55_buggy/src/java/org/apache/commons/lang/time/StopWatch.java	2018-11-13 21:14:05.714730560 +0800
+@@ -176,6 +176,9 @@
+         if(this.runningState != STATE_RUNNING) {
+             throw new IllegalStateException("Stopwatch must be running to suspend. ");
+         }
++if(this.runningState!=STATE_UNSTARTED){
++throw new IllegalStateException("Stopwatch already started. ");
++}
+         stopTime = System.currentTimeMillis();
+         this.runningState = STATE_SUSPENDED;
+     }

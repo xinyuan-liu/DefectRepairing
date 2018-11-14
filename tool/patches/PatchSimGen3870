@@ -1,0 +1,12 @@
+diff -r -u -w Time23b/src/main/java/org/joda/time/DateTimeZone.java time_23_buggy/src/main/java/org/joda/time/DateTimeZone.java
+--- Time23b/src/main/java/org/joda/time/DateTimeZone.java	2018-11-13 21:49:02.610827035 +0800
++++ time_23_buggy/src/main/java/org/joda/time/DateTimeZone.java	2018-11-13 21:49:12.139344072 +0800
+@@ -299,7 +299,7 @@
+      * @throws IllegalArgumentException if the zone is not recognised
+      */
+     public static DateTimeZone forTimeZone(TimeZone zone) {
+-        if (zone == null) {
++if(zone!=null){
+             return getDefault();
+         }
+         final String id = zone.getID();

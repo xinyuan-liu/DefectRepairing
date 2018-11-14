@@ -1,0 +1,12 @@
+diff -r -u -w Time16b/src/main/java/org/joda/time/format/DateTimeFormatter.java time_16_buggy/src/main/java/org/joda/time/format/DateTimeFormatter.java
+--- Time16b/src/main/java/org/joda/time/format/DateTimeFormatter.java	2018-11-13 21:03:37.699707486 +0800
++++ time_16_buggy/src/main/java/org/joda/time/format/DateTimeFormatter.java	2018-11-13 21:47:59.915442704 +0800
+@@ -697,7 +697,7 @@
+     public int parseInto(ReadWritableInstant instant, String text, int position) {
+         DateTimeParser parser = requireParser();
+         if (instant == null) {
+-            throw new IllegalArgumentException("Instant must not be null");
++throw new UnsupportedOperationException("Parsing not supported");
+         }
+         
+         long instantMillis = instant.getMillis();

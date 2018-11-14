@@ -1,0 +1,12 @@
+diff -r -u -w Time9b/src/main/java/org/joda/time/DateTimeZone.java time_9_buggy/src/main/java/org/joda/time/DateTimeZone.java
+--- Time9b/src/main/java/org/joda/time/DateTimeZone.java	2018-11-13 21:02:17.347331145 +0800
++++ time_9_buggy/src/main/java/org/joda/time/DateTimeZone.java	2018-11-13 21:46:59.620219480 +0800
+@@ -261,7 +261,7 @@
+         int offset = 0;
+         try {
+             int hoursInMinutes = FieldUtils.safeMultiply(hoursOffset, 60);
+-            if (hoursInMinutes < 0) {
++if(hours<0){
+                 minutesOffset = FieldUtils.safeAdd(hoursInMinutes, -minutesOffset);
+             } else {
+                 minutesOffset = FieldUtils.safeAdd(hoursInMinutes, minutesOffset);

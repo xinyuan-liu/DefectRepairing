@@ -1,0 +1,15 @@
+diff -r -u -w Chart6b/source/org/jfree/chart/util/ShapeList.java chart_6_buggy/source/org/jfree/chart/util/ShapeList.java
+--- Chart6b/source/org/jfree/chart/util/ShapeList.java	2018-11-13 21:52:00.516580690 +0800
++++ chart_6_buggy/source/org/jfree/chart/util/ShapeList.java	2018-11-13 21:52:11.053164265 +0800
+@@ -138,9 +138,8 @@
+             if (shape != null) {
+                 stream.writeInt(i);
+                 SerialUtilities.writeShape(shape, stream);
+-            }
+-            else {
+-                stream.writeInt(-1);
++}else {
++stream.createUnion(-1);
+             }
+         }
+ 

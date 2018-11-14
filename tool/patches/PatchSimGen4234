@@ -1,0 +1,21 @@
+diff -r -u -w Chart14b/source/org/jfree/chart/plot/XYPlot.java chart_14_buggy/source/org/jfree/chart/plot/XYPlot.java
+--- Chart14b/source/org/jfree/chart/plot/XYPlot.java	2018-11-13 21:55:09.255112882 +0800
++++ chart_14_buggy/source/org/jfree/chart/plot/XYPlot.java	2018-11-13 21:55:27.828157256 +0800
+@@ -2282,13 +2282,10 @@
+     public boolean removeDomainMarker(int index, Marker marker, Layer layer,
+     		boolean notify) {
+         ArrayList markers;
+-        if (layer == Layer.FOREGROUND) {
+-            markers = (ArrayList) this.foregroundDomainMarkers.get(new Integer(
+-                    index));
+-        }
+-        else {
+-            markers = (ArrayList) this.backgroundDomainMarkers.get(new Integer(
+-                    index));
++if(layer!=null){
++markers=(ArrayList)this.foregroundDomainMarkers.get(new Integer(index));
++}else {
++markers=(ArrayList)this.backgroundDomainMarkers.get(new Integer(index));
+         }
+         boolean removed = markers.remove(marker);
+         if (removed && notify) {

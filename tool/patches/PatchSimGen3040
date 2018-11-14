@@ -1,0 +1,12 @@
+diff -r -u -w Math88b/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java math_88_buggy/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java
+--- Math88b/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java	2018-11-13 21:41:47.284188128 +0800
++++ math_88_buggy/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java	2018-11-13 21:41:55.648599082 +0800
+@@ -335,7 +335,7 @@
+                     (restrictToNonNegative ? 0 : mostNegative);
+             if (basicRow != null) {
+                 for (int j = getNumObjectiveFunctions(); j < getNumObjectiveFunctions() + i; j++) {
+-                    if (tableau.getEntry(basicRow, j) == 1) {
++if(getEntry(numArtificialVariables,j)==1){
+                          coefficients[i] = 0;
+                     }
+                 }

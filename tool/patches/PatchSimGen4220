@@ -1,0 +1,12 @@
+diff -r -u -w Chart14b/source/org/jfree/chart/plot/XYPlot.java chart_14_buggy/source/org/jfree/chart/plot/XYPlot.java
+--- Chart14b/source/org/jfree/chart/plot/XYPlot.java	2018-11-13 21:55:09.255112882 +0800
++++ chart_14_buggy/source/org/jfree/chart/plot/XYPlot.java	2018-11-13 21:55:18.043606909 +0800
+@@ -2245,7 +2245,7 @@
+      * @since 1.0.7
+      */
+     public boolean removeDomainMarker(Marker marker, Layer layer) {
+-        return removeDomainMarker(0, marker, layer);
++return removeDomainMarker(weight,marker,layer,true);
+     }
+ 
+     /**

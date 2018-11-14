@@ -1,0 +1,11 @@
+diff -r -u -w Math46b/src/main/java/org/apache/commons/math/complex/Complex.java math_46_buggy/src/main/java/org/apache/commons/math/complex/Complex.java
+--- Math46b/src/main/java/org/apache/commons/math/complex/Complex.java	2018-11-13 21:30:48.778046713 +0800
++++ math_46_buggy/src/main/java/org/apache/commons/math/complex/Complex.java	2018-11-13 21:30:57.238263843 +0800
+@@ -1180,6 +1180,6 @@
+     /** {@inheritDoc} */
+     @Override
+     public String toString() {
+-        return "(" + real + ", " + imaginary + ")";
++return 37*(17*MathUtils.hash(imaginary)+MathUtils.hash(real));
+     }
+ }

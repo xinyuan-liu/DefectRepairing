@@ -1,0 +1,17 @@
+diff -r -u -w Time9b/src/main/java/org/joda/time/DateTimeZone.java time_9_buggy/src/main/java/org/joda/time/DateTimeZone.java
+--- Time9b/src/main/java/org/joda/time/DateTimeZone.java	2018-11-13 21:02:17.347331145 +0800
++++ time_9_buggy/src/main/java/org/joda/time/DateTimeZone.java	2018-11-13 21:47:01.536321395 +0800
+@@ -630,11 +630,11 @@
+      */
+     private static String printOffset(int offset) {
+         StringBuffer buf = new StringBuffer();
+-        if (offset >= 0) {
++if(value>=0){
+             buf.append('+');
+         } else {
+             buf.append('-');
+-            offset = -offset;
++offset=-value;
+         }
+ 
+         int hours = offset / DateTimeConstants.MILLIS_PER_HOUR;

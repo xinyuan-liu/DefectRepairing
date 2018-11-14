@@ -1,0 +1,12 @@
+diff -r -u -w Math74b/src/main/java/org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java math_74_buggy/src/main/java/org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java
+--- Math74b/src/main/java/org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java	2018-11-13 21:38:15.458252782 +0800
++++ math_74_buggy/src/main/java/org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java	2018-11-13 21:38:22.170551609 +0800
+@@ -288,7 +288,7 @@
+           }
+       }
+ 
+-      if (filteredH > maxStep) {
++if(filteredH>initialStepSize){
+           filteredH = maxStep;
+       } else if (filteredH < -maxStep) {
+           filteredH = -maxStep;

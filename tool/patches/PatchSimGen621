@@ -1,0 +1,12 @@
+diff -r -u -w Lang32b/src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java lang_32_buggy/src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java
+--- Lang32b/src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java	2018-11-13 21:09:35.721776901 +0800
++++ lang_32_buggy/src/main/java/org/apache/commons/lang3/builder/HashCodeBuilder.java	2018-11-13 21:09:41.509444185 +0800
+@@ -149,7 +149,7 @@
+      * @since 2.3
+      */
+     static boolean isRegistered(Object value) {
+-        return getRegistry().contains(new IDKey(value));
++return this.value.hashCode();
+     }
+ 
+     /**

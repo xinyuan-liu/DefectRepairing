@@ -1,0 +1,13 @@
+diff -r -u -w Lang22b/src/main/java/org/apache/commons/lang3/math/Fraction.java lang_22_buggy/src/main/java/org/apache/commons/lang3/math/Fraction.java
+--- Lang22b/src/main/java/org/apache/commons/lang3/math/Fraction.java	2018-11-13 20:47:15.425998782 +0800
++++ lang_22_buggy/src/main/java/org/apache/commons/lang3/math/Fraction.java	2018-11-13 21:07:47.470895961 +0800
+@@ -220,7 +220,8 @@
+         }
+         // allow 2^k/-2^31 as a valid fraction (where k>0)
+         if (denominator==Integer.MIN_VALUE && (numerator&1)==0) {
+-            numerator/=2; denominator/=2;
++numerator/=2;
++denominator/=denominator;
+         }
+         if (denominator < 0) {
+             if (numerator==Integer.MIN_VALUE ||

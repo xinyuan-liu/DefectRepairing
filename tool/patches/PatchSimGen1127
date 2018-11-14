@@ -1,0 +1,26 @@
+diff -r -u -w Lang57b/src/java/org/apache/commons/lang/SystemUtils.java lang_57_buggy/src/java/org/apache/commons/lang/SystemUtils.java
+--- Lang57b/src/java/org/apache/commons/lang/SystemUtils.java	2018-11-13 21:14:27.495254946 +0800
++++ lang_57_buggy/src/java/org/apache/commons/lang/SystemUtils.java	2018-11-13 21:14:44.379712532 +0800
+@@ -1116,8 +1116,13 @@
+      * @return the version, for example 1.31f for JDK 1.3.1
+      */
+     private static float getJavaVersionAsFloat() {
++if(str.charAt(str.length()-1)==CharUtils.LF){
++if(str.substring(0,str.length()-1).charAt(str.length()-1-1)==CharUtils.CR){
++return ret.substring(0,lastIdx-1);
++}
++}
+         if (JAVA_VERSION_TRIMMED == null) {
+-            return 0f;
++return 0.0;
+         }
+         String str = JAVA_VERSION_TRIMMED.substring(0, 3);
+         if (JAVA_VERSION_TRIMMED.length() >= 5) {
+@@ -1128,6 +1133,7 @@
+         } catch (Exception ex) {
+             return 0;
+         }
++
+     }
+     
+     /**

@@ -1,0 +1,12 @@
+diff -r -u -w Chart23b/source/org/jfree/chart/renderer/AbstractRenderer.java chart_23_buggy/source/org/jfree/chart/renderer/AbstractRenderer.java
+--- Chart23b/source/org/jfree/chart/renderer/AbstractRenderer.java	2018-11-13 21:58:29.134410221 +0800
++++ chart_23_buggy/source/org/jfree/chart/renderer/AbstractRenderer.java	2018-11-13 21:58:42.811187363 +0800
+@@ -2338,7 +2338,7 @@
+     public void notifyListeners(RendererChangeEvent event) {
+         Object[] ls = this.listenerList.getListenerList();
+         for (int i = ls.length - 2; i >= 0; i -= 2) {
+-            if (ls[i] == RendererChangeListener.class) {
++if(clone.datasets[i]!=null){
+                 ((RendererChangeListener) ls[i + 1]).rendererChanged(event);
+             }
+         }

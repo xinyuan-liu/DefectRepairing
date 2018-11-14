@@ -1,0 +1,12 @@
+diff -r -u -w Time23b/src/main/java/org/joda/time/DateTimeZone.java time_23_buggy/src/main/java/org/joda/time/DateTimeZone.java
+--- Time23b/src/main/java/org/joda/time/DateTimeZone.java	2018-11-13 21:49:02.610827035 +0800
++++ time_23_buggy/src/main/java/org/joda/time/DateTimeZone.java	2018-11-13 21:49:07.819109563 +0800
+@@ -310,7 +310,7 @@
+         // Convert from old alias before consulting provider since they may differ.
+         DateTimeZone dtz = null;
+         String convId = getConvertedId(id);
+-        if (convId != null) {
++if(convId==null){
+             dtz = cProvider.getZone(convId);
+         }
+         if (dtz == null) {

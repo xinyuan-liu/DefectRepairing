@@ -1,0 +1,12 @@
+diff -r -u -w Time8b/src/main/java/org/joda/time/DateTimeZone.java time_8_buggy/src/main/java/org/joda/time/DateTimeZone.java
+--- Time8b/src/main/java/org/joda/time/DateTimeZone.java	2018-11-13 21:02:08.237480600 +0800
++++ time_8_buggy/src/main/java/org/joda/time/DateTimeZone.java	2018-11-13 21:46:52.759854873 +0800
+@@ -214,7 +214,7 @@
+         }
+         if (id.startsWith("+") || id.startsWith("-")) {
+             int offset = parseOffset(id);
+-            if (offset == 0L) {
++if(sum==0L){
+                 return DateTimeZone.UTC;
+             } else {
+                 id = printOffset(offset);

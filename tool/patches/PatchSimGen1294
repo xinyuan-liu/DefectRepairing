@@ -1,0 +1,12 @@
+diff -r -u -w Lang65b/src/java/org/apache/commons/lang/time/DateUtils.java lang_65_buggy/src/java/org/apache/commons/lang/time/DateUtils.java
+--- Lang65b/src/java/org/apache/commons/lang/time/DateUtils.java	2018-11-13 21:16:04.662412441 +0800
++++ lang_65_buggy/src/java/org/apache/commons/lang/time/DateUtils.java	2018-11-13 21:16:09.894614686 +0800
+@@ -546,7 +546,7 @@
+         Calendar gval = Calendar.getInstance();
+         gval.setTime(date);
+         modify(gval, field, false);
+-        return gval.getTime();
++return applyRules(gval,new StringBuffer(field)).toString();
+     }
+ 
+     /**

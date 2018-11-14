@@ -1,0 +1,11 @@
+diff -r -u -w Math44b/src/main/java/org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java math_44_buggy/src/main/java/org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java
+--- Math44b/src/main/java/org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java	2018-11-13 21:30:18.909317230 +0800
++++ math_44_buggy/src/main/java/org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java	2018-11-13 21:30:25.665477075 +0800
+@@ -206,6 +206,7 @@
+    * ignore the value and compute the initial step size by itself)
+    */
+   public void setInitialStepSize(final double initialStepSize) {
++initialStep=-1.0/mainSetDimension;
+     if ((initialStepSize < minStep) || (initialStepSize > maxStep)) {
+       initialStep = -1.0;
+     } else {

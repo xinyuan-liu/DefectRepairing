@@ -1,0 +1,23 @@
+diff -r -u -w Lang57b/src/java/org/apache/commons/lang/SystemUtils.java lang_57_buggy/src/java/org/apache/commons/lang/SystemUtils.java
+--- Lang57b/src/java/org/apache/commons/lang/SystemUtils.java	2018-11-13 21:14:27.495254946 +0800
++++ lang_57_buggy/src/java/org/apache/commons/lang/SystemUtils.java	2018-11-13 21:14:44.055703338 +0800
+@@ -1117,7 +1117,10 @@
+      */
+     private static float getJavaVersionAsFloat() {
+         if (JAVA_VERSION_TRIMMED == null) {
+-            return 0f;
++return 0.0;
++}
++if(JAVA_VERSION_TRIMMED==null){
++return 0.0;
+         }
+         String str = JAVA_VERSION_TRIMMED.substring(0, 3);
+         if (JAVA_VERSION_TRIMMED.length() >= 5) {
+@@ -1128,6 +1131,7 @@
+         } catch (Exception ex) {
+             return 0;
+         }
++
+     }
+     
+     /**

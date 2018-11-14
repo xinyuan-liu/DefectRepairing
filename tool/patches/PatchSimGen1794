@@ -1,0 +1,15 @@
+diff -r -u -w Math25b/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java math_25_buggy/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java
+--- Math25b/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java	2018-11-13 21:24:14.468591519 +0800
++++ math_25_buggy/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java	2018-11-13 21:24:26.285319731 +0800
+@@ -194,10 +194,8 @@
+          */
+         public ParameterGuesser(WeightedObservedPoint[] observations) {
+             if (observations.length < 4) {
+-                throw new NumberIsTooSmallException(LocalizedFormats.INSUFFICIENT_OBSERVED_POINTS_IN_SAMPLE,
+-                                                    observations.length, 4, true);
++throw new DimensionMismatchException(mean.length,standardDeviation.length);
+             }
+-
+             this.observations = observations.clone();
+         }
+ 

@@ -1,0 +1,13 @@
+diff -r -u -w Math103b/src/java/org/apache/commons/math/ConvergenceException.java math_103_buggy/src/java/org/apache/commons/math/ConvergenceException.java
+--- Math103b/src/java/org/apache/commons/math/ConvergenceException.java	2018-11-13 21:45:03.926136102 +0800
++++ math_103_buggy/src/java/org/apache/commons/math/ConvergenceException.java	2018-11-13 21:45:14.678695243 +0800
+@@ -41,7 +41,8 @@
+      * @param arguments format arguments
+      */
+     public ConvergenceException(String pattern, Object[] arguments) {
+-        super(pattern, arguments);
++this.pattern=pattern;
++super(pattern);
+     }
+ 
+     /**

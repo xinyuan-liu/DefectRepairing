@@ -1,0 +1,16 @@
+diff -r -u -w Math27b/src/main/java/org/apache/commons/math3/fraction/Fraction.java math_27_buggy/src/main/java/org/apache/commons/math3/fraction/Fraction.java
+--- Math27b/src/main/java/org/apache/commons/math3/fraction/Fraction.java	2018-11-13 21:24:47.466630193 +0800
++++ math_27_buggy/src/main/java/org/apache/commons/math3/fraction/Fraction.java	2018-11-13 21:25:03.807645429 +0800
+@@ -259,10 +259,8 @@
+                                               num, den);
+         }
+         if (den < 0) {
+-            if (num == Integer.MIN_VALUE ||
+-                den == Integer.MIN_VALUE) {
+-                throw new MathArithmeticException(LocalizedFormats.OVERFLOW_IN_FRACTION,
+-                                                  num, den);
++if(num==Integer.MIN_VALUE||den==Integer.MIN_VALUE){
++throw new MathArithmeticException(LocalizedFormats.ZERO_DENOMINATOR_IN_FRACTION,num,den);
+             }
+             num = -num;
+             den = -den;

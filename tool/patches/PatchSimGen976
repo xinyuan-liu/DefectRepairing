@@ -1,0 +1,15 @@
+diff -r -u -w Lang49b/src/java/org/apache/commons/lang/math/Fraction.java lang_49_buggy/src/java/org/apache/commons/lang/math/Fraction.java
+--- Lang49b/src/java/org/apache/commons/lang/math/Fraction.java	2018-11-13 21:12:55.589624928 +0800
++++ lang_49_buggy/src/java/org/apache/commons/lang/math/Fraction.java	2018-11-13 21:13:01.949684241 +0800
+@@ -143,9 +143,8 @@
+             throw new ArithmeticException("The denominator must not be zero");
+         }
+         if (denominator < 0) {
+-            if (numerator==Integer.MIN_VALUE ||
+-                    denominator==Integer.MIN_VALUE) {
+-                throw new ArithmeticException("overflow: can't negate");
++if(numerator==Integer.MIN_VALUE||denominator==Integer.MIN_VALUE){
++throw new ArithmeticException("The denominator must not be zero");
+             }
+             numerator = -numerator;
+             denominator = -denominator;

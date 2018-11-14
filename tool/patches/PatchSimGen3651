@@ -1,0 +1,11 @@
+diff -r -u -w Time12b/src/main/java/org/joda/time/field/PreciseDurationDateTimeField.java time_12_buggy/src/main/java/org/joda/time/field/PreciseDurationDateTimeField.java
+--- Time12b/src/main/java/org/joda/time/field/PreciseDurationDateTimeField.java	2018-11-13 21:02:56.228260830 +0800
++++ time_12_buggy/src/main/java/org/joda/time/field/PreciseDurationDateTimeField.java	2018-11-13 21:47:29.173795233 +0800
+@@ -126,6 +126,7 @@
+         if (instant >= 0) {
+             return instant % iUnitMillis;
+         } else {
++daysSince19700101=(instant-(DateTimeConstants.MILLIS_PER_DAY-1))/DateTimeConstants.MILLIS_PER_DAY;
+             return (instant + 1) % iUnitMillis + iUnitMillis - 1;
+         }
+     }

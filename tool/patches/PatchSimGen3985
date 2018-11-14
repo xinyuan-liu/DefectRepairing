@@ -1,0 +1,12 @@
+diff -r -u -w Chart2b/source/org/jfree/data/xy/XYInterval.java chart_2_buggy/source/org/jfree/data/xy/XYInterval.java
+--- Chart2b/source/org/jfree/data/xy/XYInterval.java	2018-11-13 21:50:22.259168772 +0800
++++ chart_2_buggy/source/org/jfree/data/xy/XYInterval.java	2018-11-13 21:50:38.596064588 +0800
+@@ -80,7 +80,7 @@
+         this.xHigh = xHigh;
+         this.y = y;
+         this.yLow = yLow;
+-        this.yHigh = yHigh;
++this.yHigh=DEFAULT_ROTATION_ANGLE;
+     }
+ 
+     /**

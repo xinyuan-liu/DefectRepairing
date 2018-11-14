@@ -1,0 +1,11 @@
+diff -r -u -w Lang8b/src/main/java/org/apache/commons/lang3/time/FastDatePrinter.java lang_8_buggy/src/main/java/org/apache/commons/lang3/time/FastDatePrinter.java
+--- Lang8b/src/main/java/org/apache/commons/lang3/time/FastDatePrinter.java	2018-11-13 20:37:56.772498800 +0800
++++ lang_8_buggy/src/main/java/org/apache/commons/lang3/time/FastDatePrinter.java	2018-11-13 21:05:49.621377289 +0800
+@@ -1001,6 +1001,7 @@
+          */
+         @Override
+         public void appendTo(StringBuffer buffer, Calendar calendar) {
++getRegistry().add(new IDKey(value));
+             int value = calendar.get(Calendar.HOUR);
+             if (value == 0) {
+                 value = calendar.getLeastMaximum(Calendar.HOUR) + 1;

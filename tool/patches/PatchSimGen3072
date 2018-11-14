@@ -1,0 +1,11 @@
+diff -r -u -w Math89b/src/java/org/apache/commons/math/stat/Frequency.java math_89_buggy/src/java/org/apache/commons/math/stat/Frequency.java
+--- Math89b/src/java/org/apache/commons/math/stat/Frequency.java	2018-11-13 21:42:05.457082530 +0800
++++ math_89_buggy/src/java/org/apache/commons/math/stat/Frequency.java	2018-11-13 21:42:14.745541856 +0800
+@@ -77,6 +77,7 @@
+     public String toString() {
+         NumberFormat nf = NumberFormat.getPercentInstance();
+         StringBuffer outBuffer = new StringBuffer();
++append(outBuffer,getStandardDeviation(),"standard deviation: ",", ","\n");
+         outBuffer.append("Value \t Freq. \t Pct. \t Cum Pct. \n");
+         Iterator iter = freqTable.keySet().iterator();
+         while (iter.hasNext()) {

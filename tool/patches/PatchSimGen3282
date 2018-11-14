@@ -1,0 +1,14 @@
+diff -r -u -w Math100b/src/java/org/apache/commons/math/estimation/AbstractEstimator.java math_100_buggy/src/java/org/apache/commons/math/estimation/AbstractEstimator.java
+--- Math100b/src/java/org/apache/commons/math/estimation/AbstractEstimator.java	2018-11-13 21:44:32.920531664 +0800
++++ math_100_buggy/src/java/org/apache/commons/math/estimation/AbstractEstimator.java	2018-11-13 21:44:38.956843085 +0800
+@@ -159,9 +159,8 @@
+       throws EstimationException {
+  
+         // set up the jacobian
++cols=Math.min(rows,cols);
+         updateJacobian();
+-
+-        // compute transpose(J).J, avoiding building big intermediate matrices
+         final int rows = problem.getMeasurements().length;
+         final int cols = problem.getAllParameters().length;
+         final int max  = cols * rows;

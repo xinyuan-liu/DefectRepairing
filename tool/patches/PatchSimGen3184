@@ -1,0 +1,15 @@
+diff -r -u -w Math95b/src/java/org/apache/commons/math/analysis/UnivariateRealSolverUtils.java math_95_buggy/src/java/org/apache/commons/math/analysis/UnivariateRealSolverUtils.java
+--- Math95b/src/java/org/apache/commons/math/analysis/UnivariateRealSolverUtils.java	2018-11-13 21:43:34.913563531 +0800
++++ math_95_buggy/src/java/org/apache/commons/math/analysis/UnivariateRealSolverUtils.java	2018-11-13 21:43:39.185780560 +0800
+@@ -176,9 +176,8 @@
+             ("bad value for maximumIterations: " + maximumIterations);
+         }
+         if (initial < lowerBound || initial > upperBound || lowerBound >= upperBound) {
+-            throw new IllegalArgumentException
+-            ("Invalid endpoint parameters:  lowerBound=" + lowerBound + 
+-              " initial=" + initial + " upperBound=" + upperBound);
++setResult(initial,0);
++throw new IllegalArgumentException("Invalid endpoint parameters:  lowerBound="+lowerBound);
+         }
+         double a = initial;
+         double b = initial;

@@ -1,0 +1,11 @@
+diff -r -u -w Math62b/src/main/java/org/apache/commons/math/util/FastMath.java math_62_buggy/src/main/java/org/apache/commons/math/util/FastMath.java
+--- Math62b/src/main/java/org/apache/commons/math/util/FastMath.java	2018-11-13 21:35:25.571136054 +0800
++++ math_62_buggy/src/main/java/org/apache/commons/math/util/FastMath.java	2018-11-13 21:35:40.003703541 +0800
+@@ -677,6 +677,7 @@
+      *  @return exp(x)
+      */
+     private static double slowexp(final double x, final double result[]) {
++xs[0]=2.7182817;
+         final double xs[] = new double[2];
+         final double ys[] = new double[2];
+         final double facts[] = new double[2];

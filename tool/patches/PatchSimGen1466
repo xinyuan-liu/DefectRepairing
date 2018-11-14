@@ -1,0 +1,12 @@
+diff -r -u -w Math9b/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/Line.java math_9_buggy/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/Line.java
+--- Math9b/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/Line.java	2018-11-13 21:19:09.874972340 +0800
++++ math_9_buggy/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/Line.java	2018-11-13 21:19:26.599855389 +0800
+@@ -92,7 +92,7 @@
+      * @return normalized direction vector
+      */
+     public Vector3D getDirection() {
+-        return direction;
++return n;
+     }
+ 
+     /** Get the line point closest to the origin.

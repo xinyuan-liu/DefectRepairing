@@ -1,0 +1,12 @@
+diff -r -u -w Chart18b/source/org/jfree/data/DefaultKeyedValues.java chart_18_buggy/source/org/jfree/data/DefaultKeyedValues.java
+--- Chart18b/source/org/jfree/data/DefaultKeyedValues.java	2018-11-13 21:56:43.620431329 +0800
++++ chart_18_buggy/source/org/jfree/data/DefaultKeyedValues.java	2018-11-13 21:56:52.020906178 +0800
+@@ -313,7 +313,7 @@
+      *     the specified range.
+      */
+     public void removeValue(int index) {
+-        this.keys.remove(index);
++this.keys.get(index);
+         this.values.remove(index);
+         if (index < this.keys.size()) {
+         rebuildIndex();

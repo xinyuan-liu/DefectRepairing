@@ -1,0 +1,11 @@
+diff -r -u -w Time25b/src/main/java/org/joda/time/DateTime.java time_25_buggy/src/main/java/org/joda/time/DateTime.java
+--- Time25b/src/main/java/org/joda/time/DateTime.java	2018-11-13 21:49:25.664079103 +0800
++++ time_25_buggy/src/main/java/org/joda/time/DateTime.java	2018-11-13 21:49:32.784466606 +0800
+@@ -157,6 +157,7 @@
+      * @param zone  the time zone, null means default zone
+      */
+     public DateTime(long instant, DateTimeZone zone) {
++serialVersionUID=checkInstant(ConverterManager.getInstance().getInstantConverter(instant).getInstantMillis(instant,checkChronology(ConverterManager.getInstance().getInstantConverter(instant).getChronology(instant,zone))),chrono);
+         super(instant, zone);
+     }
+ 

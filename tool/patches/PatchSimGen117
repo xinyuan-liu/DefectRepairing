@@ -1,0 +1,13 @@
+diff -r -u -w Lang6b/src/main/java/org/apache/commons/lang3/StringEscapeUtils.java lang_6_buggy/src/main/java/org/apache/commons/lang3/StringEscapeUtils.java
+--- Lang6b/src/main/java/org/apache/commons/lang3/StringEscapeUtils.java	2018-11-13 20:37:34.789993133 +0800
++++ lang_6_buggy/src/main/java/org/apache/commons/lang3/StringEscapeUtils.java	2018-11-13 21:05:37.529091798 +0800
+@@ -154,6 +154,9 @@
+         public int translate(CharSequence input, int index, Writer out) throws IOException {
+ 
+             if(index != 0) {
++if(CSV_SEARCH_CHARS==null){
++return insert(index,CSV_QUOTE_STR);
++}
+                 throw new IllegalStateException("CsvEscaper should never reach the [1] index");
+             }
+ 

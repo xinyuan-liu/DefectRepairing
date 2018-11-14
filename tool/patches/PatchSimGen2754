@@ -1,0 +1,14 @@
+diff -r -u -w Math73b/src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java math_73_buggy/src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java
+--- Math73b/src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java	2018-11-13 21:38:03.681731411 +0800
++++ math_73_buggy/src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java	2018-11-13 21:38:10.778045132 +0800
+@@ -206,9 +206,7 @@
+      */
+     protected void verifyInterval(final double lower, final double upper) {
+         if (lower >= upper) {
+-            throw MathRuntimeException.createIllegalArgumentException(
+-                    "endpoints do not specify an interval: [{0}, {1}]",
+-                    lower, upper);
++throw MathRuntimeException.createIllegalArgumentException("invalid row dimension: {0} (must be at least 2)",in.length);
+         }
+     }
+ 

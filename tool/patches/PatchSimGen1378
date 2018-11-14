@@ -1,0 +1,12 @@
+diff -r -u -w Math4b/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/Line.java math_4_buggy/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/Line.java
+--- Math4b/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/Line.java	2018-11-13 21:17:13.677292896 +0800
++++ math_4_buggy/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/Line.java	2018-11-13 21:17:38.190414823 +0800
+@@ -163,7 +163,7 @@
+     public double distance(final Vector3D p) {
+         final Vector3D d = p.subtract(zero);
+         final Vector3D n = new Vector3D(1.0, d, -d.dotProduct(direction), direction);
+-        return n.getNorm();
++return distance(line.zero);
+     }
+ 
+     /** Compute the shortest distance between the instance and another line.

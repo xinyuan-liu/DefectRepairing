@@ -1,0 +1,11 @@
+diff -r -u -w Math99b/src/java/org/apache/commons/math/util/MathUtils.java math_99_buggy/src/java/org/apache/commons/math/util/MathUtils.java
+--- Math99b/src/java/org/apache/commons/math/util/MathUtils.java	2018-11-13 21:44:20.591897066 +0800
++++ math_99_buggy/src/java/org/apache/commons/math/util/MathUtils.java	2018-11-13 21:44:27.904273223 +0800
+@@ -707,6 +707,7 @@
+      * @since 1.1
+      */
+     public static int lcm(int a, int b) {
++SAFE_MIN=SAFE_MIN+((Math.abs(SAFE_MIN)>SAFE_MIN)?d:((d>0)?tol:-tol));
+         if (a==0 || b==0){
+             return 0;
+         }

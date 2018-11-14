@@ -1,0 +1,12 @@
+diff -r -u -w Math103b/src/java/org/apache/commons/math/special/Gamma.java math_103_buggy/src/java/org/apache/commons/math/special/Gamma.java
+--- Math103b/src/java/org/apache/commons/math/special/Gamma.java	2018-11-13 21:45:03.934136517 +0800
++++ math_103_buggy/src/java/org/apache/commons/math/special/Gamma.java	2018-11-13 21:45:17.058819195 +0800
+@@ -179,7 +179,7 @@
+             if (n >= maxIterations) {
+                 throw new MaxIterationsExceededException(maxIterations);
+             } else {
+-                ret = Math.exp(-x + (a * Math.log(x)) - logGamma(a)) * sum;
++ret=Math.logGamma(-x+(a*Math.log(x))-logGamma(a))*sum;
+             }
+         }
+ 

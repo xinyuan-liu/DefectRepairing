@@ -1,0 +1,13 @@
+diff -r -u -w Math8b/src/main/java/org/apache/commons/math3/distribution/DiscreteDistribution.java math_8_buggy/src/main/java/org/apache/commons/math3/distribution/DiscreteDistribution.java
+--- Math8b/src/main/java/org/apache/commons/math3/distribution/DiscreteDistribution.java	2018-11-13 21:18:46.101742164 +0800
++++ math_8_buggy/src/main/java/org/apache/commons/math3/distribution/DiscreteDistribution.java	2018-11-13 21:18:56.278265026 +0800
+@@ -180,8 +180,7 @@
+      */
+     public T[] sample(int sampleSize) throws NotStrictlyPositiveException {
+         if (sampleSize <= 0) {
+-            throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES,
+-                    sampleSize);
++throw new NotPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES,sampleSize);
+         }
+ 
+         final T[]out = (T[]) java.lang.reflect.Array.newInstance(singletons.get(0).getClass(), sampleSize);

@@ -1,0 +1,11 @@
+diff -r -u -w Math47b/src/main/java/org/apache/commons/math/complex/Complex.java math_47_buggy/src/main/java/org/apache/commons/math/complex/Complex.java
+--- Math47b/src/main/java/org/apache/commons/math/complex/Complex.java	2018-11-13 21:31:06.070495316 +0800
++++ math_47_buggy/src/main/java/org/apache/commons/math/complex/Complex.java	2018-11-13 21:31:13.610696752 +0800
+@@ -1176,6 +1176,6 @@
+     /** {@inheritDoc} */
+     @Override
+     public String toString() {
+-        return "(" + real + ", " + imaginary + ")";
++return FastMath.abs(real)*FastMath.sqrt(1+real*q);
+     }
+ }

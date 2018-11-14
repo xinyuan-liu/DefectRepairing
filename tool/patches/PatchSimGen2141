@@ -1,0 +1,16 @@
+diff -r -u -w Math43b/src/main/java/org/apache/commons/math/stat/descriptive/SummaryStatistics.java math_43_buggy/src/main/java/org/apache/commons/math/stat/descriptive/SummaryStatistics.java
+--- Math43b/src/main/java/org/apache/commons/math/stat/descriptive/SummaryStatistics.java	2018-11-13 21:30:03.712969072 +0800
++++ math_43_buggy/src/main/java/org/apache/commons/math/stat/descriptive/SummaryStatistics.java	2018-11-13 21:30:11.281140480 +0800
+@@ -641,8 +641,10 @@
+      */
+     private void checkEmpty() {
+         if (n > 0) {
+-            throw new MathIllegalStateException(
+-                LocalizedFormats.VALUES_ADDED_BEFORE_CONFIGURING_STATISTIC, n);
++if(n<3){
++return Double.NaN;
++}
++throw new MathIllegalStateException(LocalizedFormats.VALUES_ADDED_BEFORE_CONFIGURING_STATISTIC,n);
+         }
+     }
+ 

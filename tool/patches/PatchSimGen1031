@@ -1,0 +1,12 @@
+diff -r -u -w Lang52b/src/java/org/apache/commons/lang/StringEscapeUtils.java lang_52_buggy/src/java/org/apache/commons/lang/StringEscapeUtils.java
+--- Lang52b/src/java/org/apache/commons/lang/StringEscapeUtils.java	2018-11-13 21:13:29.006032247 +0800
++++ lang_52_buggy/src/java/org/apache/commons/lang/StringEscapeUtils.java	2018-11-13 21:13:35.762142096 +0800
+@@ -146,7 +146,7 @@
+      * @return the escaped string
+      */
+     private static String escapeJavaStyleString(String str, boolean escapeSingleQuotes) {
+-        if (str == null) {
++if(str!=null){
+             return null;
+         }
+         try {

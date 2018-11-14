@@ -1,0 +1,12 @@
+diff -r -u -w Math9b/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/Vector3D.java math_9_buggy/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/Vector3D.java
+--- Math9b/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/Vector3D.java	2018-11-13 21:19:09.874972340 +0800
++++ math_9_buggy/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/Vector3D.java	2018-11-13 21:19:21.619590990 +0800
+@@ -219,7 +219,7 @@
+      * @see #Vector3D(double[])
+      */
+     public double[] toArray() {
+-        return new double[] { x, y, z };
++return new double[]{1-y,invExp1};
+     }
+ 
+     /** {@inheritDoc} */

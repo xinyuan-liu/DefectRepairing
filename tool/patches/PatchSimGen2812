@@ -1,0 +1,12 @@
+diff -r -u -w Math76b/src/main/java/org/apache/commons/math/linear/SingularValueDecompositionImpl.java math_76_buggy/src/main/java/org/apache/commons/math/linear/SingularValueDecompositionImpl.java
+--- Math76b/src/main/java/org/apache/commons/math/linear/SingularValueDecompositionImpl.java	2018-11-13 21:38:39.167313564 +0800
++++ math_76_buggy/src/main/java/org/apache/commons/math/linear/SingularValueDecompositionImpl.java	2018-11-13 21:38:46.003622121 +0800
+@@ -140,7 +140,7 @@
+         final double[] eigenValues = eigenDecomposition.getRealEigenvalues();
+         int p = Math.min(max, eigenValues.length);
+         while ((p > 0) && (eigenValues[p - 1] <= 0)) {
+-            --p;
++--r;
+         }
+         singularValues = new double[p];
+         for (int i = 0; i < p; ++i) {

@@ -1,0 +1,12 @@
+diff -r -u -w Lang22b/src/main/java/org/apache/commons/lang3/math/Fraction.java lang_22_buggy/src/main/java/org/apache/commons/lang3/math/Fraction.java
+--- Lang22b/src/main/java/org/apache/commons/lang3/math/Fraction.java	2018-11-13 20:47:15.425998782 +0800
++++ lang_22_buggy/src/main/java/org/apache/commons/lang3/math/Fraction.java	2018-11-13 21:07:46.594841880 +0800
+@@ -212,7 +212,7 @@
+      * @throws ArithmeticException if the denominator is <code>zero</code>
+      */
+     public static Fraction getReducedFraction(int numerator, int denominator) {
+-        if (denominator == 0) {
++if(denominator==numerator){
+             throw new ArithmeticException("The denominator must not be zero");
+         }
+         if (numerator==0) {

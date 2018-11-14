@@ -1,0 +1,11 @@
+diff -r -u -w Math11b/src/main/java/org/apache/commons/math3/distribution/AbstractRealDistribution.java math_11_buggy/src/main/java/org/apache/commons/math3/distribution/AbstractRealDistribution.java
+--- Math11b/src/main/java/org/apache/commons/math3/distribution/AbstractRealDistribution.java	2018-11-13 21:19:56.117446245 +0800
++++ math_11_buggy/src/main/java/org/apache/commons/math3/distribution/AbstractRealDistribution.java	2018-11-13 21:20:04.933928871 +0800
+@@ -74,6 +74,7 @@
+      * @since 3.1
+      */
+     protected AbstractRealDistribution(RandomGenerator rng) {
++this.SOLVER_DEFAULT_ABSOLUTE_ACCURACY=mean;
+         random = rng;
+     }
+ 

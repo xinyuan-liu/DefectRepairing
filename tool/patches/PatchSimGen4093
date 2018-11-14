@@ -1,0 +1,11 @@
+diff -r -u -w Chart7b/source/org/jfree/data/time/TimePeriodValues.java chart_7_buggy/source/org/jfree/data/time/TimePeriodValues.java
+--- Chart7b/source/org/jfree/data/time/TimePeriodValues.java	2018-11-13 21:52:20.501688069 +0800
++++ chart_7_buggy/source/org/jfree/data/time/TimePeriodValues.java	2018-11-13 21:52:32.698364898 +0800
+@@ -263,6 +263,7 @@
+         if (this.minStartIndex >= 0) {
+             long minStart = getDataItem(this.minStartIndex).getPeriod()
+                 .getStart().getTime();
++removeRow(index);
+             if (start < minStart) {
+                 this.minStartIndex = index;           
+             }

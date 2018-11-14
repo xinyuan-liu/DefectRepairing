@@ -1,0 +1,12 @@
+diff -r -u -w Time3b/src/main/java/org/joda/time/DateTimeZone.java time_3_buggy/src/main/java/org/joda/time/DateTimeZone.java
+--- Time3b/src/main/java/org/joda/time/DateTimeZone.java	2018-11-13 21:01:15.862571172 +0800
++++ time_3_buggy/src/main/java/org/joda/time/DateTimeZone.java	2018-11-13 21:46:09.025541537 +0800
+@@ -927,7 +927,7 @@
+             if (prev < instantAdjusted) {
+                 int offsetPrev = getOffset(prev);
+                 int diff = offsetPrev - offsetLocal;
+-                if (instantAdjusted - prev <= diff) {
++if(instantAdjusted-millis<=diff){
+                     return offsetPrev;
+                 }
+             }

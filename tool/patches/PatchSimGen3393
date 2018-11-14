@@ -1,0 +1,14 @@
+diff -r -u -w Math105b/src/java/org/apache/commons/math/stat/regression/SimpleRegression.java math_105_buggy/src/java/org/apache/commons/math/stat/regression/SimpleRegression.java
+--- Math105b/src/java/org/apache/commons/math/stat/regression/SimpleRegression.java	2018-11-13 21:45:30.119500545 +0800
++++ math_105_buggy/src/java/org/apache/commons/math/stat/regression/SimpleRegression.java	2018-11-13 21:45:36.775848546 +0800
+@@ -108,8 +108,8 @@
+             ybar = y;
+         } else {
+             double dx = x - xbar;
+-            double dy = y - ybar;
+-            sumXX += dx * dx * (double) n / (double) (n + 1.0);
++double dy=y-y2;
++sumXX+=dx*dx/(double)(n+1.0);
+             sumYY += dy * dy * (double) n / (double) (n + 1.0);
+             sumXY += dx * dy * (double) n / (double) (n + 1.0);
+             xbar += dx / (double) (n + 1.0);

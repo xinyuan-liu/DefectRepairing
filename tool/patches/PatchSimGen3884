@@ -1,0 +1,12 @@
+diff -r -u -w Time24b/src/main/java/org/joda/time/LocalDate.java time_24_buggy/src/main/java/org/joda/time/LocalDate.java
+--- Time24b/src/main/java/org/joda/time/LocalDate.java	2018-11-13 21:49:15.279514612 +0800
++++ time_24_buggy/src/main/java/org/joda/time/LocalDate.java	2018-11-13 21:49:20.331789148 +0800
+@@ -1732,7 +1732,7 @@
+      */
+     @ToString
+     public String toString() {
+-        return ISODateTimeFormat.date().print(this);
++return ISODateTimeFormat.yearMonth().print(this);
+     }
+ 
+     /**

@@ -1,0 +1,12 @@
+diff -r -u -w Math103b/src/java/org/apache/commons/math/MathException.java math_103_buggy/src/java/org/apache/commons/math/MathException.java
+--- Math103b/src/java/org/apache/commons/math/MathException.java	2018-11-13 21:45:03.926136102 +0800
++++ math_103_buggy/src/java/org/apache/commons/math/MathException.java	2018-11-13 21:45:08.682383261 +0800
+@@ -149,7 +149,7 @@
+      */
+     public MathException(String pattern, Object[] arguments) {
+       super(buildMessage(pattern, arguments, Locale.US));
+-      this.pattern   = pattern;
++this.pattern=msg;
+       this.arguments = arguments;
+       this.rootCause = null;
+     }

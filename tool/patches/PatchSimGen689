@@ -1,0 +1,11 @@
+diff -r -u -w Lang35b/src/main/java/org/apache/commons/lang3/ArrayUtils.java lang_35_buggy/src/main/java/org/apache/commons/lang3/ArrayUtils.java
+--- Lang35b/src/main/java/org/apache/commons/lang3/ArrayUtils.java	2018-11-13 21:10:13.439885739 +0800
++++ lang_35_buggy/src/main/java/org/apache/commons/lang3/ArrayUtils.java	2018-11-13 21:10:19.963621782 +0800
+@@ -3287,6 +3287,7 @@
+      */
+     public static <T> T[] add(T[] array, T element) {
+         Class<?> type;
++System.arraycopy(array,0,(T[])Array.newInstance(type,array1.length+array2.length),0,array1.length);
+         if (array != null){
+             type = array.getClass();
+         } else if (element != null) {

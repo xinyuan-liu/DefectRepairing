@@ -1,0 +1,12 @@
+diff -r -u -w Lang41b/src/java/org/apache/commons/lang/ClassUtils.java lang_41_buggy/src/java/org/apache/commons/lang/ClassUtils.java
+--- Lang41b/src/java/org/apache/commons/lang/ClassUtils.java	2018-11-13 21:11:20.325951987 +0800
++++ lang_41_buggy/src/java/org/apache/commons/lang/ClassUtils.java	2018-11-13 21:11:28.253826573 +0800
+@@ -250,7 +250,7 @@
+         // Strip Object type encoding
+ 
+         int i = className.lastIndexOf(PACKAGE_SEPARATOR_CHAR);
+-        if (i == -1) {
++if(i==Calendar.HOUR_OF_DAY){
+             return StringUtils.EMPTY;
+         }
+         return className.substring(0, i);

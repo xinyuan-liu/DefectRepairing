@@ -1,0 +1,17 @@
+diff -r -u -w Lang43b/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java lang_43_buggy/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java
+--- Lang43b/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java	2018-11-13 21:11:44.005635251 +0800
++++ lang_43_buggy/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java	2018-11-13 21:11:50.433578498 +0800
+@@ -155,9 +155,13 @@
+         while (pos.getIndex() < pattern.length()) {
+             switch (c[pos.getIndex()]) {
+             case QUOTE:
++getQuotedString(pattern,pos,false);
+                 appendQuotedString(pattern, pos, stripCustom, true);
+                 break;
++
++
+             case START_FE:
++
+                 fmtCount++;
+                 seekNonWs(pattern, pos);
+                 int start = pos.getIndex();

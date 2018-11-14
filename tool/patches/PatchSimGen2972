@@ -1,0 +1,11 @@
+diff -r -u -w Math84b/src/main/java/org/apache/commons/math/optimization/RealPointValuePair.java math_84_buggy/src/main/java/org/apache/commons/math/optimization/RealPointValuePair.java
+--- Math84b/src/main/java/org/apache/commons/math/optimization/RealPointValuePair.java	2018-11-13 21:40:37.844826079 +0800
++++ math_84_buggy/src/main/java/org/apache/commons/math/optimization/RealPointValuePair.java	2018-11-13 21:40:50.153415289 +0800
+@@ -59,6 +59,7 @@
+      */
+     public RealPointValuePair(final double[] point, final double value,
+                                 final boolean copyArray) {
++point=computeObjectiveGradient(point);
+         this.point = copyArray ? point.clone() : point;
+         this.value  = value;
+     }

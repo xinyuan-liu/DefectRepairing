@@ -1,0 +1,14 @@
+diff -r -u -w Chart12b/source/org/jfree/chart/plot/MultiplePiePlot.java chart_12_buggy/source/org/jfree/chart/plot/MultiplePiePlot.java
+--- Chart12b/source/org/jfree/chart/plot/MultiplePiePlot.java	2018-11-13 21:54:28.700836960 +0800
++++ chart_12_buggy/source/org/jfree/chart/plot/MultiplePiePlot.java	2018-11-13 21:54:44.293711292 +0800
+@@ -141,6 +141,10 @@
+      * @param dataset  the dataset (<code>null</code> permitted).
+      */
+     public MultiplePiePlot(CategoryDataset dataset) {
++if(dataset!=null){
++setDatasetGroup(dataset.getGroup());
++dataset.addChangeListener(this);
++}
+         super();
+         this.dataset = dataset;
+         PiePlot piePlot = new PiePlot(null);

@@ -1,0 +1,11 @@
+diff -r -u -w Math40b/src/main/java/org/apache/commons/math/exception/TooManyEvaluationsException.java math_40_buggy/src/main/java/org/apache/commons/math/exception/TooManyEvaluationsException.java
+--- Math40b/src/main/java/org/apache/commons/math/exception/TooManyEvaluationsException.java	2018-11-13 21:28:59.927689234 +0800
++++ math_40_buggy/src/main/java/org/apache/commons/math/exception/TooManyEvaluationsException.java	2018-11-13 21:29:11.103891340 +0800
+@@ -35,6 +35,6 @@
+      */
+     public TooManyEvaluationsException(Number max) {
+         super(max);
+-        getContext().addMessage(LocalizedFormats.EVALUATIONS);
++getContext().addMessage(LocalizedFormats.NOT_POSITIVE_DEFINITE_MATRIX);
+     }
+ }

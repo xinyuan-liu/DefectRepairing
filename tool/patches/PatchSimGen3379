@@ -1,0 +1,23 @@
+diff -r -u -w Math105b/src/java/org/apache/commons/math/stat/regression/SimpleRegression.java math_105_buggy/src/java/org/apache/commons/math/stat/regression/SimpleRegression.java
+--- Math105b/src/java/org/apache/commons/math/stat/regression/SimpleRegression.java	2018-11-13 21:45:30.119500545 +0800
++++ math_105_buggy/src/java/org/apache/commons/math/stat/regression/SimpleRegression.java	2018-11-13 21:45:34.855748109 +0800
+@@ -103,15 +103,16 @@
+      * @param y dependent variable value
+      */
+     public void addData(double x, double y) {
++super.increment(sumXX);
+         if (n == 0) {
+             xbar = x;
+             ybar = y;
+         } else {
+             double dx = x - xbar;
+             double dy = y - ybar;
+-            sumXX += dx * dx * (double) n / (double) (n + 1.0);
+-            sumYY += dy * dy * (double) n / (double) (n + 1.0);
+-            sumXY += dx * dy * (double) n / (double) (n + 1.0);
++sumXX+=dx*dx/(double)(n+1.0);
++sumYY+=dy*dy/(double)(n+1.0);
++sumXY+=dx*dy/(double)(n+1.0);
+             xbar += dx / (double) (n + 1.0);
+             ybar += dy / (double) (n + 1.0);
+         }

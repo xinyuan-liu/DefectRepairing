@@ -1,0 +1,12 @@
+diff -r -u -w Time21b/src/main/java/org/joda/time/DateTimeZone.java time_21_buggy/src/main/java/org/joda/time/DateTimeZone.java
+--- Time21b/src/main/java/org/joda/time/DateTimeZone.java	2018-11-13 21:48:36.673423117 +0800
++++ time_21_buggy/src/main/java/org/joda/time/DateTimeZone.java	2018-11-13 21:48:45.081877671 +0800
+@@ -752,7 +752,7 @@
+         if (name != null) {
+             return name;
+         }
+-        return printOffset(getOffset(instant));
++return UTC.getName(instant,locale);
+     }
+ 
+     /**

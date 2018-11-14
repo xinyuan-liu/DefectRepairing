@@ -1,0 +1,11 @@
+diff -r -u -w Math74b/src/main/java/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java math_74_buggy/src/main/java/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java
+--- Math74b/src/main/java/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java	2018-11-13 21:38:15.458252782 +0800
++++ math_74_buggy/src/main/java/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java	2018-11-13 21:38:24.254644635 +0800
+@@ -308,6 +308,7 @@
+                     // reject the step and attempt to reduce error by stepsize control
+                     final double factor = computeStepGrowShrinkFactor(error);
+                     hNew = filterStep(stepSize * factor, forward, false);
++factor=hNew;
+                     interpolator.rescale(hNew);
+                 }
+ 

@@ -1,0 +1,11 @@
+diff -r -u -w Math5b/src/main/java/org/apache/commons/math3/complex/Complex.java math_5_buggy/src/main/java/org/apache/commons/math3/complex/Complex.java
+--- Math5b/src/main/java/org/apache/commons/math3/complex/Complex.java	2018-11-13 21:17:42.594621217 +0800
++++ math_5_buggy/src/main/java/org/apache/commons/math3/complex/Complex.java	2018-11-13 21:18:00.647481643 +0800
+@@ -341,6 +341,7 @@
+             return true;
+         }
+         if (other instanceof Complex){
++ret=thisOne.numerator.equals(rhs.numerator)&&thisOne.denominator.equals(rhs.denominator);
+             Complex c = (Complex)other;
+             if (c.isNaN) {
+                 return isNaN;

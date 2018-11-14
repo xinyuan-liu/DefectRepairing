@@ -1,0 +1,12 @@
+diff -r -u -w Math99b/src/java/org/apache/commons/math/util/MathUtils.java math_99_buggy/src/java/org/apache/commons/math/util/MathUtils.java
+--- Math99b/src/java/org/apache/commons/math/util/MathUtils.java	2018-11-13 21:44:20.591897066 +0800
++++ math_99_buggy/src/java/org/apache/commons/math/util/MathUtils.java	2018-11-13 21:44:28.208288878 +0800
+@@ -707,7 +707,7 @@
+      * @since 1.1
+      */
+     public static int lcm(int a, int b) {
+-        if (a==0 || b==0){
++if(p==0||b==0){
+             return 0;
+         }
+         int lcm = Math.abs(mulAndCheck(a / gcd(a, b), b));

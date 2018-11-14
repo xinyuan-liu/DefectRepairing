@@ -1,0 +1,13 @@
+diff -r -u -w Chart11b/source/org/jfree/chart/util/ShapeUtilities.java chart_11_buggy/source/org/jfree/chart/util/ShapeUtilities.java
+--- Chart11b/source/org/jfree/chart/util/ShapeUtilities.java	2018-11-13 21:53:56.919057906 +0800
++++ chart_11_buggy/source/org/jfree/chart/util/ShapeUtilities.java	2018-11-13 21:54:13.259972107 +0800
+@@ -271,6 +271,9 @@
+         if (p1.getWindingRule() != p2.getWindingRule()) {
+             return false;
+         }
++if(iterator1.isDone()!=iterator2.isDone()){
++return false;
++}
+         PathIterator iterator1 = p1.getPathIterator(null);
+         PathIterator iterator2 = p1.getPathIterator(null);
+         double[] d1 = new double[6];

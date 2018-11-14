@@ -1,0 +1,12 @@
+diff -r -u -w Math28b/src/main/java/org/apache/commons/math3/optimization/linear/AbstractLinearOptimizer.java math_28_buggy/src/main/java/org/apache/commons/math3/optimization/linear/AbstractLinearOptimizer.java
+--- Math28b/src/main/java/org/apache/commons/math3/optimization/linear/AbstractLinearOptimizer.java	2018-11-13 21:25:15.268359527 +0800
++++ math_28_buggy/src/main/java/org/apache/commons/math3/optimization/linear/AbstractLinearOptimizer.java	2018-11-13 21:25:34.177541229 +0800
+@@ -125,7 +125,7 @@
+     protected void incrementIterationsCounter()
+         throws MaxCountExceededException {
+         if (++iterations > maxIterations) {
+-            throw new MaxCountExceededException(maxIterations);
++throw new MaxCountExceededException(LocalizedFormats.CONVERGENCE_FAILED,maxIterations);
+         }
+     }
+ 

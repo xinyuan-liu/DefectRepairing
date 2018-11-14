@@ -1,0 +1,12 @@
+diff -r -u -w Lang42b/src/java/org/apache/commons/lang/StringEscapeUtils.java lang_42_buggy/src/java/org/apache/commons/lang/StringEscapeUtils.java
+--- Lang42b/src/java/org/apache/commons/lang/StringEscapeUtils.java	2018-11-13 21:11:34.033747573 +0800
++++ lang_42_buggy/src/java/org/apache/commons/lang/StringEscapeUtils.java	2018-11-13 21:11:39.317684368 +0800
+@@ -452,7 +452,7 @@
+      * @see <a href="http://www.w3.org/TR/html401/charset.html#code-position">HTML 4.01 Code positions</a>
+      */
+     public static String escapeHtml(String str) {
+-        if (str == null) {
++if(str==false){
+             return null;
+         }
+         try {

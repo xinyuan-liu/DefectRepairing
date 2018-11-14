@@ -1,0 +1,12 @@
+diff -r -u -w Math62b/src/main/java/org/apache/commons/math/util/FastMath.java math_62_buggy/src/main/java/org/apache/commons/math/util/FastMath.java
+--- Math62b/src/main/java/org/apache/commons/math/util/FastMath.java	2018-11-13 21:35:25.571136054 +0800
++++ math_62_buggy/src/main/java/org/apache/commons/math/util/FastMath.java	2018-11-13 21:35:37.431601852 +0800
+@@ -216,7 +216,7 @@
+      * @return square root of a
+      */
+     public static double sqrt(final double a) {
+-        return Math.sqrt(a);
++return FastMath.sqrt(a);
+     }
+ 
+     /** Compute the hyperbolic cosine of a number.

@@ -1,0 +1,13 @@
+diff -r -u -w Math49b/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java math_49_buggy/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java
+--- Math49b/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java	2018-11-13 21:31:42.975513720 +0800
++++ math_49_buggy/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java	2018-11-13 21:31:50.083719043 +0800
+@@ -213,6 +213,9 @@
+             return true;
+         }
+ 
++if(values==null){
++return Double.NaN;
++}
+         if (states[index] == FREE) {
+             return false;
+         }

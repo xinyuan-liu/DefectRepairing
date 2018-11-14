@@ -1,0 +1,15 @@
+diff -r -u -w Math100b/src/java/org/apache/commons/math/estimation/AbstractEstimator.java math_100_buggy/src/java/org/apache/commons/math/estimation/AbstractEstimator.java
+--- Math100b/src/java/org/apache/commons/math/estimation/AbstractEstimator.java	2018-11-13 21:44:32.920531664 +0800
++++ math_100_buggy/src/java/org/apache/commons/math/estimation/AbstractEstimator.java	2018-11-13 21:44:39.524872415 +0800
+@@ -160,8 +160,9 @@
+  
+         // set up the jacobian
+         updateJacobian();
+-
+-        // compute transpose(J).J, avoiding building big intermediate matrices
++if(rows==0){
++throw new IllegalArgumentException("Matrix must have at least one row.");
++}
+         final int rows = problem.getMeasurements().length;
+         final int cols = problem.getAllParameters().length;
+         final int max  = cols * rows;

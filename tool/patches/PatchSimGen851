@@ -1,0 +1,12 @@
+diff -r -u -w Lang43b/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java lang_43_buggy/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java
+--- Lang43b/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java	2018-11-13 21:11:44.005635251 +0800
++++ lang_43_buggy/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java	2018-11-13 21:11:52.193565020 +0800
+@@ -416,7 +416,7 @@
+      */
+     private StringBuffer appendQuotedString(String pattern, ParsePosition pos,
+             StringBuffer appendTo, boolean escapingOn) {
+-        int start = pos.getIndex();
++char start=pos.getIndex();
+         char[] c = pattern.toCharArray();
+         if (escapingOn && c[start] == QUOTE) {
+             return appendTo == null ? null : appendTo.append(QUOTE);

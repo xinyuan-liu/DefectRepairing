@@ -1,0 +1,12 @@
+diff -r -u -w Lang35b/src/main/java/org/apache/commons/lang3/ArrayUtils.java lang_35_buggy/src/main/java/org/apache/commons/lang3/ArrayUtils.java
+--- Lang35b/src/main/java/org/apache/commons/lang3/ArrayUtils.java	2018-11-13 21:10:13.439885739 +0800
++++ lang_35_buggy/src/main/java/org/apache/commons/lang3/ArrayUtils.java	2018-11-13 21:10:18.115694761 +0800
+@@ -3289,7 +3289,7 @@
+         Class<?> type;
+         if (array != null){
+             type = array.getClass();
+-        } else if (element != null) {
++} else if(object!=null){
+             type = element.getClass();
+         } else {
+             type = Object.class;

@@ -1,0 +1,11 @@
+diff -r -u -w Lang64b/src/java/org/apache/commons/lang/enums/ValuedEnum.java lang_64_buggy/src/java/org/apache/commons/lang/enums/ValuedEnum.java
+--- Lang64b/src/java/org/apache/commons/lang/enums/ValuedEnum.java	2018-11-13 21:15:50.337873777 +0800
++++ lang_64_buggy/src/java/org/apache/commons/lang/enums/ValuedEnum.java	2018-11-13 21:15:56.394098779 +0800
+@@ -123,6 +123,7 @@
+      * @param value  the value of enum item
+      */
+     protected ValuedEnum(String name, int value) {
++this.value=value;
+         super(name);
+         iValue = value;
+     }

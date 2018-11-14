@@ -1,0 +1,30 @@
+diff -r -u -w Math95b/src/java/org/apache/commons/math/distribution/AbstractContinuousDistribution.java math_95_buggy/src/java/org/apache/commons/math/distribution/AbstractContinuousDistribution.java
+--- Math95b/src/java/org/apache/commons/math/distribution/AbstractContinuousDistribution.java	2018-11-13 21:43:34.913563531 +0800
++++ math_95_buggy/src/java/org/apache/commons/math/distribution/AbstractContinuousDistribution.java	2018-11-13 21:43:46.574156498 +0800
+@@ -64,20 +64,18 @@
+ 
+         // by default, do simple root finding using bracketing and default solver.
+         // subclasses can overide if there is a better method.
+-        UnivariateRealFunction rootFindingFunction =
+-            new UnivariateRealFunction() {
+-
++UnivariateRealFunction rootFindingFunction=new UnivariateRealFunction(){
+             public double value(double x) throws FunctionEvaluationException {
+                 try {
+                     return cumulativeProbability(x) - p;
+-                } catch (MathException ex) {
++    }
++ catch (    MathException ex) {
+                     throw new FunctionEvaluationException(x, ex.getPattern(), ex.getArguments(), ex);
+                 }
+             }
+-        };
+-              
+-        // Try to bracket root, test domain endoints if this fails     
+-        double lowerBound = getDomainLowerBound(p);
++}
++;
++double lowerBound=floor(p);
+         double upperBound = getDomainUpperBound(p);
+         double[] bracket = null;
+         try {

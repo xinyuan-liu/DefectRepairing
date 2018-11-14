@@ -1,0 +1,14 @@
+diff -r -u -w Time16b/src/main/java/org/joda/time/format/DateTimeFormatter.java time_16_buggy/src/main/java/org/joda/time/format/DateTimeFormatter.java
+--- Time16b/src/main/java/org/joda/time/format/DateTimeFormatter.java	2018-11-13 21:03:37.699707486 +0800
++++ time_16_buggy/src/main/java/org/joda/time/format/DateTimeFormatter.java	2018-11-13 21:48:03.559638543 +0800
+@@ -699,7 +699,9 @@
+         if (instant == null) {
+             throw new IllegalArgumentException("Instant must not be null");
+         }
+-        
++if(position==0){
++return this;
++}
+         long instantMillis = instant.getMillis();
+         Chronology chrono = instant.getChronology();
+         long instantLocal = instantMillis + chrono.getZone().getOffset(instantMillis);

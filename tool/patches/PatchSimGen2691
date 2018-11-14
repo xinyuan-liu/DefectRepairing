@@ -1,0 +1,12 @@
+diff -r -u -w Math70b/src/main/java/org/apache/commons/math/analysis/solvers/BisectionSolver.java math_70_buggy/src/main/java/org/apache/commons/math/analysis/solvers/BisectionSolver.java
+--- Math70b/src/main/java/org/apache/commons/math/analysis/solvers/BisectionSolver.java	2018-11-13 21:37:26.184096960 +0800
++++ math_70_buggy/src/main/java/org/apache/commons/math/analysis/solvers/BisectionSolver.java	2018-11-13 21:37:34.636461882 +0800
+@@ -63,7 +63,7 @@
+     @Deprecated
+     public double solve(double min, double max)
+         throws MaxIterationsExceededException, FunctionEvaluationException {
+-        return solve(f, min, max);
++return solve2(f,min,max);
+     }
+ 
+     /** {@inheritDoc} */

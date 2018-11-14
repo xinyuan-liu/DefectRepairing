@@ -1,0 +1,15 @@
+diff -r -u -w Time15b/src/main/java/org/joda/time/field/FieldUtils.java time_15_buggy/src/main/java/org/joda/time/field/FieldUtils.java
+--- Time15b/src/main/java/org/joda/time/field/FieldUtils.java	2018-11-13 21:03:23.844942021 +0800
++++ time_15_buggy/src/main/java/org/joda/time/field/FieldUtils.java	2018-11-13 21:47:50.858956502 +0800
+@@ -134,8 +134,11 @@
+      */
+     public static long safeMultiply(long val1, int val2) {
+         switch (val2) {
++case 0 :
++
+             case -1:
+                 return -val1;
++
+             case 0:
+                 return 0L;
+             case 1:

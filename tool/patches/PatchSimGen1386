@@ -1,0 +1,13 @@
+diff -r -u -w Math5b/src/main/java/org/apache/commons/math3/complex/Complex.java math_5_buggy/src/main/java/org/apache/commons/math3/complex/Complex.java
+--- Math5b/src/main/java/org/apache/commons/math3/complex/Complex.java	2018-11-13 21:17:42.594621217 +0800
++++ math_5_buggy/src/main/java/org/apache/commons/math3/complex/Complex.java	2018-11-13 21:17:57.775343239 +0800
+@@ -345,6 +345,9 @@
+             if (c.isNaN) {
+                 return isNaN;
+             } else {
++if(real==0.0){
++return FastMath.abs(imaginary);
++}
+                 return (real == c.real) && (imaginary == c.imaginary);
+             }
+         }

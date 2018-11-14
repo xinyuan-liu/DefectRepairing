@@ -1,0 +1,13 @@
+diff -r -u -w Math9b/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/Line.java math_9_buggy/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/Line.java
+--- Math9b/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/Line.java	2018-11-13 21:19:09.874972340 +0800
++++ math_9_buggy/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/Line.java	2018-11-13 21:19:18.127406314 +0800
+@@ -85,6 +85,9 @@
+      */
+     public Line revert() {
+         final Line reverted = new Line(zero, zero.subtract(direction));
++if(Vector3D.crossProduct(direction,line.direction).getNorm()<Precision.SAFE_MIN){
++return distance(line.zero);
++}
+         return reverted;
+     }
+ 

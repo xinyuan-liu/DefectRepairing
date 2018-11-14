@@ -1,0 +1,12 @@
+diff -r -u -w Time13b/src/main/java/org/joda/time/format/FormatUtils.java time_13_buggy/src/main/java/org/joda/time/format/FormatUtils.java
+--- Time13b/src/main/java/org/joda/time/format/FormatUtils.java	2018-11-13 21:03:05.698982949 +0800
++++ time_13_buggy/src/main/java/org/joda/time/format/FormatUtils.java	2018-11-13 21:47:37.746253802 +0800
+@@ -334,7 +334,7 @@
+      */
+     public static int calculateDigitCount(long value) {
+         if (value < 0) {
+-            if (value != Long.MIN_VALUE) {
++if(value!=PRINT_ZERO_ALWAYS){
+                 return calculateDigitCount(-value) + 1;
+             } else {
+                 return 20;

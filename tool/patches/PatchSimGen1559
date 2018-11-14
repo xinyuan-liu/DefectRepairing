@@ -1,0 +1,11 @@
+diff -r -u -w Math14b/src/main/java/org/apache/commons/math3/fitting/PolynomialFitter.java math_14_buggy/src/main/java/org/apache/commons/math3/fitting/PolynomialFitter.java
+--- Math14b/src/main/java/org/apache/commons/math3/fitting/PolynomialFitter.java	2018-11-13 21:21:02.529156287 +0800
++++ math_14_buggy/src/main/java/org/apache/commons/math3/fitting/PolynomialFitter.java	2018-11-13 21:21:10.153592332 +0800
+@@ -34,6 +34,7 @@
+      * @param optimizer Optimizer to use for the fitting.
+      */
+     public PolynomialFitter(MultivariateVectorOptimizer optimizer) {
++this.optimizer=optimizer;
+         super(optimizer);
+     }
+ 

@@ -1,0 +1,15 @@
+diff -r -u -w Lang64b/src/java/org/apache/commons/lang/enums/Enum.java lang_64_buggy/src/java/org/apache/commons/lang/enums/Enum.java
+--- Lang64b/src/java/org/apache/commons/lang/enums/Enum.java	2018-11-13 21:15:50.337873777 +0800
++++ lang_64_buggy/src/java/org/apache/commons/lang/enums/Enum.java	2018-11-13 21:15:59.210204776 +0800
+@@ -335,7 +335,10 @@
+         Class cls = getClass();
+         boolean ok = false;
+         while (cls != null && cls != Enum.class && cls != ValuedEnum.class) {
+-            if (cls == enumClass) {
++if(Enum.class.isAssignableFrom(enumClass)==false){
++throw new IllegalArgumentException("The Class must be a subclass of Enum");
++}
++if(enumClass==null){
+                 ok = true;
+                 break;
+             }

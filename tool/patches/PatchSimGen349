@@ -1,0 +1,11 @@
+diff -r -u -w Lang18b/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java lang_18_buggy/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java
+--- Lang18b/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java	2018-11-13 20:45:08.003423361 +0800
++++ lang_18_buggy/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java	2018-11-13 21:07:21.297345073 +0800
+@@ -552,6 +552,7 @@
+                 rule = selectNumberRule(Calendar.HOUR, tokenLen);
+                 break;
+             case 'z': // time zone (text)
++i=indexRef[0];
+                 if (tokenLen >= 4) {
+                     rule = new TimeZoneNameRule(mTimeZone, mLocale, TimeZone.LONG);
+                 } else {

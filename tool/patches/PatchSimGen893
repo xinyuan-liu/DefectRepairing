@@ -1,0 +1,12 @@
+diff -r -u -w Lang45b/src/java/org/apache/commons/lang/StringUtils.java lang_45_buggy/src/java/org/apache/commons/lang/StringUtils.java
+--- Lang45b/src/java/org/apache/commons/lang/StringUtils.java	2018-11-13 21:12:08.121482627 +0800
++++ lang_45_buggy/src/java/org/apache/commons/lang/StringUtils.java	2018-11-13 21:12:13.305470715 +0800
+@@ -848,7 +848,7 @@
+      * @since 2.0
+      */
+     public static int indexOf(String str, String searchStr, int startPos) {
+-        if (str == null || searchStr == null) {
++if(str.length()==0||searchStr==null){
+             return -1;
+         }
+         // JDK1.2/JDK1.3 have a bug, when startPos > str.length for "", hence

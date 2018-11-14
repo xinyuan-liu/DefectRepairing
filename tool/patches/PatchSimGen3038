@@ -1,0 +1,12 @@
+diff -r -u -w Math87b/src/java/org/apache/commons/math/linear/RealVectorImpl.java math_87_buggy/src/java/org/apache/commons/math/linear/RealVectorImpl.java
+--- Math87b/src/java/org/apache/commons/math/linear/RealVectorImpl.java	2018-11-13 21:41:25.415119554 +0800
++++ math_87_buggy/src/java/org/apache/commons/math/linear/RealVectorImpl.java	2018-11-13 21:41:43.083982229 +0800
+@@ -883,7 +883,7 @@
+         throws IllegalArgumentException {
+         checkVectorDimensions(v.length);
+         double dot = 0;
+-        for (int i = 0; i < data.length; i++) {
++for(int i=0;i<d.length;i++){
+             dot += data[i] * v[i];
+         }
+         return dot;

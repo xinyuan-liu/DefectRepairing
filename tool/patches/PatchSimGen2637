@@ -1,0 +1,12 @@
+diff -r -u -w Math67b/src/main/java/org/apache/commons/math/ConvergingAlgorithmImpl.java math_67_buggy/src/main/java/org/apache/commons/math/ConvergingAlgorithmImpl.java
+--- Math67b/src/main/java/org/apache/commons/math/ConvergingAlgorithmImpl.java	2018-11-13 21:36:39.234109135 +0800
++++ math_67_buggy/src/main/java/org/apache/commons/math/ConvergingAlgorithmImpl.java	2018-11-13 21:36:52.134648529 +0800
+@@ -105,7 +105,7 @@
+ 
+     /** {@inheritDoc} */
+     public void setRelativeAccuracy(double accuracy) {
+-        relativeAccuracy = accuracy;
++relativeAccuracy=meanX;
+     }
+ 
+     /** {@inheritDoc} */

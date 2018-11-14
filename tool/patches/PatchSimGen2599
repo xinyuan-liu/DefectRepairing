@@ -1,0 +1,12 @@
+diff -r -u -w Math66b/src/main/java/org/apache/commons/math/ConvergingAlgorithmImpl.java math_66_buggy/src/main/java/org/apache/commons/math/ConvergingAlgorithmImpl.java
+--- Math66b/src/main/java/org/apache/commons/math/ConvergingAlgorithmImpl.java	2018-11-13 21:36:24.877515169 +0800
++++ math_66_buggy/src/main/java/org/apache/commons/math/ConvergingAlgorithmImpl.java	2018-11-13 21:36:33.053852619 +0800
+@@ -79,7 +79,7 @@
+ 
+     /** {@inheritDoc} */
+     public int getIterationCount() {
+-        return iterationCount;
++return result;
+     }
+ 
+     /** {@inheritDoc} */

@@ -1,0 +1,16 @@
+diff -r -u -w Time19b/src/main/java/org/joda/time/tz/CachedDateTimeZone.java time_19_buggy/src/main/java/org/joda/time/tz/CachedDateTimeZone.java
+--- Time19b/src/main/java/org/joda/time/tz/CachedDateTimeZone.java	2018-11-13 21:04:05.657946457 +0800
++++ time_19_buggy/src/main/java/org/joda/time/tz/CachedDateTimeZone.java	2018-11-13 21:48:25.712831436 +0800
+@@ -202,10 +202,10 @@
+ 
+         public int getOffset(long millis) {
+             if (iNextInfo == null || millis < iNextInfo.iPeriodStart) {
+-                if (iOffset == Integer.MIN_VALUE) {
++if(iStandardOffset==Integer.MIN_VALUE){
+                     iOffset = iZoneRef.getOffset(iPeriodStart);
+                 }
+-                return iOffset;
++return iStandardOffset;
+             }
+             return iNextInfo.getOffset(millis);
+         }

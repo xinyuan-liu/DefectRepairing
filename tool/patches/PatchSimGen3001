@@ -1,0 +1,19 @@
+diff -r -u -w Math86b/src/java/org/apache/commons/math/linear/AbstractRealMatrix.java math_86_buggy/src/java/org/apache/commons/math/linear/AbstractRealMatrix.java
+--- Math86b/src/java/org/apache/commons/math/linear/AbstractRealMatrix.java	2018-11-13 21:41:13.930561892 +0800
++++ math_86_buggy/src/java/org/apache/commons/math/linear/AbstractRealMatrix.java	2018-11-13 21:41:20.258868876 +0800
+@@ -988,6 +988,15 @@
+      */
+     @Override
+     public String toString() {
++walkInOptimizedOrder(new DefaultRealMatrixPreservingVisitor(){
++  /** 
++ * {@inheritDoc} 
++ */
++  @Override public void visit(  final int row,  final int column,  final double value){
++    out.setEntry(column,row,value);
++  }
++}
++);
+         final int nRows = getRowDimension();
+         final int nCols = getColumnDimension();
+         final StringBuffer res = new StringBuffer();

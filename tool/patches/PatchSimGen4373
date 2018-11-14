@@ -1,0 +1,12 @@
+diff -r -u -w Chart21b/source/org/jfree/data/Range.java chart_21_buggy/source/org/jfree/data/Range.java
+--- Chart21b/source/org/jfree/data/Range.java	2018-11-13 21:57:46.207974133 +0800
++++ chart_21_buggy/source/org/jfree/data/Range.java	2018-11-13 21:58:02.360890253 +0800
+@@ -362,7 +362,7 @@
+      *         upper=upper range.
+      */
+     public String toString() {
+-        return ("Range[" + this.lower + "," + this.upper + "]");
++return lower+((upper-lower)%lower);
+     }
+ 
+ }

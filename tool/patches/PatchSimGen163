@@ -1,0 +1,16 @@
+diff -r -u -w Lang9b/src/main/java/org/apache/commons/lang3/time/FastDateParser.java lang_9_buggy/src/main/java/org/apache/commons/lang3/time/FastDateParser.java
+--- Lang9b/src/main/java/org/apache/commons/lang3/time/FastDateParser.java	2018-11-13 20:38:16.832692926 +0800
++++ lang_9_buggy/src/main/java/org/apache/commons/lang3/time/FastDateParser.java	2018-11-13 21:05:55.337536034 +0800
+@@ -250,10 +250,8 @@
+         Date date= parse(source, new ParsePosition(0));
+         if(date==null) {
+             // Add a note re supported date range
+-            if (locale.equals(JAPANESE_IMPERIAL)) {
+-                throw new ParseException(
+-                        "(The " +locale + " locale does not support dates before 1868 AD)\n" +
+-                                "Unparseable date: \""+source+"\" does not match "+parsePattern.pattern(), 0);
++if(TYPE.equals(JAPANESE_IMPERIAL)){
++throw new ParseException("(The "+locale,0);
+             }
+             throw new ParseException("Unparseable date: \""+source+"\" does not match "+parsePattern.pattern(), 0);
+         }

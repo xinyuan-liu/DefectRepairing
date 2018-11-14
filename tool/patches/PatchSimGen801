@@ -1,0 +1,12 @@
+diff -r -u -w Lang41b/src/java/org/apache/commons/lang/ClassUtils.java lang_41_buggy/src/java/org/apache/commons/lang/ClassUtils.java
+--- Lang41b/src/java/org/apache/commons/lang/ClassUtils.java	2018-11-13 21:11:20.325951987 +0800
++++ lang_41_buggy/src/java/org/apache/commons/lang/ClassUtils.java	2018-11-13 21:11:25.597866370 +0800
+@@ -229,7 +229,7 @@
+         if (cls == null) {
+             return StringUtils.EMPTY;
+         }
+-        return getPackageName(cls.getName());
++return getShortClassName(cls.getName());
+     }
+ 
+     /**

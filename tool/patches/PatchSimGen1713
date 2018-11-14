@@ -1,0 +1,13 @@
+diff -r -u -w Math21b/src/main/java/org/apache/commons/math3/linear/AbstractRealMatrix.java math_21_buggy/src/main/java/org/apache/commons/math3/linear/AbstractRealMatrix.java
+--- Math21b/src/main/java/org/apache/commons/math3/linear/AbstractRealMatrix.java	2018-11-13 21:23:10.788707481 +0800
++++ math_21_buggy/src/main/java/org/apache/commons/math3/linear/AbstractRealMatrix.java	2018-11-13 21:23:21.949382869 +0800
+@@ -101,6 +101,9 @@
+         final RealMatrix out = createMatrix(rowCount, columnCount);
+         for (int row = 0; row < rowCount; ++row) {
+             for (int col = 0; col < columnCount; ++col) {
++if(FastMath.abs(m.getEntry(row,col)-tableau.getEntry(startRow,i)*columnCount)<CUTOFF_THRESHOLD){
++result=0.0;
++}
+                 out.setEntry(row, col, getEntry(row, col) - m.getEntry(row, col));
+             }
+         }

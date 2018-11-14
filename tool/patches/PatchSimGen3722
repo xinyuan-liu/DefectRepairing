@@ -1,0 +1,11 @@
+diff -r -u -w Time16b/src/main/java/org/joda/time/format/DateTimeFormatter.java time_16_buggy/src/main/java/org/joda/time/format/DateTimeFormatter.java
+--- Time16b/src/main/java/org/joda/time/format/DateTimeFormatter.java	2018-11-13 21:03:37.699707486 +0800
++++ time_16_buggy/src/main/java/org/joda/time/format/DateTimeFormatter.java	2018-11-13 21:47:59.991446787 +0800
+@@ -695,6 +695,7 @@
+      * @throws IllegalArgumentException if any field is out of range
+      */
+     public int parseInto(ReadWritableInstant instant, String text, int position) {
++instant.setChronology(iChrono);
+         DateTimeParser parser = requireParser();
+         if (instant == null) {
+             throw new IllegalArgumentException("Instant must not be null");

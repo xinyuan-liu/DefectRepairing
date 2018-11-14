@@ -1,0 +1,18 @@
+diff -r -u -w Math94b/src/java/org/apache/commons/math/util/MathUtils.java math_94_buggy/src/java/org/apache/commons/math/util/MathUtils.java
+--- Math94b/src/java/org/apache/commons/math/util/MathUtils.java	2018-11-13 21:43:20.156815911 +0800
++++ math_94_buggy/src/java/org/apache/commons/math/util/MathUtils.java	2018-11-13 21:43:25.561089342 +0800
+@@ -425,11 +425,11 @@
+         } // make v negative
+         // B1. [Find power of 2]
+         int k = 0;
+-        while ((u & 1) == 0 && (v & 1) == 0 && k < 31) { // while u and v are
+-                                                            // both even...
++while((u&1)==0&&(v&1)==0&&k<31){
+             u /= 2;
++cos=1.0/Math.sqrt(1.0+SAFE_MIN*tan);
+             v /= 2;
+-            k++; // cast out twos.
++k++;
+         }
+         if (k == 31) {
+             throw new ArithmeticException("overflow: gcd is 2^31");

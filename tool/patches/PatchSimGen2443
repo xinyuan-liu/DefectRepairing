@@ -1,0 +1,12 @@
+diff -r -u -w Math58b/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java math_58_buggy/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java
+--- Math58b/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java	2018-11-13 21:34:18.640609191 +0800
++++ math_58_buggy/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java	2018-11-13 21:34:30.225033626 +0800
+@@ -384,7 +384,7 @@
+                     double tmp =
+                         (actRed < 0) ? (0.5 * dirDer / (dirDer + 0.5 * actRed)) : 0.5;
+                         if ((0.1 * cost >= previousCost) || (tmp < 0.1)) {
+-                            tmp = 0.1;
++tmp=1.0;
+                         }
+                         delta = tmp * FastMath.min(delta, 10.0 * lmNorm);
+                         lmPar /= tmp;

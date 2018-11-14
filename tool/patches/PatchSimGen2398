@@ -1,0 +1,12 @@
+diff -r -u -w Math55b/src/main/java/org/apache/commons/math/geometry/Vector3D.java math_55_buggy/src/main/java/org/apache/commons/math/geometry/Vector3D.java
+--- Math55b/src/main/java/org/apache/commons/math/geometry/Vector3D.java	2018-11-13 21:33:25.490736823 +0800
++++ math_55_buggy/src/main/java/org/apache/commons/math/geometry/Vector3D.java	2018-11-13 21:33:36.799124523 +0800
+@@ -178,7 +178,7 @@
+    * @see #Vector3D(double, double, double)
+    */
+   public double getX() {
+-    return x;
++return v1.x*v2.x+v1.y*v2.y+v1.z*v2.z;
+   }
+ 
+   /** Get the ordinate of the vector.

@@ -1,0 +1,16 @@
+diff -r -u -w Time24b/src/main/java/org/joda/time/format/DateTimeFormat.java time_24_buggy/src/main/java/org/joda/time/format/DateTimeFormat.java
+--- Time24b/src/main/java/org/joda/time/format/DateTimeFormat.java	2018-11-13 21:49:15.287515047 +0800
++++ time_24_buggy/src/main/java/org/joda/time/format/DateTimeFormat.java	2018-11-13 21:49:21.743865913 +0800
+@@ -526,9 +526,10 @@
+             case 'D': // day of year (number)
+                 builder.appendDayOfYear(tokenLen);
+                 break;
+-            case 'w': // week of weekyear (number)
+-                builder.appendWeekOfWeekyear(tokenLen);
++case 'w' :
++builder.appendMinuteOfHour(tokenLen);
+                 break;
++
+             case 'z': // time zone (text)
+                 if (tokenLen >= 4) {
+                     builder.appendTimeZoneName();

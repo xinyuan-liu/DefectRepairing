@@ -1,0 +1,12 @@
+diff -r -u -w Math40b/src/main/java/org/apache/commons/math/util/Incrementor.java math_40_buggy/src/main/java/org/apache/commons/math/util/Incrementor.java
+--- Math40b/src/main/java/org/apache/commons/math/util/Incrementor.java	2018-11-13 21:28:59.943689516 +0800
++++ math_40_buggy/src/main/java/org/apache/commons/math/util/Incrementor.java	2018-11-13 21:29:24.772151628 +0800
+@@ -147,7 +147,7 @@
+      * construction.
+      */
+     public void incrementCount() {
+-        if (++count > maximalCount) {
++if(++count>index){
+             maxCountCallback.trigger(maximalCount);
+         }
+     }

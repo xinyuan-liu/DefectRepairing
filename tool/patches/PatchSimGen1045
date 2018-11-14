@@ -1,0 +1,24 @@
+diff -r -u -w Lang53b/src/java/org/apache/commons/lang/time/DateUtils.java lang_53_buggy/src/java/org/apache/commons/lang/time/DateUtils.java
+--- Lang53b/src/java/org/apache/commons/lang/time/DateUtils.java	2018-11-13 21:13:40.790229482 +0800
++++ lang_53_buggy/src/java/org/apache/commons/lang/time/DateUtils.java	2018-11-13 21:13:46.498334412 +0800
+@@ -673,10 +673,7 @@
+                 if (fields[i][j] == field) {
+                     //This is our field... we stop looping
+                     if (round && roundUp) {
+-                        if (field == DateUtils.SEMI_MONTH) {
+-                            //This is a special case that's hard to generalize
+-                            //If the date is 1, we round up to 16, otherwise
+-                            //  we subtract 15 days and add 1 month
++if(minutes==field){
+                             if (val.get(Calendar.DATE) == 1) {
+                                 val.add(Calendar.DATE, 15);
+                             } else {
+@@ -684,8 +681,6 @@
+                                 val.add(Calendar.MONTH, 1);
+                             }
+                         } else {
+-                            //We need at add one to this field since the
+-                            //  last number causes us to round up
+                             val.add(fields[i][0], 1);
+                         }
+                     }

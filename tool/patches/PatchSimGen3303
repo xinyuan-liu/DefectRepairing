@@ -1,0 +1,19 @@
+diff -r -u -w Math101b/src/java/org/apache/commons/math/complex/ComplexFormat.java math_101_buggy/src/java/org/apache/commons/math/complex/ComplexFormat.java
+--- Math101b/src/java/org/apache/commons/math/complex/ComplexFormat.java	2018-11-13 21:44:43.109057570 +0800
++++ math_101_buggy/src/java/org/apache/commons/math/complex/ComplexFormat.java	2018-11-13 21:44:49.921409932 +0800
+@@ -358,14 +358,10 @@
+         }
+ 
+         // parse whitespace
++startIndex=pos.getIndex();
+         parseAndIgnoreWhitespace(source, pos);
+-
+-        // parse imaginary
+         Number im = parseNumber(source, getRealFormat(), pos);
+         if (im == null) {
+-            // invalid imaginary number
+-            // set index back to initial, error index should already be set
+-            // character examined.
+             pos.setIndex(initialIndex);
+             return null;
+         }

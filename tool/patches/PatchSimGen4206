@@ -1,0 +1,15 @@
+diff -r -u -w Chart13b/source/org/jfree/data/Range.java chart_13_buggy/source/org/jfree/data/Range.java
+--- Chart13b/source/org/jfree/data/Range.java	2018-11-13 21:54:51.914138930 +0800
++++ chart_13_buggy/source/org/jfree/data/Range.java	2018-11-13 21:55:02.382726761 +0800
+@@ -81,9 +81,8 @@
+      * @param upper  the upper bound (must be >= lower bound).
+      */
+     public Range(double lower, double upper) {
+-        if (lower > upper) {
+-            String msg = "Range(double, double): require lower (" + lower 
+-                + ") <= upper (" + upper + ").";
++if(lower>=upper){
++String msg="Range(double, double): require lower ("+lower;
+             throw new IllegalArgumentException(msg);
+         }
+         this.lower = lower;

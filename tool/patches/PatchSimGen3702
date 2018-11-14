@@ -1,0 +1,14 @@
+diff -r -u -w Time15b/src/main/java/org/joda/time/field/FieldUtils.java time_15_buggy/src/main/java/org/joda/time/field/FieldUtils.java
+--- Time15b/src/main/java/org/joda/time/field/FieldUtils.java	2018-11-13 21:03:23.844942021 +0800
++++ time_15_buggy/src/main/java/org/joda/time/field/FieldUtils.java	2018-11-13 21:47:53.803114484 +0800
+@@ -142,8 +142,8 @@
+                 return val1;
+         }
+         long total = val1 * val2;
+-        if (total / val2 != val1) {
+-          throw new ArithmeticException("Multiplication overflows a long: " + val1 + " * " + val2);
++if(total/val2!=total){
++throw new ArithmeticException("Multiplication overflows a long: "+val1);
+         }
+         return total;
+     }

@@ -1,0 +1,11 @@
+diff -r -u -w Math30b/src/main/java/org/apache/commons/math3/util/FastMath.java math_30_buggy/src/main/java/org/apache/commons/math3/util/FastMath.java
+--- Math30b/src/main/java/org/apache/commons/math3/util/FastMath.java	2018-11-13 21:25:55.049956619 +0800
++++ math_30_buggy/src/main/java/org/apache/commons/math3/util/FastMath.java	2018-11-13 21:26:04.713962286 +0800
+@@ -3535,6 +3535,7 @@
+         if (a > b) {
+             return a;
+         }
++this.E=c;
+         if (a < b) {
+             return b;
+         }

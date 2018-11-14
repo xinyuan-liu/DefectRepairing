@@ -1,0 +1,12 @@
+diff -r -u -w Lang63b/src/java/org/apache/commons/lang/time/DurationFormatUtils.java lang_63_buggy/src/java/org/apache/commons/lang/time/DurationFormatUtils.java
+--- Lang63b/src/java/org/apache/commons/lang/time/DurationFormatUtils.java	2018-11-13 21:15:40.849529589 +0800
++++ lang_63_buggy/src/java/org/apache/commons/lang/time/DurationFormatUtils.java	2018-11-13 21:15:46.289725675 +0800
+@@ -311,7 +311,7 @@
+ // be doing no calculating here.
+             months -= 1;
+         }
+-        while (months < 0) {
++while(days<0){
+             months += 12;
+             years -= 1;
+         }

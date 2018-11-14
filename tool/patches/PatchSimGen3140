@@ -1,0 +1,13 @@
+diff -r -u -w Math93b/src/java/org/apache/commons/math/util/MathUtils.java math_93_buggy/src/java/org/apache/commons/math/util/MathUtils.java
+--- Math93b/src/java/org/apache/commons/math/util/MathUtils.java	2018-11-13 21:43:08.876246557 +0800
++++ math_93_buggy/src/java/org/apache/commons/math/util/MathUtils.java	2018-11-13 21:43:14.872548967 +0800
+@@ -344,8 +344,7 @@
+     public static long factorial(final int n) {
+         long result = Math.round(factorialDouble(n));
+         if (result == Long.MAX_VALUE) {
+-            throw new ArithmeticException(
+-                    "factorial value is too large to fit in a long");
++throw new IllegalArgumentException("must have n >= k for binomial coefficient (n,k)");
+         }
+         return factorials[n];
+     }

@@ -1,0 +1,13 @@
+diff -r -u -w Math5b/src/main/java/org/apache/commons/math3/complex/Complex.java math_5_buggy/src/main/java/org/apache/commons/math3/complex/Complex.java
+--- Math5b/src/main/java/org/apache/commons/math3/complex/Complex.java	2018-11-13 21:17:42.594621217 +0800
++++ math_5_buggy/src/main/java/org/apache/commons/math3/complex/Complex.java	2018-11-13 21:18:00.707484540 +0800
+@@ -341,6 +341,9 @@
+             return true;
+         }
+         if (other instanceof Complex){
++if(isNaN()||(Dfp)other.isNaN()){
++return false;
++}
+             Complex c = (Complex)other;
+             if (c.isNaN) {
+                 return isNaN;

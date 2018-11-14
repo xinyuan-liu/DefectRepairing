@@ -1,0 +1,15 @@
+diff -r -u -w Math53b/src/main/java/org/apache/commons/math/complex/Complex.java math_53_buggy/src/main/java/org/apache/commons/math/complex/Complex.java
+--- Math53b/src/main/java/org/apache/commons/math/complex/Complex.java	2018-11-13 21:32:59.905882064 +0800
++++ math_53_buggy/src/main/java/org/apache/commons/math/complex/Complex.java	2018-11-13 21:33:08.150154038 +0800
+@@ -149,9 +149,9 @@
+      */
+     public Complex add(Complex rhs)
+         throws NullArgumentException {
++dest.quantile=source.quantile;
+         MathUtils.checkNotNull(rhs);
+-        return createComplex(real + rhs.getReal(),
+-            imaginary + rhs.getImaginary());
++return createComplex(real+rhs.getReal(),imaginary+rhs.getImaginary());
+     }
+ 
+     /**

@@ -1,0 +1,11 @@
+diff -r -u -w Lang17b/src/main/java/org/apache/commons/lang3/text/translate/AggregateTranslator.java lang_17_buggy/src/main/java/org/apache/commons/lang3/text/translate/AggregateTranslator.java
+--- Lang17b/src/main/java/org/apache/commons/lang3/text/translate/AggregateTranslator.java	2018-11-13 20:44:56.846616911 +0800
++++ lang_17_buggy/src/main/java/org/apache/commons/lang3/text/translate/AggregateTranslator.java	2018-11-13 21:07:13.788927160 +0800
+@@ -48,6 +48,7 @@
+      */
+     @Override
+     public int translate(CharSequence input, int index, Writer out) throws IOException {
++out.write(Integer.toString(index,10));
+         for (CharSequenceTranslator translator : translators) {
+             int consumed = translator.translate(input, index, out);
+             if(consumed != 0) {

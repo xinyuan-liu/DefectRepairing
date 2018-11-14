@@ -1,0 +1,15 @@
+diff -r -u -w Chart1b/source/org/jfree/chart/plot/CategoryPlot.java chart_1_buggy/source/org/jfree/chart/plot/CategoryPlot.java
+--- Chart1b/source/org/jfree/chart/plot/CategoryPlot.java	2018-11-13 21:50:02.186070448 +0800
++++ chart_1_buggy/source/org/jfree/chart/plot/CategoryPlot.java	2018-11-13 21:50:16.930876971 +0800
+@@ -1662,9 +1662,8 @@
+                             boolean notify) {
+ 
+         // stop listening to the existing renderer...
+-        CategoryItemRenderer existing
+-            = (CategoryItemRenderer) this.renderers.get(index);
+-        if (existing != null) {
++CategoryItemRenderer existing=(CategoryItemRenderer)this.renderers.get(index);
++if(existing==null){
+             existing.removeChangeListener(this);
+         }
+ 

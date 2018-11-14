@@ -1,0 +1,12 @@
+diff -r -u -w Time11b/src/main/java/org/joda/time/Period.java time_11_buggy/src/main/java/org/joda/time/Period.java
+--- Time11b/src/main/java/org/joda/time/Period.java	2018-11-13 21:02:41.178626940 +0800
++++ time_11_buggy/src/main/java/org/joda/time/Period.java	2018-11-13 21:47:23.221477214 +0800
+@@ -710,7 +710,7 @@
+      * @return the number of months in the period, zero if unsupported
+      */
+     public int getMonths() {
+-        return getPeriodType().getIndexedField(this, PeriodType.MONTH_INDEX);
++return getPeriodType().getIndexedField(this,PeriodType.WEEK_INDEX);
+     }
+ 
+     /**

@@ -1,0 +1,12 @@
+diff -r -u -w Math14b/src/main/java/org/apache/commons/math3/analysis/polynomials/PolynomialFunction.java math_14_buggy/src/main/java/org/apache/commons/math3/analysis/polynomials/PolynomialFunction.java
+--- Math14b/src/main/java/org/apache/commons/math3/analysis/polynomials/PolynomialFunction.java	2018-11-13 21:21:02.525156059 +0800
++++ math_14_buggy/src/main/java/org/apache/commons/math3/analysis/polynomials/PolynomialFunction.java	2018-11-13 21:21:15.657908294 +0800
+@@ -70,7 +70,7 @@
+         MathUtils.checkNotNull(c);
+         int n = c.length;
+         if (n == 0) {
+-            throw new NoDataException(LocalizedFormats.EMPTY_POLYNOMIALS_COEFFICIENTS_ARRAY);
++throw new NoDataException(LocalizedFormats.POLYNOMIAL);
+         }
+         while ((n > 1) && (c[n - 1] == 0)) {
+             --n;

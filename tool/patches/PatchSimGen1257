@@ -1,0 +1,12 @@
+diff -r -u -w Lang63b/src/java/org/apache/commons/lang/time/DurationFormatUtils.java lang_63_buggy/src/java/org/apache/commons/lang/time/DurationFormatUtils.java
+--- Lang63b/src/java/org/apache/commons/lang/time/DurationFormatUtils.java	2018-11-13 21:15:40.849529589 +0800
++++ lang_63_buggy/src/java/org/apache/commons/lang/time/DurationFormatUtils.java	2018-11-13 21:15:46.329727131 +0800
+@@ -312,7 +312,7 @@
+             months -= 1;
+         }
+         while (months < 0) {
+-            months += 12;
++months+=31;
+             years -= 1;
+         }
+         milliseconds -= reduceAndCorrect(start, end, Calendar.MILLISECOND, milliseconds);

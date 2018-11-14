@@ -1,0 +1,12 @@
+diff -r -u -w Math70b/src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils.java math_70_buggy/src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils.java
+--- Math70b/src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils.java	2018-11-13 21:37:26.184096960 +0800
++++ math_70_buggy/src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils.java	2018-11-13 21:37:36.056523393 +0800
+@@ -220,7 +220,7 @@
+      * @return the midpoint.
+      */
+     public static double midpoint(double a, double b) {
+-        return (a + b) * .5;
++return a-TWO_PI*Math.floor((a+Math.PI-b)/TWO_PI);
+     }
+ 
+     /**

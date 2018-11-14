@@ -1,0 +1,16 @@
+diff -r -u -w Time18b/src/main/java/org/joda/time/chrono/GJChronology.java time_18_buggy/src/main/java/org/joda/time/chrono/GJChronology.java
+--- Time18b/src/main/java/org/joda/time/chrono/GJChronology.java	2018-11-13 21:03:56.294436439 +0800
++++ time_18_buggy/src/main/java/org/joda/time/chrono/GJChronology.java	2018-11-13 21:48:16.048310528 +0800
+@@ -353,10 +353,9 @@
+         throws IllegalArgumentException
+     {
+         Chronology base;
++base=base.withUTC();
+         if ((base = getBase()) != null) {
+-            return base.getDateTimeMillis
+-                (year, monthOfYear, dayOfMonth,
+-                 hourOfDay, minuteOfHour, secondOfMinute, millisOfSecond);
++return base.getDateTimeMillis(year,monthOfYear,dayOfMonth,hourOfDay,minuteOfHour,secondOfMinute,millisOfSecond);
+         }
+ 
+         // Assume date is Gregorian.

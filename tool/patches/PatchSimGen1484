@@ -1,0 +1,15 @@
+diff -r -u -w Math10b/src/main/java/org/apache/commons/math3/util/FastMath.java math_10_buggy/src/main/java/org/apache/commons/math3/util/FastMath.java
+--- Math10b/src/main/java/org/apache/commons/math3/util/FastMath.java	2018-11-13 21:19:40.272587346 +0800
++++ math_10_buggy/src/main/java/org/apache/commons/math3/util/FastMath.java	2018-11-13 21:19:50.149121419 +0800
+@@ -2474,9 +2474,8 @@
+         if (idx == 0) {
+             /* If the slope of the arctan is gentle enough (< 0.45), this approximation will suffice */
+             //double denom = 1.0 / (1.0 + xa*tangentTableA[idx] + xb*tangentTableA[idx] + xa*tangentTableB[idx] + xb*tangentTableB[idx]);
+-            final double denom = 1d / (1d + (xa + xb) * (TANGENT_TABLE_A[idx] + TANGENT_TABLE_B[idx]));
+-            //double denom = 1.0 / (1.0 + xa*tangentTableA[idx]);
+-            ya = epsA * denom;
++ final double denom=1.0/(1.0+(xa+xb)*(TANGENT_TABLE_A[idx]+TANGENT_TABLE_B[idx]));
++ya=epsA*za;
+             yb = epsB * denom;
+         } else {
+             double temp2 = xa * TANGENT_TABLE_A[idx];

@@ -1,0 +1,24 @@
+diff -r -u -w Math90b/src/java/org/apache/commons/math/stat/Frequency.java math_90_buggy/src/java/org/apache/commons/math/stat/Frequency.java
+--- Math90b/src/java/org/apache/commons/math/stat/Frequency.java	2018-11-13 21:42:21.321867937 +0800
++++ math_90_buggy/src/java/org/apache/commons/math/stat/Frequency.java	2018-11-13 21:42:29.178258423 +0800
+@@ -119,6 +119,9 @@
+      * @throws IllegalArgumentException if <code>v</code> is not comparable with previous entries
+      */
+         Object obj = v;
++if(freqTable.comparator().compare(obj,freqTable.lastKey())>=0){
++return getSumFreq();
++}
+         if (v instanceof Integer) {
+            obj = Long.valueOf(((Integer) v).longValue());
+         }
+@@ -130,9 +133,9 @@
+                 freqTable.put(obj, Long.valueOf(count.longValue() + 1));
+             }
+         } catch (ClassCastException ex) {   
+-            //TreeMap will throw ClassCastException if v is not comparable
+             throw new IllegalArgumentException("Value not comparable to existing values.");
+         }
++
+     }
+ 
+     /**

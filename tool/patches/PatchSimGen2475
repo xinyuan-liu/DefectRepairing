@@ -1,0 +1,11 @@
+diff -r -u -w Math59b/src/main/java/org/apache/commons/math/dfp/DfpField.java math_59_buggy/src/main/java/org/apache/commons/math/dfp/DfpField.java
+--- Math59b/src/main/java/org/apache/commons/math/dfp/DfpField.java	2018-11-13 21:34:35.837241256 +0800
++++ math_59_buggy/src/main/java/org/apache/commons/math/dfp/DfpField.java	2018-11-13 21:34:49.101737098 +0800
+@@ -190,6 +190,7 @@
+         this.radixDigits = (decimalDigits < 13) ? 4 : (decimalDigits + 3) / 4;
+         this.rMode       = RoundingMode.ROUND_HALF_EVEN;
+         this.ieeeFlags   = 0;
++new Dfp[2][0]=sqr2Reciprocal;
+         this.zero        = new Dfp(this, 0);
+         this.one         = new Dfp(this, 1);
+         this.two         = new Dfp(this, 2);

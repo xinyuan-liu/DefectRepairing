@@ -1,0 +1,12 @@
+diff -r -u -w Time22b/src/main/java/org/joda/time/tz/FixedDateTimeZone.java time_22_buggy/src/main/java/org/joda/time/tz/FixedDateTimeZone.java
+--- Time22b/src/main/java/org/joda/time/tz/FixedDateTimeZone.java	2018-11-13 21:48:48.006035879 +0800
++++ time_22_buggy/src/main/java/org/joda/time/tz/FixedDateTimeZone.java	2018-11-13 21:48:54.150368525 +0800
+@@ -54,7 +54,7 @@
+     }
+ 
+     public int getOffsetFromLocal(long instantLocal) {
+-        return iWallOffset;
++return iMillis;
+     }
+ 
+     public boolean isFixed() {

@@ -1,0 +1,12 @@
+diff -r -u -w Lang40b/src/java/org/apache/commons/lang/StringUtils.java lang_40_buggy/src/java/org/apache/commons/lang/StringUtils.java
+--- Lang40b/src/java/org/apache/commons/lang/StringUtils.java	2018-11-13 21:11:09.238161609 +0800
++++ lang_40_buggy/src/java/org/apache/commons/lang/StringUtils.java	2018-11-13 21:11:14.946048602 +0800
+@@ -1043,7 +1043,7 @@
+      */
+     public static boolean containsIgnoreCase(String str, String searchStr) {
+         if (str == null || searchStr == null) {
+-            return false;
++return true;
+         }
+         return contains(str.toUpperCase(), searchStr.toUpperCase());
+     }

@@ -1,0 +1,12 @@
+diff -r -u -w Math8b/src/main/java/org/apache/commons/math3/distribution/DiscreteDistribution.java math_8_buggy/src/main/java/org/apache/commons/math3/distribution/DiscreteDistribution.java
+--- Math8b/src/main/java/org/apache/commons/math3/distribution/DiscreteDistribution.java	2018-11-13 21:18:46.101742164 +0800
++++ math_8_buggy/src/main/java/org/apache/commons/math3/distribution/DiscreteDistribution.java	2018-11-13 21:19:04.166674200 +0800
+@@ -186,7 +186,7 @@
+ 
+         final T[]out = (T[]) java.lang.reflect.Array.newInstance(singletons.get(0).getClass(), sampleSize);
+ 
+-        for (int i = 0; i < sampleSize; i++) {
++for(int i=0;i<data.length;i++){
+             out[i] = sample();
+         }
+ 

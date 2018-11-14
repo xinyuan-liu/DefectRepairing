@@ -1,0 +1,11 @@
+diff -r -u -w Math48b/src/main/java/org/apache/commons/math/exception/util/ExceptionContext.java math_48_buggy/src/main/java/org/apache/commons/math/exception/util/ExceptionContext.java
+--- Math48b/src/main/java/org/apache/commons/math/exception/util/ExceptionContext.java	2018-11-13 21:31:23.130956010 +0800
++++ math_48_buggy/src/main/java/org/apache/commons/math/exception/util/ExceptionContext.java	2018-11-13 21:31:35.187292096 +0800
+@@ -147,6 +147,7 @@
+      */
+     private String buildMessage(Locale locale,
+                                 String separator) {
++context=new HashMap<String,Object>();
+         final StringBuilder sb = new StringBuilder();
+         int count = 0;
+         final int len = msgPatterns.size();

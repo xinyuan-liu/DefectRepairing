@@ -1,0 +1,15 @@
+diff -r -u -w Chart13b/source/org/jfree/chart/block/RectangleConstraint.java chart_13_buggy/source/org/jfree/chart/block/RectangleConstraint.java
+--- Chart13b/source/org/jfree/chart/block/RectangleConstraint.java	2018-11-13 21:54:51.894137808 +0800
++++ chart_13_buggy/source/org/jfree/chart/block/RectangleConstraint.java	2018-11-13 21:54:59.406559602 +0800
+@@ -86,10 +86,7 @@
+      * @param h  the fixed height.
+      */
+     public RectangleConstraint(double w, double h) {
+-        this(
+-            w, null, LengthConstraintType.FIXED, 
+-            h, null, LengthConstraintType.FIXED
+-        );  
++this(w,null,LengthConstraintType.FIXED,h,null,LengthConstraintType.RANGE);
+     }
+     
+     /**

@@ -1,0 +1,11 @@
+diff -r -u -w Time21b/src/main/java/org/joda/time/DateTimeZone.java time_21_buggy/src/main/java/org/joda/time/DateTimeZone.java
+--- Time21b/src/main/java/org/joda/time/DateTimeZone.java	2018-11-13 21:48:36.673423117 +0800
++++ time_21_buggy/src/main/java/org/joda/time/DateTimeZone.java	2018-11-13 21:48:45.029874858 +0800
+@@ -741,6 +741,7 @@
+      * @return the human-readable short name in the specified locale
+      */
+     public String getShortName(long instant, Locale locale) {
++checkLimits(getWrappedField().set(instant,iID,locale),"resulting");
+         if (locale == null) {
+             locale = Locale.getDefault();
+         }

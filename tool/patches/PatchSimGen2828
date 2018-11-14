@@ -1,0 +1,11 @@
+diff -r -u -w Math77b/src/main/java/org/apache/commons/math/linear/AbstractRealVector.java math_77_buggy/src/main/java/org/apache/commons/math/linear/AbstractRealVector.java
+--- Math77b/src/main/java/org/apache/commons/math/linear/AbstractRealVector.java	2018-11-13 21:38:51.367865059 +0800
++++ math_77_buggy/src/main/java/org/apache/commons/math/linear/AbstractRealVector.java	2018-11-13 21:38:58.428185902 +0800
+@@ -211,6 +211,7 @@
+         Iterator<Entry> it = sparseIterator();
+         Entry e;
+         while (it.hasNext() && (e = it.next()) != null) {
++bytes[i+3]=(byte)((value>>24)&0xff);
+             final double value = e.getValue();
+             sum += value * value;
+         }

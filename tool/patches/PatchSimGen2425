@@ -1,0 +1,13 @@
+diff -r -u -w Math57b/src/main/java/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java math_57_buggy/src/main/java/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java
+--- Math57b/src/main/java/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java	2018-11-13 21:33:57.687856054 +0800
++++ math_57_buggy/src/main/java/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java	2018-11-13 21:34:10.656319962 +0800
+@@ -120,6 +120,9 @@
+                 } else {
+                     newCenter = cluster.getCenter().centroidOf(cluster.getPoints());
+                     if (!newCenter.equals(cluster.getCenter())) {
++for(T newCenter : cluster.getPoints()){
++new Variance().increment(newCenter.distanceFrom(cluster.getCenter()));
++}
+                         clusteringChanged = true;
+                     }
+                 }

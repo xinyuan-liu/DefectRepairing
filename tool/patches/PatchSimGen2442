@@ -1,0 +1,11 @@
+diff -r -u -w Math58b/src/main/java/org/apache/commons/math/exception/MathRuntimeException.java math_58_buggy/src/main/java/org/apache/commons/math/exception/MathRuntimeException.java
+--- Math58b/src/main/java/org/apache/commons/math/exception/MathRuntimeException.java	2018-11-13 21:34:18.632608900 +0800
++++ math_58_buggy/src/main/java/org/apache/commons/math/exception/MathRuntimeException.java	2018-11-13 21:34:27.192921991 +0800
+@@ -111,6 +111,6 @@
+     /** {@inheritDoc} */
+     @Override
+     public String getLocalizedMessage() {
+-        return getMessage(Locale.getDefault());
++return getMessage(Locale.US);
+     }
+ }

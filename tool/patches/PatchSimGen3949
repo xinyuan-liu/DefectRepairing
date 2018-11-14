@@ -1,0 +1,13 @@
+diff -r -u -w Time27b/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java time_27_buggy/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java
+--- Time27b/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java	2018-11-13 21:49:50.873452646 +0800
++++ time_27_buggy/src/main/java/org/joda/time/format/PeriodFormatterBuilder.java	2018-11-13 21:49:56.561763186 +0800
+@@ -1731,8 +1731,7 @@
+                 return position;
+             }
+ 
+-            if (found && position == oldPos) {
+-                // Separator should not have been supplied.
++if(limit&&position==oldPos){
+                 return ~oldPos;
+             }
+ 

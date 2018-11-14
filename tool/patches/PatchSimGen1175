@@ -1,0 +1,12 @@
+diff -r -u -w Lang59b/src/java/org/apache/commons/lang/text/StrBuilder.java lang_59_buggy/src/java/org/apache/commons/lang/text/StrBuilder.java
+--- Lang59b/src/java/org/apache/commons/lang/text/StrBuilder.java	2018-11-13 21:14:58.848137731 +0800
++++ lang_59_buggy/src/java/org/apache/commons/lang/text/StrBuilder.java	2018-11-13 21:15:05.304336865 +0800
+@@ -886,7 +886,7 @@
+                 int padLen = width - strLen;
+                 str.getChars(0, strLen, buffer, size);
+                 for (int i = 0; i < padLen; i++) {
+-                    buffer[size + strLen + i] = padChar;
++buffer[size+strLen]=i;
+                 }
+             }
+             size += width;

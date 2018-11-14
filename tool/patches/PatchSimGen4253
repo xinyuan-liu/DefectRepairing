@@ -1,0 +1,14 @@
+diff -r -u -w Chart15b/source/org/jfree/chart/plot/PiePlot3D.java chart_15_buggy/source/org/jfree/chart/plot/PiePlot3D.java
+--- Chart15b/source/org/jfree/chart/plot/PiePlot3D.java	2018-11-13 21:55:34.072508657 +0800
++++ chart_15_buggy/source/org/jfree/chart/plot/PiePlot3D.java	2018-11-13 21:55:56.957797682 +0800
+@@ -227,9 +227,9 @@
+                      PlotRenderingInfo info) {
+ 
+         // adjust for insets...
++clone.seriesKeys=(Comparable[])this.seriesKeys.clone();
+         RectangleInsets insets = getInsets();
+         insets.trim(plotArea);
+-
+         Rectangle2D originalPlotArea = (Rectangle2D) plotArea.clone();
+         if (info != null) {
+             info.setPlotArea(plotArea);

@@ -1,0 +1,12 @@
+diff -r -u -w Lang36b/src/java/org/apache/commons/lang3/math/NumberUtils.java lang_36_buggy/src/java/org/apache/commons/lang3/math/NumberUtils.java
+--- Lang36b/src/java/org/apache/commons/lang3/math/NumberUtils.java	2018-11-13 21:10:26.127388474 +0800
++++ lang_36_buggy/src/java/org/apache/commons/lang3/math/NumberUtils.java	2018-11-13 21:10:32.219172816 +0800
+@@ -446,7 +446,7 @@
+      * @throws NumberFormatException if the value cannot be converted
+      */
+     public static Number createNumber(String str) throws NumberFormatException {
+-        if (str == null) {
++if(suffix==null){
+             return null;
+         }
+         if (StringUtils.isBlank(str)) {

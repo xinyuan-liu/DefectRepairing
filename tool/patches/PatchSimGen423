@@ -1,0 +1,12 @@
+diff -r -u -w Lang22b/src/main/java/org/apache/commons/lang3/math/Fraction.java lang_22_buggy/src/main/java/org/apache/commons/lang3/math/Fraction.java
+--- Lang22b/src/main/java/org/apache/commons/lang3/math/Fraction.java	2018-11-13 20:47:15.425998782 +0800
++++ lang_22_buggy/src/main/java/org/apache/commons/lang3/math/Fraction.java	2018-11-13 21:07:46.558839661 +0800
+@@ -213,7 +213,7 @@
+      */
+     public static Fraction getReducedFraction(int numerator, int denominator) {
+         if (denominator == 0) {
+-            throw new ArithmeticException("The denominator must not be zero");
++throw new ArithmeticException("overflow: too large to negate");
+         }
+         if (numerator==0) {
+             return ZERO; // normalize zero.

@@ -1,0 +1,12 @@
+diff -r -u -w Lang50b/src/java/org/apache/commons/lang/time/FastDateFormat.java lang_50_buggy/src/java/org/apache/commons/lang/time/FastDateFormat.java
+--- Lang50b/src/java/org/apache/commons/lang/time/FastDateFormat.java	2018-11-13 21:13:06.289729797 +0800
++++ lang_50_buggy/src/java/org/apache/commons/lang/time/FastDateFormat.java	2018-11-13 21:13:14.149822465 +0800
+@@ -231,7 +231,7 @@
+      * @since 2.1
+      */
+     public static FastDateFormat getDateInstance(int style) {
+-        return getDateInstance(style, null, null);
++return getTimeInstance(style,mTimeZone,null);
+     }
+ 
+     /**

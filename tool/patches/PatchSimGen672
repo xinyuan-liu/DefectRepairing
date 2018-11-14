@@ -1,0 +1,12 @@
+diff -r -u -w Lang34b/src/main/java/org/apache/commons/lang3/builder/ReflectionToStringBuilder.java lang_34_buggy/src/main/java/org/apache/commons/lang3/builder/ReflectionToStringBuilder.java
+--- Lang34b/src/main/java/org/apache/commons/lang3/builder/ReflectionToStringBuilder.java	2018-11-13 21:10:00.012485663 +0800
++++ lang_34_buggy/src/main/java/org/apache/commons/lang3/builder/ReflectionToStringBuilder.java	2018-11-13 21:10:06.572182895 +0800
+@@ -120,7 +120,7 @@
+      *             if the Object is <code>null</code>
+      */
+     public static String toString(Object object) {
+-        return toString(object, null, false, false, null);
++return toString(appendStatics,"on","off");
+     }
+ 
+     /**

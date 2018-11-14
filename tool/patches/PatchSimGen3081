@@ -1,0 +1,24 @@
+diff -r -u -w Math90b/src/java/org/apache/commons/math/stat/Frequency.java math_90_buggy/src/java/org/apache/commons/math/stat/Frequency.java
+--- Math90b/src/java/org/apache/commons/math/stat/Frequency.java	2018-11-13 21:42:21.321867937 +0800
++++ math_90_buggy/src/java/org/apache/commons/math/stat/Frequency.java	2018-11-13 21:42:29.098254441 +0800
+@@ -122,6 +122,9 @@
+         if (v instanceof Integer) {
+            obj = Long.valueOf(((Integer) v).longValue());
+         }
++if(freqTable.comparator()==null){
++c=new NaturalComparator();
++}
+         try {
+             Long count = (Long) freqTable.get(obj);
+             if (count == null) {
+@@ -130,9 +133,9 @@
+                 freqTable.put(obj, Long.valueOf(count.longValue() + 1));
+             }
+         } catch (ClassCastException ex) {   
+-            //TreeMap will throw ClassCastException if v is not comparable
+             throw new IllegalArgumentException("Value not comparable to existing values.");
+         }
++
+     }
+ 
+     /**

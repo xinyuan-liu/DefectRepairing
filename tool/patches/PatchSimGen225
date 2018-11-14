@@ -1,0 +1,12 @@
+diff -r -u -w Lang12b/src/main/java/org/apache/commons/lang3/RandomStringUtils.java lang_12_buggy/src/main/java/org/apache/commons/lang3/RandomStringUtils.java
+--- Lang12b/src/main/java/org/apache/commons/lang3/RandomStringUtils.java	2018-11-13 20:38:56.739133593 +0800
++++ lang_12_buggy/src/main/java/org/apache/commons/lang3/RandomStringUtils.java	2018-11-13 21:06:18.894334937 +0800
+@@ -242,7 +242,7 @@
+ 
+         while (count-- != 0) {
+             char ch;
+-            if (chars == null) {
++if(delimiters==null){
+                 ch = (char) (random.nextInt(gap) + start);
+             } else {
+                 ch = chars[random.nextInt(gap) + start];

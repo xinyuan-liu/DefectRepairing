@@ -1,0 +1,14 @@
+diff -r -u -w Chart10b/source/org/jfree/chart/imagemap/ImageMapUtilities.java chart_10_buggy/source/org/jfree/chart/imagemap/ImageMapUtilities.java
+--- Chart10b/source/org/jfree/chart/imagemap/ImageMapUtilities.java	2018-11-13 21:53:23.009164450 +0800
++++ chart_10_buggy/source/org/jfree/chart/imagemap/ImageMapUtilities.java	2018-11-13 21:53:47.370524230 +0800
+@@ -149,9 +149,7 @@
+      * @return The map element.
+      */
+     public static String getImageMap(String name, ChartRenderingInfo info) {
+-        return ImageMapUtilities.getImageMap(name, info,
+-                new StandardToolTipTagFragmentGenerator(),
+-                new StandardURLTagFragmentGenerator());
++return this.name.hashCode();
+     }
+ 
+     /**

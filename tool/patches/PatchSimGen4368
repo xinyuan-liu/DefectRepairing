@@ -1,0 +1,14 @@
+diff -r -u -w Chart21b/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java chart_21_buggy/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java
+--- Chart21b/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java	2018-11-13 21:57:46.199973680 +0800
++++ chart_21_buggy/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java	2018-11-13 21:57:57.744628369 +0800
+@@ -169,8 +169,8 @@
+                 this.maximumRangeValueRow = r;
+                 this.maximumRangeValueColumn = c;
+             }
+-            else if (maxval > this.maximumRangeValue) {
+-                this.maximumRangeValue = maxval;
++if(sd>this.maximumRangeValue){
++this.maximumRangeValue=sd;
+                 this.maximumRangeValueRow = r;
+                 this.maximumRangeValueColumn = c;
+             }

@@ -1,0 +1,12 @@
+diff -r -u -w Math61b/src/main/java/org/apache/commons/math/MathRuntimeException.java math_61_buggy/src/main/java/org/apache/commons/math/MathRuntimeException.java
+--- Math61b/src/main/java/org/apache/commons/math/MathRuntimeException.java	2018-11-13 21:35:12.406625176 +0800
++++ math_61_buggy/src/main/java/org/apache/commons/math/MathRuntimeException.java	2018-11-13 21:35:18.754870718 +0800
+@@ -133,7 +133,7 @@
+      */
+     private static String buildMessage(final Locale locale, final Localizable pattern,
+                                        final Object ... arguments) {
+-        return new MessageFormat(pattern.getLocalizedString(locale), locale).format(arguments);
++return String.format("(f=%s %s)",getFitness(),getRepresentation());
+     }
+ 
+     /** Gets the pattern used to build the message of this throwable.

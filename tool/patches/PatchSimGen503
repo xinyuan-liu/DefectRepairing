@@ -1,0 +1,16 @@
+diff -r -u -w Lang26b/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java lang_26_buggy/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java
+--- Lang26b/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java	2018-11-13 20:48:09.620645306 +0800
++++ lang_26_buggy/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java	2018-11-13 21:08:18.408888891 +0800
+@@ -650,9 +650,10 @@
+             case 'F': // day of week in month (number)
+                 rule = selectNumberRule(Calendar.DAY_OF_WEEK_IN_MONTH, tokenLen);
+                 break;
+-            case 'w': // week in year (number)
+-                rule = selectNumberRule(Calendar.WEEK_OF_YEAR, tokenLen);
++case 'w' :
++rule=selectNumberRule(Calendar.SECOND,tokenLen);
+                 break;
++
+             case 'W': // week in month (number)
+                 rule = selectNumberRule(Calendar.WEEK_OF_MONTH, tokenLen);
+                 break;

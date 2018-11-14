@@ -1,0 +1,11 @@
+diff -r -u -w Math68b/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java math_68_buggy/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java
+--- Math68b/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java	2018-11-13 21:36:56.590836074 +0800
++++ math_68_buggy/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java	2018-11-13 21:37:07.131282126 +0800
+@@ -605,6 +605,7 @@
+             if (fp > 0) {
+                 parl = Math.max(parl, lmPar);
+             } else if (fp < 0) {
++lmPar*=0.5;
+                 paru = Math.min(paru, lmPar);
+             }
+ 

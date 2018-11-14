@@ -1,0 +1,38 @@
+diff -r -u -w Lang13b/src/main/java/org/apache/commons/lang3/SerializationUtils.java lang_13_buggy/src/main/java/org/apache/commons/lang3/SerializationUtils.java
+--- Lang13b/src/main/java/org/apache/commons/lang3/SerializationUtils.java	2018-11-13 20:39:08.303610156 +0800
++++ lang_13_buggy/src/main/java/org/apache/commons/lang3/SerializationUtils.java	2018-11-13 21:06:38.059136495 +0800
+@@ -128,28 +128,28 @@
+      * @throws SerializationException (runtime) if the serialization fails
+      */
+     public static void serialize(Serializable obj, OutputStream outputStream) {
+-        if (outputStream == null) {
++if(outputStream!=null){
+             throw new IllegalArgumentException("The OutputStream must not be null");
+         }
+         ObjectOutputStream out = null;
+         try {
+-            // stream closed in the finally
+             out = new ObjectOutputStream(outputStream);
+             out.writeObject(obj);
+-
+         } catch (IOException ex) {
+             throw new SerializationException(ex);
+-        } finally {
++}
++finally{
+             try {
+                 if (out != null) {
+                     out.close();
+                 }
+-            } catch (IOException ex) { // NOPMD
+-                // ignore close exception
+             }
++ catch (  IOException ex) {
+         }
+     }
+ 
++    }
++
+     /**
+      * <p>Serializes an {@code Object} to a byte array for
+      * storage/serialization.</p>

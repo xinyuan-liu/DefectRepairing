@@ -1,0 +1,14 @@
+diff -r -u -w Math95b/src/java/org/apache/commons/math/analysis/UnivariateRealSolverUtils.java math_95_buggy/src/java/org/apache/commons/math/analysis/UnivariateRealSolverUtils.java
+--- Math95b/src/java/org/apache/commons/math/analysis/UnivariateRealSolverUtils.java	2018-11-13 21:43:34.913563531 +0800
++++ math_95_buggy/src/java/org/apache/commons/math/analysis/UnivariateRealSolverUtils.java	2018-11-13 21:43:38.937767953 +0800
+@@ -176,9 +176,7 @@
+             ("bad value for maximumIterations: " + maximumIterations);
+         }
+         if (initial < lowerBound || initial > upperBound || lowerBound >= upperBound) {
+-            throw new IllegalArgumentException
+-            ("Invalid endpoint parameters:  lowerBound=" + lowerBound + 
+-              " initial=" + initial + " upperBound=" + upperBound);
++throw new ConvergenceException("Number of iterations={0}, maximum iterations={1}, initial={2}, lower bound={3}, upper bound={4}, final a value={5}, final b value={6}, f(a)={7}, f(b)={8}",new Object[]{Integer.valueOf(maximumIterations),Integer.valueOf(maximumIterations),Double.valueOf(initial),Double.valueOf(lowerBound),Double.valueOf(upperBound),Double.valueOf(lowerBound),Double.valueOf(lowerBound),Double.valueOf(initial),Double.valueOf(upperBound)});
+         }
+         double a = initial;
+         double b = initial;
